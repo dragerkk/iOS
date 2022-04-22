@@ -77,3 +77,52 @@ import Foundation
 //	}
 //}
 
+//// 1037 약수
+//
+//let n = Int(readLine()!)!
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//print(input.min()!*input.max()!)
+
+
+//// 2609 최대공약수와 최소공배수
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var a = input.max()!, b = input.min()!
+//
+//var res = 0
+//var gcd = 0
+//var lcm = a * b
+//
+//while true {
+//	res = a % b
+//	if res == 0 {
+//		gcd = b
+//		break
+//	} else {
+//		a = b
+//		b = res
+//	}
+//}
+//
+//lcm /= gcd
+//print(gcd)
+//print(lcm)
+
+
+// 1934 최소공배수
+
+let caseNum = Int(readLine()!)!
+
+for _ in 1...caseNum {
+	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+	print(getLcm(input.max()!, input.min()!))
+	
+	func getGcd (_ a:Int, _ b:Int) -> Int {
+		return a%b==0 ? b : getGcd(b, a%b)
+	}
+	
+	func getLcm (_ a:Int, _ b:Int) -> Int {
+		return (a*b)/getGcd(a, b)
+	}
+}
+

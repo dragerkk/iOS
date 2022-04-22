@@ -1,3 +1,4 @@
+
 // // 2798 블랙잭, 8ms, 62232KB
 
 // let input = readLine()!.split(separator: " ").map{Int(String($0))!}
@@ -178,30 +179,77 @@
 // }
 // print(num)
 
-// 1436 영화감독 숌 -3, 40ms, 62224KB
+// // 1436 영화감독 숌 -3, 40ms, 62224KB
 
-let nth = Int(readLine()!)!
-var num = 666
-var count = 0
+// let nth = Int(readLine()!)!
+// var num = 666
+// var count = 0
 
-while true {
-	var countSix = 0
-	var value = num 
-	while value > 0 {
-		if value%10 == 6 {
-			countSix += 1
-		} else {
-			countSix = 0
-		}
-		if countSix == 3 {
-			count += 1
-			break
-		}
-		value /= 10
-	}
-	if count == nth {
-		break
-	}
-	num += 1
-}
-print(num)
+// while true {
+// 	var countSix = 0
+// 	var value = num
+// 	while value > 0 {
+// 		if value%10 == 6 {
+// 			countSix += 1
+// 		} else {
+// 			countSix = 0
+// 		}
+// 		if countSix == 3 {
+// 			count += 1
+// 			break
+// 		}
+// 		value /= 10
+// 	}
+// 	if count == nth {
+// 		break
+// 	}
+// 	num += 1
+// }
+// print(num)
+
+
+//// 16968 차량 번호판 1
+//
+//let input = readLine()!.map{String($0)}
+//var result = 0
+//
+//if input[0] == "d" {
+//	result = 10
+//} else {
+//	result = 26
+//}
+//
+//for i in 0..<input.count-1 {
+//	if input[i] == "d" && input[i+1] == "d" {
+//		result *= 9
+//	} else if input[i] == "d" && input[i+1] == "c" {
+//		result *= 26
+//	} else if input[i] == "c" && input[i+1] == "c" {
+//		result *= 25
+//	} else if input[i] == "c" && input[i+1] == "d" {
+//		result *= 10
+//	}
+//}
+//print(result)
+
+
+//// 16917 양념 반 후라이드 반
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//let a = input[0]
+//let b = input[1]
+//let c = input[2]*2
+//
+//let x = input[3]
+//let y = input[4]
+//
+//var price = 0
+//
+//if x>y {
+//	price = a+b > c ? c*y + min(a,c)*(x-y) : a*x + b*y
+//} else {
+//	price = a+b > c ? c*x + min(b,c)*(y-x) : a*x + b*y
+//}
+//
+//print(price)
