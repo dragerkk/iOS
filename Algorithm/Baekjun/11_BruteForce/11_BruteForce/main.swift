@@ -1,3 +1,4 @@
+import Foundation
 
 // // 2798 블랙잭, 8ms, 62232KB
 
@@ -253,3 +254,14 @@
 //}
 //
 //print(price)
+
+
+// 16922 로마 숫자 만들기
+
+let num = Int(readLine()!)!
+let arr = [1,5,10,50]
+var setArr : Set<Int> = []
+
+func availNum(_ num:Int) -> Int {
+	
+}
