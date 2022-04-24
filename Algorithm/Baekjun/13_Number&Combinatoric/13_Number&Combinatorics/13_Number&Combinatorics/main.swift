@@ -109,20 +109,66 @@ import Foundation
 //print(lcm)
 
 
-// 1934 최소공배수
+//// 1934 최소공배수
+//
+//let caseNum = Int(readLine()!)!
+//
+//for _ in 1...caseNum {
+//	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//	print(getLcm(input.max()!, input.min()!))
+//
+//	func getGcd (_ a:Int, _ b:Int) -> Int {
+//		return a%b==0 ? b : getGcd(b, a%b)
+//	}
+//
+//	func getLcm (_ a:Int, _ b:Int) -> Int {
+//		return (a*b)/getGcd(a, b)
+//	}
+//}
 
-let caseNum = Int(readLine()!)!
+//// 2981 검문 -1, 시간초과 ㅠㅠㅠㅠㅠㅠ
+//
+//let caseNum = Int(readLine()!)!
+//var arr : [Int] = []
+//var result : [Int] = []
+//
+//for _ in 1...caseNum {
+//	arr.append(Int(readLine()!)!)
+//}
+//
+//for i in 2..<arr.min()! {
+//	let res = arr.min()! % i
+//	let filter = arr.filter { $0 % i == res }
+//	if arr.count == filter.count {
+//		result.append(i)
+//	}
+//}
+//print(result.map{String($0)}.joined(separator: " "))
 
-for _ in 1...caseNum {
-	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
-	print(getLcm(input.max()!, input.min()!))
-	
-	func getGcd (_ a:Int, _ b:Int) -> Int {
-		return a%b==0 ? b : getGcd(b, a%b)
+
+// 2981 검문 -2
+
+let num = Int(readLine()!)!
+var arr : [Int] = []
+
+for _ in 1...num {
+	arr.append(Int(readLine()!)!)
+}
+arr.sort()
+var gcd = arr[1]-arr[0]
+
+for i in 1..<arr.count-1 {
+	gcd = getGcd(gcd, arr[i+1]-arr[i])
+} // gcd 구하기
+
+for j in 2...gcd {
+	if gcd%j == 0 {
+		print(j, terminator: " ")
 	}
-	
-	func getLcm (_ a:Int, _ b:Int) -> Int {
-		return (a*b)/getGcd(a, b)
-	}
+}
+print("")
+
+func getGcd(_ a:Int, _ b:Int) -> Int {
+	return a%b==0 ? b : getGcd(b, a%b)
 }
 

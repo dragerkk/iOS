@@ -15,7 +15,7 @@ class CalculateViewController: UIViewController {
 	@IBOutlet weak var heightSlider: UISlider!
 	@IBOutlet weak var weightSlider: UISlider!
 	
-	var bmi : Float = 0
+	var calculatorBrain = CalculatorBrain()
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +36,16 @@ class CalculateViewController: UIViewController {
 		let height = heightSlider.value
 		let weight = weightSlider.value
 		
-		bmi = weight / pow(height, 2)
+		calculatorBrain.calculateBMI(height, weight)
+
 		self.performSegue(withIdentifier: "goToResult", sender: self)
-		print(bmi)
+
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "goToResult" { // segue가 여러 개 있을 수 있기 때문에 충돌을 피하기 위해 체크함.
 			let destinationVC = segue.destination as! ResultViewController // as!를 사용해서 정확한 대상을 지정함 ( Downcasting )
-			destinationVC.bmiValue = String(format: "%.2f", bmi)
+			destinationVC.bmiValue = calculatorBrain.getBMIValue()
 		}
 	}
 
