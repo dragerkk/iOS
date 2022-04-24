@@ -161,12 +161,22 @@ for i in 1..<arr.count-1 {
 	gcd = getGcd(gcd, arr[i+1]-arr[i])
 } // gcd 구하기
 
-for j in 2...gcd {
+// ------------------ 시간초과를 극복하기 위해....... 에라스토테네스의 체
+var n = Int(Float(gcd).squareRoot())
+var resultSet : Set<Int> = []
+var result : [Int] = []
+for j in 1...n {
 	if gcd%j == 0 {
-		print(j, terminator: " ")
+		resultSet.insert(j)
+		resultSet.insert(gcd/j)
 	}
-}
-print("")
+} // gcd 약수 출력
+result = Array(resultSet)
+result.sort()
+result.removeFirst()
+
+print(result.map{String($0)}.joined(separator: " "))
+// ------------------------------
 
 func getGcd(_ a:Int, _ b:Int) -> Int {
 	return a%b==0 ? b : getGcd(b, a%b)
