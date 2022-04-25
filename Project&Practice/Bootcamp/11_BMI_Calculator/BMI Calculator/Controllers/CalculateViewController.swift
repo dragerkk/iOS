@@ -39,6 +39,7 @@ class CalculateViewController: UIViewController {
 		calculatorBrain.calculateBMI(height, weight)
 
 		self.performSegue(withIdentifier: "goToResult", sender: self)
+		
 
 	}
 	
@@ -46,6 +47,9 @@ class CalculateViewController: UIViewController {
 		if segue.identifier == "goToResult" { // segue가 여러 개 있을 수 있기 때문에 충돌을 피하기 위해 체크함.
 			let destinationVC = segue.destination as! ResultViewController // as!를 사용해서 정확한 대상을 지정함 ( Downcasting )
 			destinationVC.bmiValue = calculatorBrain.getBMIValue()
+			destinationVC.advice = calculatorBrain.getAdvice()
+			destinationVC.color = calculatorBrain.getColor()
+			
 		}
 	}
 
