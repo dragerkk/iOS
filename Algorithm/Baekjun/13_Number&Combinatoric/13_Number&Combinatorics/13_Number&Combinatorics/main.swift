@@ -146,39 +146,88 @@ import Foundation
 //print(result.map{String($0)}.joined(separator: " "))
 
 
-// 2981 검문 -2
+//// 2981 검문 -2
+//
+//let num = Int(readLine()!)!
+//var arr : [Int] = []
+//
+//for _ in 1...num {
+//	arr.append(Int(readLine()!)!)
+//}
+//arr.sort()
+//var gcd = arr[1]-arr[0]
+//
+//for i in 1..<arr.count-1 {
+//	gcd = getGcd(gcd, arr[i+1]-arr[i])
+//} // gcd 구하기
+//
+//// ------------------ 시간초과를 극복하기 위해....... 에라토스테네스의 체
+//var n = Int(Float(gcd).squareRoot())
+//var resultSet : Set<Int> = []
+//var result : [Int] = []
+//for j in 1...n {
+//	if gcd%j == 0 {
+//		resultSet.insert(j)
+//		resultSet.insert(gcd/j)
+//	}
+//} // gcd 약수 출력
+//result = Array(resultSet)
+//result.sort()
+//result.removeFirst()
+//
+//print(result.map{String($0)}.joined(separator: " "))
+//// ------------------------------
+//
+//func getGcd(_ a:Int, _ b:Int) -> Int {
+//	return a%b==0 ? b : getGcd(b, a%b)
+//}
+//
 
-let num = Int(readLine()!)!
-var arr : [Int] = []
 
-for _ in 1...num {
-	arr.append(Int(readLine()!)!)
-}
-arr.sort()
-var gcd = arr[1]-arr[0]
+//// 3036 링
+//
+//let n = Int(readLine()!)!
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var gcd = 0
+//
+//for i in 1..<input.count {
+//	gcd = getGcd(input[0], input[i])
+//	print("\(input[0]/gcd)/\(input[i]/gcd)")
+//}
+//
+//func getGcd (_ a:Int, _ b:Int) -> Int{
+//	a%b==0 ? b : getGcd(b, a%b)
+//}
 
-for i in 1..<arr.count-1 {
-	gcd = getGcd(gcd, arr[i+1]-arr[i])
-} // gcd 구하기
 
-// ------------------ 시간초과를 극복하기 위해....... 에라스토테네스의 체
-var n = Int(Float(gcd).squareRoot())
-var resultSet : Set<Int> = []
-var result : [Int] = []
-for j in 1...n {
-	if gcd%j == 0 {
-		resultSet.insert(j)
-		resultSet.insert(gcd/j)
+//// 11050 이항계수1
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//let result = getFactorial(input[0]) / (getFactorial(input[1])*getFactorial(input[0]-input[1]))
+//print(result)
+//
+//func getFactorial (_ num:Int) -> Int {
+//	if num <= 1 {
+//		return 1
+//	}
+//	return num * getFactorial(num-1)
+//}
+
+
+// 11051 이항계수2 -1, 런타임에러
+// 정확한 원인은 모르지만 N이 1000까지 올 수 있기 때문에 수가 너무 커져서 오버플로우 발생하는 듯함. 팩토리얼을 사용한 방법으로는 무리인 것으로 보임
+
+let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+
+var result = getFactorial(input[0]) / (getFactorial(input[1])*getFactorial(input[0]-input[1]))
+
+print(result%10007)
+
+func getFactorial (_ num:Int) -> Int {
+	if num <= 1 {
+		return 1
 	}
-} // gcd 약수 출력
-result = Array(resultSet)
-result.sort()
-result.removeFirst()
-
-print(result.map{String($0)}.joined(separator: " "))
-// ------------------------------
-
-func getGcd(_ a:Int, _ b:Int) -> Int {
-	return a%b==0 ? b : getGcd(b, a%b)
+	return num * getFactorial(num-1)
 }
 
