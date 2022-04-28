@@ -251,16 +251,54 @@ import Foundation
 //print(arr[input[0]][input[1]])
 
 
-// 1010 다리놓기
+//// 1010 다리놓기, 파스칼의 삼각형 이용
+//
+//let caseNum = Int(readLine()!)!
+//var resultArr = Array(repeating: Array(repeating: 0, count: 31), count: 31)
+//
+//for _ in 1...caseNum {
+//	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//	print(getCombination(input[1], input[0]))
+//}
+//
+//func getCombination (_ a:Int, _ b:Int) -> Int {
+//
+//	if a == b || b == 0 {
+//		return 1
+//	}
+//	if resultArr[a][b] != 0 { // 이 부분이 중요, 없으면 시간초과 : 이미 탐색했던 경우는 바로 반환함.
+//		return resultArr[a][b]
+//	}
+//
+//	resultArr[a][b] = getCombination(a-1, b-1) + getCombination(a-1, b)
+//	return resultArr[a][b]
+//}
+//
 
-let caseNum = Int(readLine()!)!
 
-for _ in 1...caseNum {
-	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
-	let result = 0
-	let siteA: [Int] = Array(1...input[0])
-	let siteB: [Int] = Array(1...input[1])
-
-
-}
-
+//// 9375 패션왕 신해빈 -1
+//
+//let caseNum = Int(readLine()!)!
+//
+//for _ in 1...caseNum {
+//	var dictArr = [String: [String]]()
+//	let clothNum = Int(readLine()!)!
+//	if clothNum == 0 {
+//		print(0)
+//		continue
+//	}
+//	var result = 1
+//	for _ in 1...clothNum {
+//		let input = readLine()!.split(separator: " ").map{String($0)}
+//
+//		if dictArr.keys.contains(input[1]) {
+//			dictArr[input[1]]?.append(input[0])
+//		} else {
+//			dictArr[input[1]] = [input[0]]
+//		}
+//	}
+//	for (_, value) in dictArr {
+//		result *= (value.count+1)
+//	}
+//	print(result-1)
+//}
