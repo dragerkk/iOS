@@ -260,6 +260,7 @@ for _ in 1...caseNum {
 	let result = 0
 	let siteA: [Int] = Array(1...input[0])
 	let siteB: [Int] = Array(1...input[1])
-	
-	
+
+
 }
+
