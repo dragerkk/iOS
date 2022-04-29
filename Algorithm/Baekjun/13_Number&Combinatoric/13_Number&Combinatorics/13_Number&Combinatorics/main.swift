@@ -304,3 +304,53 @@ import Foundation
 //}
 
 
+//// 1676 팩토리얼 0의 개수
+//
+//let input = Int(readLine()!)!
+//var count = 0
+//
+//for i  in 1..<input+1 { // n에 0이 올 수 있기 때문에 범위를 다르게 지정하면 런타임 에러 뜸
+//	var num = i
+//	while num >= 5 && num % 5 == 0 {
+//		count += 1
+//		num /= 5
+//	}
+//}
+//
+//print(count)
+
+
+//
+//// 2004 조합 0의 개수
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//let result1 = countFive(input[0]) - countFive(input[1]) - countFive(input[0]-input[1])
+//let result2 = countTwo(input[0]) - countTwo(input[1]) - countTwo(input[0]-input[1])
+//
+//print(result1 > result2 ? result2 : result1)
+//
+//func countFive(_ num:Int) -> Int {
+//
+//	var count = 0
+//	var i = 5
+//
+//	while num >= i {
+//		count += num/i
+//		i *= 5
+//	}
+//	return count
+//}
+//
+//func countTwo(_ num:Int) -> Int {
+//
+//	var count = 0
+//	var i = 2
+//
+//	while num >= i {
+//		count += num/i
+//		i *= 2
+//	}
+//
+//	return count
+//}
