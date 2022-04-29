@@ -276,7 +276,7 @@ import Foundation
 //
 
 
-//// 9375 패션왕 신해빈 -1
+//// 9375 패션왕 신해빈
 //
 //let caseNum = Int(readLine()!)!
 //
@@ -302,3 +302,5 @@ import Foundation
 //	}
 //	print(result-1)
 //}
+
+
