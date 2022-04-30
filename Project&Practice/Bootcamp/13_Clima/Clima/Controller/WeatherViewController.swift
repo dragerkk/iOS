@@ -15,6 +15,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cityLabel: UILabel!
 	@IBOutlet weak var searchTextField: UITextField!
 	
+	var weatherManager = WeatherManager()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,9 +50,15 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
 	// func textFieldDidEndEditing 사용하지 않으면 위의 searchPressed(), textFieldShouldReturn()에서 각각 비워줘야 함.
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		// 1. Use 'searchTextField.text' to get the weather for that city.
+		// 2. API에 접근!
+		// 3. 입력된 값을 비워줌 (계속 남아있으면 보기싫으니까..)
 		
-		// 2. 입력된 값을 비워줌 (계속 남아있으면 보기싫으니까..)
+		if let city = searchTextField.text {
+			weatherManager.fetchWeather(cityName: city)
+		}
+		
 		searchTextField.text = ""
+		
 	}
 }
 
