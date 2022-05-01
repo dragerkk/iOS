@@ -1,36 +1,46 @@
-// 시간초과
+import Foundation
 
-let n = 20
-let answers = [1,3,2,4,2]
-//let num = answers.count
-let count1 = n/5 + 1
-let count2 = n/8 + 1
-let count3 = n/10 + 1
-let arr1 : [Int] = Array(repeating: [1,2,3,4,5], count:count1).flatMap{$0}
-let arr2 : [Int] = Array(repeating: [2,1,2,3,2,4,2,5], count:count2).flatMap{$0}
-let arr3 : [Int] = Array(repeating: [3,3,1,1,2,2,4,4,5,5], count:count3).flatMap{$0}
-var score = [0,0,0]
+var arr1 = [9,20,28,18,11]
+var arr2 = [30,1,21,17,28]
+let n = 5
 
-for i in 0..<answers.count {
-	if arr1[i] == answers[i] {
-		score[0] += 1
+var answer = Array(repeating: "#", count: n)
+
+var binary1 = Array(repeating: 0, count: n)
+var binary2 = Array(repeating: 0, count: n)
+
+var combineArr = Array(repeating: "0", count: n)
+
+var binArr = [String]()
+// 1. 이진수로 바꿈 2. 이진수 0->" ", 1->"#"바꿈 3. 배열비교해서 하나라도 #이면 #을 새배열에 넣음 4.캐릭터를 스트링으로 바꿔줌
+for i in 0..<n {
+	while arr1[i] >= 2 && arr2[i] >= 2 {
+		for j in (0..<n).reversed() {
+			let res1 = arr1[i] % 2
+			let res2 = arr2[i] % 2
+			binary1[j] = res1
+			binary2[j] = res2
+			arr1[i] /= 2
+			arr2[i] /= 2
+		}
 	}
-	if arr2[i] == answers[i] {
-		score[1] += 1
+	let stringBin1 = binary1.map{String($0)}
+	let stringBin2 = binary2.map{String($0)}
+	print(stringBin1)
+	print(stringBin2)
+	
+	for i in 0..<n {
+		if stringBin1[i] == "1" || stringBin2[i] == "1" {
+			combineArr[i] = "#"
+		} else {
+			combineArr[i] = " "
+		}
 	}
-	if arr3[i] == answers[i] {
-		score[2] += 1
-	}
-}
-var result:[Int] = []
-if score.max() == score[0] {
-	result.append(1)
-}
-if score.max() == score[1] {
-	result.append(2)
-}
-if score.max() == score[2] {
-	result.append(3)
+	print("c: \(combineArr)")
+	binArr.append(combineArr.joined(separator: ""))
 }
 
-print(result)
+print(binArr)
+
+
+
