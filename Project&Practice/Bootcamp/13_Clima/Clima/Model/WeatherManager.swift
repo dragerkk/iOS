@@ -8,9 +8,16 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+	
+	func didUpdateWeather(weather: WeatherModel)
+}
+
 struct WeatherManager {
 	// http 가 아닌 https를 사용해야 한다?!
 	let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=83ba97ae4ea9e6a8ca0b14ebcadede50&units=metric"
+	
+	var delegate: WeatherManagerDelegate?
 	
 	func fetchWeather(cityName: String) {
 		let urlString = "\(weatherURL)&q=\(cityName)"
@@ -34,7 +41,9 @@ struct WeatherManager {
 				}
 				
 				if let safeData = data {
-					parseJSON(weatherData: safeData)
+					if let weather = parseJSON(weatherData: safeData) { // parseJSON func -- optional이기 때문에 여기서도 optional binding 사용해줬음
+						delegate?.didUpdateWeather(weather: weather )
+					}
 				}
 			}
 			// 4. Start the task
@@ -59,15 +68,24 @@ struct WeatherManager {
 	
 	// -------JSON
 	
-	func parseJSON(weatherData: Data) {
+	func parseJSON(weatherData: Data) -> WeatherModel? { // 에러 발생시 nil을 반환하기 때문에 optional
 		let decoder = JSONDecoder()
 		do {
 			let decodedData = try decoder.decode(WeatherData.self, from: weatherData )
-			print(decodedData.name)
-			print(decodedData.main.temp)
-			print(decodedData.weather[0].description)
+			
+			let id = decodedData.weather[0].id
+			let temp = decodedData.main.temp
+			let name = decodedData.name
+			
+			let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+			
+			return weather
+			
 		} catch {
 			print(error)
+			return nil
 		}
 	}
+	
+
 }
