@@ -1,5 +1,5 @@
 
-protocol AdvancedLifeSupport {
+protocol AdvancedLifeSupport { // 프로토콜을 사용할 클래스와 동일한 파일 안에 만들어주는게 관례임
 	func performCPR()
 }
 
