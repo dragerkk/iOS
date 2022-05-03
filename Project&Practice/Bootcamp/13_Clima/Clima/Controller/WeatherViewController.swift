@@ -63,8 +63,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 		
 	}
 	
-	func didUpdateWeather(weather: WeatherModel) {
-		print(weather.temperature)
+	func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+		// Model - WeatherManager - func performRequest 부분을 보면, completion handler 이기 때문에 디스패치 해줘야 한다고 함...
+		DispatchQueue.main.async {
+			self.temperatureLabel.text = weather.temperatureString
+			self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+		}
+		
+	}
+	
+	func didFailWithError(error: Error) {
+		print(error)
 	}
 }
 

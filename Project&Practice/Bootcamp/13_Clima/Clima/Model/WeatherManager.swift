@@ -10,7 +10,8 @@ import Foundation
 
 protocol WeatherManagerDelegate {
 	
-	func didUpdateWeather(weather: WeatherModel)
+	func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+	func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
@@ -21,10 +22,10 @@ struct WeatherManager {
 	
 	func fetchWeather(cityName: String) {
 		let urlString = "\(weatherURL)&q=\(cityName)"
-		performRequest(urlString: urlString)
+		performRequest(with: urlString)
 	}
 	
-	func performRequest(urlString: String) {
+	func performRequest(with urlString: String) {
 		// ---Networking---
 		// 1. Create a URL
 		if let url = URL(string: urlString) {
@@ -36,13 +37,13 @@ struct WeatherManager {
 			// let task = session.dataTask(with: url, completionHandler: handle(data:response:error:))
 			let task = session.dataTask(with: url) { (data, response, error) in
 				if error != nil {
-					print(error!)
+					delegate?.didFailWithError(error: error!)
 					return // exit out of this function.
 				}
 				
 				if let safeData = data {
-					if let weather = parseJSON(weatherData: safeData) { // parseJSON func -- optional이기 때문에 여기서도 optional binding 사용해줬음
-						delegate?.didUpdateWeather(weather: weather )
+					if let weather = parseJSON(safeData) { // parseJSON func -- optional이기 때문에 여기서도 optional binding 사용해줬음
+						delegate?.didUpdateWeather(self, weather: weather)
 					}
 				}
 			}
@@ -68,7 +69,7 @@ struct WeatherManager {
 	
 	// -------JSON
 	
-	func parseJSON(weatherData: Data) -> WeatherModel? { // 에러 발생시 nil을 반환하기 때문에 optional
+	func parseJSON(_ weatherData: Data) -> WeatherModel? { // 에러 발생시 nil을 반환하기 때문에 optional
 		let decoder = JSONDecoder()
 		do {
 			let decodedData = try decoder.decode(WeatherData.self, from: weatherData )
@@ -82,7 +83,7 @@ struct WeatherManager {
 			return weather
 			
 		} catch {
-			print(error)
+			delegate?.didFailWithError(error: error)
 			return nil
 		}
 	}
