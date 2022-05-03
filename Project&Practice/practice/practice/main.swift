@@ -4,19 +4,35 @@ import Foundation
 let expression = "100-200*300-500+20" // answer:60420
 
 
-var str = "try hello world"
+let s = "a B z"
+let n = 4
 
-var result = String()
-var n = 0
-for i in str {
-	if n % 2 == 0 {
-		result.append(i.uppercased())
-	} else {
-		result.append(i)
+var str = Array(s)
+let lower : [Character] = Array("abcdefghijklmnopqrstuvwxyz")
+let upper : [Character] = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+for i in 0..<str.count {
+	if str[i] == " " {
+		continue
 	}
-	n+=1
-	if i == " " {
-		n = 0
+	if lower.contains(str[i]) {
+		let index = lower.firstIndex(of: str[i])!
+		if index + n > 25 {
+			str[i] = lower[index+n-26]
+		} else {
+			str[i] = lower[index+n]
+		}
 	}
+	if upper.contains(str[i]) {
+		let index = upper.firstIndex(of: str[i])!
+		if index + n > 25 {
+			str[i] = upper[index+n-26]
+		} else {
+			str[i] = upper[index+n]
+		}
+	}
+
 }
-print(result)
+
+print(lower.count)
+print(String(str))
