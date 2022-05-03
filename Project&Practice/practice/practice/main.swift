@@ -4,16 +4,19 @@ import Foundation
 let expression = "100-200*300-500+20" // answer:60420
 
 
-let x = 12
-var num = x
-var sum = 0
+var str = "try hello world"
 
-while num >= 10 {
-	sum += num % 10
-	num /= 10
+var result = String()
+var n = 0
+for i in str {
+	if n % 2 == 0 {
+		result.append(i.uppercased())
+	} else {
+		result.append(i)
+	}
+	n+=1
+	if i == " " {
+		n = 0
+	}
 }
-if x % sum == 0 {
-	print(true)
-} else {
-	print(false)
-}
+print(result)
