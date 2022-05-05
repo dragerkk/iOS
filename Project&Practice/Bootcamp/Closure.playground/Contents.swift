@@ -77,6 +77,6 @@ print(resultArr)
 
 // ------- Closure Expression Syntax
 
-{ (parameters) -> return type in
-	statements
-}
+//{ (parameters) -> return type in
+//	statements
+//}
