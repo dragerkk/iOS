@@ -76,5 +76,51 @@ import Foundation
 //
 //print(count)
 
+//
+//// 모의고사 (수포자..)
+//let answers = [1,2,3,4,5]
+//
+//let n = answers.count
+//var arr1 = [1,2,3,4,5]
+//var arr2 = [2,1,2,3,2,4,2,5]
+//var arr3 = [3,3,1,1,2,2,4,4,5,5]
+//
+//var dict = [1 : 0, 2 : 0, 3 : 0]
+//
+//for i in 0..<answers.count {
+//	if answers[i] == arr1[i%5] {
+//		dict[1]! += 1
+//	}
+//	if answers[i] == arr2[i%8] {
+//		dict[2]! += 1
+//	}
+//	if answers[i] == arr3[i%10] {
+//		dict[3]! += 1
+//	}
+//}
+//
+//var max = dict.values.max()!
+//
+//for i in 1...3 {
+//	if dict[i] != max {
+//		dict[i] = nil
+//	}
+//}
+//
+//var sortedDict = dict.sorted {
+//	if $0.1 == $1.1 {
+//		return $0 < $1
+//	} else {
+//		return $0.1 > $1.1
+//	}
+//}
+//
+//var result = [Int]()
+//
+//for i in sortedDict {
+//	result.append(i.key)
+//}
+//
+//print(result)
 
 
