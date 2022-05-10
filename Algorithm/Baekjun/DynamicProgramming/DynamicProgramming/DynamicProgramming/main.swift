@@ -55,5 +55,33 @@ import Foundation
 //print(arr[line-1].max()!)
 
 
-// 1149 - RGB 거리
+//// 1149 - RGB 거리
+//
+//let num = Int(readLine()!)!
+//var dp = [[Int]]()
+//for _ in 1...num {
+//	dp.append(readLine()!.split(separator: " ").map{Int(String($0))!})
+//}
+//
+//for i in 1..<num {
+//	dp[i][0] = dp[i][0] + min(dp[i-1][1],dp[i-1][2])
+//	dp[i][1] = dp[i][1] + min(dp[i-1][0],dp[i-1][2])
+//	dp[i][2] = dp[i][2] + min(dp[i-1][1],dp[i-1][0])
+//}
+//
+//print(dp[num-1].min()!)
 
+
+// 11052 카드 구매하기
+
+let n = Int(readLine()!)!
+var input = readLine()!.split(separator: " ").map{Int(String($0))!}
+var priceDict = [Int:Int]()
+
+for i in 0..<n {
+	priceDict[i+1] = input[i]
+}
+
+//for i in priceDict.keys {
+//	for
+//}
