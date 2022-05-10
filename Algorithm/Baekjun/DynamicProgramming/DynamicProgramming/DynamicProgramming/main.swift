@@ -32,24 +32,28 @@ import Foundation
 //print(dp[num])
 
 
-// 1932 정수 삼각형
+//// 1932 정수 삼각형
+//
+//let line = Int(readLine()!)!
+//var arr = [[Int]]()
+//for _ in 0..<line {
+//	arr.append(readLine()!.split(separator: " ").map{Int(String($0))!})
+//}
+//
+//for i in 1..<line {
+//	for j in 0..<i+1 {
+//		if j == 0 {
+//			arr[i][j] += arr[i-1][j]
+//		} else if j == i {
+//			arr[i][j] += arr[i-1][j-1]
+//		} else {
+//			arr[i][j] += max(arr[i-1][j-1], arr[i-1][j])
+//		}
+//	}
+//}
+//
+//print(arr[line-1].max()!)
 
-let line = Int(readLine()!)!
-var arr = [[Int]]()
-for _ in 0..<line {
-	arr.append(readLine()!.split(separator: " ").map{Int(String($0))!})
-}
 
-for i in 1..<line {
-	for j in 0..<i+1 {
-		if j == 0 {
-			arr[i][j] += arr[i-1][j]
-		} else if j == i {
-			arr[i][j] += arr[i-1][j-1]
-		} else {
-			arr[i][j] += max(arr[i-1][j-1], arr[i-1][j])
-		}
-	}
-}
+// 1149 - RGB 거리
 
-print(arr[line-1].max()!)
