@@ -55,8 +55,9 @@ import Foundation
 //print(arr[line-1].max()!)
 
 
-//// 1149 - RGB 거리
-//
+//// 1149 - RGB 거리 -1,
+////
+//let start = CFAbsoluteTimeGetCurrent()
 //let num = Int(readLine()!)!
 //var dp = [[Int]]()
 //for _ in 1...num {
@@ -70,18 +71,52 @@ import Foundation
 //}
 //
 //print(dp[num-1].min()!)
+//let diff = CFAbsoluteTimeGetCurrent()-start
+//print(diff)
+//// 1: for i : = : 5.16 ( 3 1 100 100 / 100 100 100 / 1 100 100 )
+//// 2: for i : += : 6.079918026924133
+//// 3. num = 10, 43.5609
+//// 4. num = 20, 14.37
 
 
-// 11052 카드 구매하기
-
-let n = Int(readLine()!)!
-var input = readLine()!.split(separator: " ").map{Int(String($0))!}
-var priceDict = [Int:Int]()
-
-for i in 0..<n {
-	priceDict[i+1] = input[i]
-}
-
-//for i in priceDict.keys {
-//	for
+//// 1149 - RGB 거리 -2,
+////
+//let start = CFAbsoluteTimeGetCurrent()
+//let num = Int(readLine()!)!
+//var arr = [[Int]]()
+//
+//for _ in 1...num {
+//	arr.append(readLine()!.split(separator: " ").map{Int(String($0))!})
 //}
+//
+//var dp = Array(repeating: Array(repeating: 0, count: 3), count: num)
+//
+//for i in 1..<num {
+//	dp[i][0] = arr[i][0] + min(dp[i-1][1],dp[i-1][2])
+//	dp[i][1] = arr[i][1] + min(dp[i-1][0],dp[i-1][2])
+//	dp[i][2] = arr[i][2] + min(dp[i-1][1],dp[i-1][0])
+//}
+//
+//print(dp[num-1].min()!)
+//let diff = CFAbsoluteTimeGetCurrent()-start
+//print(diff)
+//
+//// 1. num = 3, 4.97 ( 3 1 100 100 / 100 100 100 / 1 100 100 )
+//// 2. num=10개짜리 : 5.174
+//// 3. num = 20 : 2.01
+
+
+//
+//// 11052 카드 구매하기
+//
+//let n = Int(readLine()!)!
+//var input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var priceDict = [Int:Int]()
+//
+//for i in 0..<n {
+//	priceDict[i+1] = input[i]
+//}
+//
+////for i in priceDict.keys {
+////	for
+////}
