@@ -106,17 +106,19 @@ import Foundation
 //// 3. num = 20 : 2.01
 
 
-//
-//// 11052 카드 구매하기
-//
-//let n = Int(readLine()!)!
-//var input = readLine()!.split(separator: " ").map{Int(String($0))!}
-//var priceDict = [Int:Int]()
-//
-//for i in 0..<n {
-//	priceDict[i+1] = input[i]
-//}
-//
-////for i in priceDict.keys {
-////	for
-////}
+
+// 11052 카드 구매하기
+
+let n = Int(readLine()!)!
+var input = readLine()!.split(separator: " ").map{Int(String($0))!}
+var priceDict = [Int:Int]()
+
+for i in 0..<n {
+	priceDict[i+1] = input[i]
+}
+
+var sumArr = [[Int]]()
+
+for i in 1...n {
+	
+}
