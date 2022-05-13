@@ -68,4 +68,6 @@ eagle.fly()
 let myPlane = Airplane()
 myPlane.fly()
 
-// protocol 내에서는 method
+// protocol 내에서는 method의 body 부분을 입력하지 않는다.
+// extension으로 기능을 넣어줘서 다른 class, struct로 이를 활용할 수 있음
+
