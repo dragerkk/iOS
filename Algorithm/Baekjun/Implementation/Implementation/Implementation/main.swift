@@ -1,5 +1,4 @@
-import Foundation
-
+import CoreFoundation
 //// 10093 숫자
 //
 //let input = readLine()!.split(separator: " ").map{Int(String($0))!}
@@ -15,6 +14,29 @@ import Foundation
 //		print(i, terminator: " ")
 //	}
 //	print("")
+//}
+
+//// 1371 가장 많은 글자
+//import Foundation
+//var input = String()
+//
+//while let a = readLine()?.replacingOccurrences(of: " ", with: "") {
+//	input += a
+//}
+//
+//var dict = [Character:Int]()
+//
+//for ch in input {
+//	dict[ch] = dict[ch] == nil ? 1 : dict[ch]! + 1
+//}
+//
+//let maxValue = dict.values.max()
+//let aToZ = "abcdefghijklmnopqrstuvwxyz".map{$0}
+//
+//for ch in aToZ {
+//	if dict[ch] == maxValue {
+//		print(ch, terminator: "")
+//	}
 //}
 
 
