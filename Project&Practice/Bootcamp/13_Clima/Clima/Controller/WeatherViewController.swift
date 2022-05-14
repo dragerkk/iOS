@@ -1,36 +1,35 @@
-//
-//  ViewController.swift
-//  Clima
-//
-//  Created by Angela Yu on 01/09/2019.
-//  Copyright © 2019 App Brewery. All rights reserved.
-//
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
 	
-    @IBOutlet weak var conditionImageView: UIImageView!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+	@IBOutlet weak var conditionImageView: UIImageView!
+	@IBOutlet weak var temperatureLabel: UILabel!
+	@IBOutlet weak var cityLabel: UILabel!
 	@IBOutlet weak var searchTextField: UITextField!
 	
 	var weatherManager = WeatherManager()
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		searchTextField.delegate = self
 		//textfile should report back to VC,, self == current VC
 		weatherManager.delegate = self
 		//set this class as the delegate
-    }
+	}
+	
+}
 
+//MARK: - UITextFieldDelegate
+//위처럼 (MARK: -) 입력하면 WeatherVC를 섹션으로 구분해줌
+
+extension WeatherViewController: UITextFieldDelegate { //Refactoring! uitextfield 관련부분을 따로 뺌
 	@IBAction func searchPressed(_ sender: UIButton) {
 		print(searchTextField.text!)
 		searchTextField.endEditing(true)
 	}
-
+	
 	// textField 라는 variable은
 	// textField에 입력을 하고 return했을 때
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -47,7 +46,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 			return false
 		}
 	}
-
+	
 	// textfield에 입력 끝낸 뒤...
 	// func textFieldDidEndEditing 사용하지 않으면 위의 searchPressed(), textFieldShouldReturn()에서 각각 비워줘야 함.
 	func textFieldDidEndEditing(_ textField: UITextField) {
@@ -62,7 +61,12 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 		searchTextField.text = ""
 		
 	}
-	
+}
+
+
+//MARK: - WeatherManagerDelegate
+
+extension WeatherViewController: WeatherManagerDelegate { //weathermanagerdelegate method 따로 뺌
 	func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
 		// Model - WeatherManager - func performRequest 부분을 보면, completion handler 이기 때문에 디스패치 해줘야 한다고 함...
 		DispatchQueue.main.async {
@@ -76,6 +80,3 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 		print(error)
 	}
 }
-
-
-
