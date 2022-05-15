@@ -258,10 +258,13 @@ import Foundation
 
 // 16922 로마 숫자 만들기
 
-let num = Int(readLine()!)!
+var num = Int(readLine()!)!
 let arr = [1,5,10,50]
 var setArr : Set<Int> = []
 
-func availNum(_ num:Int) -> Int {
+while num > 0 {
 	
 }
+
+
+print(setArr.count)
