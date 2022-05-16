@@ -256,15 +256,40 @@ import Foundation
 //print(price)
 
 
-// 16922 로마 숫자 만들기
+// 16924 십자가 찾기
 
-var num = Int(readLine()!)!
-let arr = [1,5,10,50]
-var setArr : Set<Int> = []
+import Foundation
 
-while num > 0 {
-	
+var size = readLine()!.split(separator: " ").map{Int(String($0))}
+var inputArr = Array(repeating: Array(repeating: " ", count: size[1]!), count: size[0]!)
+
+for i in 0..<size[0]! {
+	inputArr[i] = readLine()!.map{String($0)}
 }
 
+var result = [String]()
 
-print(setArr.count)
+for i in 1..<size[0]! {
+	for j in 1..<size[1]! {
+		if inputArr[i][j] == "*" {
+			var crossSize = 0
+			while i-crossSize >= 1 && j-crossSize >= 1 {
+				if inputArr[i-crossSize-1][j] == "*" && inputArr[i-crossSize+1][j] == "*" && inputArr[i][j-crossSize-1] == "*" && inputArr[i][j-crossSize+1] == "*" {
+					crossSize += 1
+					result.append("\(i+1) \(j+1) \(crossSize)")
+				} else {
+					break
+				}
+			}
+		}
+	}
+}
+
+if result.count == 0 {
+	print(-1)
+} else {
+	print(result.count)
+	for i in 0..<result.count {
+		print(result[i])
+	}
+}
