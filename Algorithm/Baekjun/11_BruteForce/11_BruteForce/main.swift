@@ -1,4 +1,4 @@
-import Foundation
+
 
 // // 2798 블랙잭, 8ms, 62232KB
 
@@ -96,7 +96,7 @@ import Foundation
 // 	var count = 1
 // 	for j in stride(from: 0, to: caseNum*2, by: 2) {
 // 		// print(array[i],array[j],array[i+1],array[j+1])
-		
+
 // 		if array[i] < array[j] && array[i+1] < array[j+1] {
 // 			count += 1
 // 		}
@@ -256,9 +256,7 @@ import Foundation
 //print(price)
 
 
-// 16924 십자가 찾기
-
-import Foundation
+// 16924 십자가 찾기 -- 75588KB, 160ms
 
 var size = readLine()!.split(separator: " ").map{Int(String($0))}
 var inputArr = Array(repeating: Array(repeating: " ", count: size[1]!), count: size[0]!)
@@ -268,24 +266,63 @@ for i in 0..<size[0]! {
 }
 
 var result = [String]()
+var copyInput = inputArr
 
-for i in 1..<size[0]! {
-	for j in 1..<size[1]! {
+func checkIfCross(_ arr:[[String]], n1:Int, n2:Int, size:Int) -> Int {
+	var crossSize = size
+	if crossSize == 0 {
+		return 0
+	} else {
+		if arr[n1-crossSize][n2] == "*" && arr[n1+crossSize][n2] == "*" && arr[n1][n2-crossSize] == "*" && arr[n1][n2+crossSize] == "*" {
+			crossSize -= 1
+			return checkIfCross(arr, n1: n1, n2: n2, size: crossSize)
+		} else {
+			return -1
+		}
+	}
+}
+
+for i in 1..<size[0]!-1 {
+	for j in 1..<size[1]!-1 {
 		if inputArr[i][j] == "*" {
-			var crossSize = 0
-			while i-crossSize >= 1 && j-crossSize >= 1 {
-				if inputArr[i-crossSize-1][j] == "*" && inputArr[i-crossSize+1][j] == "*" && inputArr[i][j-crossSize-1] == "*" && inputArr[i][j-crossSize+1] == "*" {
-					crossSize += 1
-					result.append("\(i+1) \(j+1) \(crossSize)")
-				} else {
-					break
+			let maxCrossSize = min(min(size[0]!-1-i, i), min(size[1]!-1-j, j))
+			var crossSize = maxCrossSize // 최대한의 십자가 크기
+			var checkCross = 0 // 십자가가 있으면 카운트
+			while crossSize > 0 { // 십자가 탐색
+				if inputArr[i-crossSize][j] == "*" && inputArr[i+crossSize][j] == "*" && inputArr[i][j-crossSize] == "*" && inputArr[i][j+crossSize] == "*" {
+					if checkIfCross(inputArr, n1: i, n2: j, size: crossSize) == 0 {
+						checkCross += 1
+						for k in (1...crossSize).reversed() {
+							result.append("\(i+1) \(j+1) \(k)")
+							copyInput[i-k][j] = "."
+							copyInput[i+k][j] = "."
+							copyInput[i][j-k] = "."
+							copyInput[i][j+k] = "."
+						}
+						crossSize = 0
+					}
 				}
+				crossSize -= 1
+			}
+			if checkCross > 0 { // 현재 좌표를 기준으로 십자가가 있었다면 배열 복사본의 현재 좌표를 .으로 바꿔줌
+				copyInput[i][j] = "."
 			}
 		}
 	}
 }
 
-if result.count == 0 {
+
+
+
+var checkStar = 0
+for i in 0..<size[0]! {
+	if copyInput[i].contains("*") {
+		checkStar += 1
+		break
+	}
+}
+
+if checkStar > 0 {
 	print(-1)
 } else {
 	print(result.count)
@@ -293,3 +330,5 @@ if result.count == 0 {
 		print(result[i])
 	}
 }
+
+
