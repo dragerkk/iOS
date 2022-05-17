@@ -256,79 +256,114 @@
 //print(price)
 
 
-// 16924 십자가 찾기 -- 75588KB, 160ms
+//// 16924 십자가 찾기 -- 75588KB, 160ms
+//
+//var size = readLine()!.split(separator: " ").map{Int(String($0))}
+//var inputArr = Array(repeating: Array(repeating: " ", count: size[1]!), count: size[0]!)
+//
+//for i in 0..<size[0]! {
+//	inputArr[i] = readLine()!.map{String($0)}
+//}
+//
+//var result = [String]()
+//var copyInput = inputArr
+//
+//func checkIfCross(_ arr:[[String]], n1:Int, n2:Int, size:Int) -> Int {
+//	var crossSize = size
+//	if crossSize == 0 {
+//		return 0
+//	} else {
+//		if arr[n1-crossSize][n2] == "*" && arr[n1+crossSize][n2] == "*" && arr[n1][n2-crossSize] == "*" && arr[n1][n2+crossSize] == "*" {
+//			crossSize -= 1
+//			return checkIfCross(arr, n1: n1, n2: n2, size: crossSize)
+//		} else {
+//			return -1
+//		}
+//	}
+//}
+//
+//for i in 1..<size[0]!-1 {
+//	for j in 1..<size[1]!-1 {
+//		if inputArr[i][j] == "*" {
+//			let maxCrossSize = min(min(size[0]!-1-i, i), min(size[1]!-1-j, j))
+//			var crossSize = maxCrossSize // 최대한의 십자가 크기
+//			var checkCross = 0 // 십자가가 있으면 카운트
+//			while crossSize > 0 { // 십자가 탐색
+//				if inputArr[i-crossSize][j] == "*" && inputArr[i+crossSize][j] == "*" && inputArr[i][j-crossSize] == "*" && inputArr[i][j+crossSize] == "*" {
+//					if checkIfCross(inputArr, n1: i, n2: j, size: crossSize) == 0 {
+//						checkCross += 1
+//						for k in (1...crossSize).reversed() {
+//							result.append("\(i+1) \(j+1) \(k)")
+//							copyInput[i-k][j] = "."
+//							copyInput[i+k][j] = "."
+//							copyInput[i][j-k] = "."
+//							copyInput[i][j+k] = "."
+//						}
+//						crossSize = 0
+//					}
+//				}
+//				crossSize -= 1
+//			}
+//			if checkCross > 0 { // 현재 좌표를 기준으로 십자가가 있었다면 배열 복사본의 현재 좌표를 .으로 바꿔줌
+//				copyInput[i][j] = "."
+//			}
+//		}
+//	}
+//}
+//
+//
+//
+//
+//var checkStar = 0
+//for i in 0..<size[0]! {
+//	if copyInput[i].contains("*") {
+//		checkStar += 1
+//		break
+//	}
+//}
+//
+//if checkStar > 0 {
+//	print(-1)
+//} else {
+//	print(result.count)
+//	for i in 0..<result.count {
+//		print(result[i])
+//	}
+//}
 
-var size = readLine()!.split(separator: " ").map{Int(String($0))}
-var inputArr = Array(repeating: Array(repeating: " ", count: size[1]!), count: size[0]!)
+// 16932 나3곱2 - 시간초과
 
-for i in 0..<size[0]! {
-	inputArr[i] = readLine()!.map{String($0)}
-}
+let size = Int(readLine()!)!
+let arr = readLine()!.split(separator: " ").map{Int64(String($0))!}
 
-var result = [String]()
-var copyInput = inputArr
+var result = [Int64]()
+result.append(arr[0])
 
-func checkIfCross(_ arr:[[String]], n1:Int, n2:Int, size:Int) -> Int {
-	var crossSize = size
-	if crossSize == 0 {
-		return 0
-	} else {
-		if arr[n1-crossSize][n2] == "*" && arr[n1+crossSize][n2] == "*" && arr[n1][n2-crossSize] == "*" && arr[n1][n2+crossSize] == "*" {
-			crossSize -= 1
-			return checkIfCross(arr, n1: n1, n2: n2, size: crossSize)
-		} else {
-			return -1
+var index = 0
+var loopCount = 0
+
+while result.count != size {
+	for i in 0..<arr.count {
+		if arr[i] / 2 == result[index] && !result.contains(arr[i]) {
+			result.append(arr[i])
+			index = result.endIndex-1
+		} else if arr[i] * 3 == result[index] && !result.contains(arr[i]) {
+			result.append(arr[i])
+			index = result.endIndex-1
+		} else if arr[i] * 2 == result[index] && !result.contains(arr[i]) {
+			result.insert(arr[i], at: index)
+		} else if arr[i] / 3 == result[index] && !result.contains(arr[i]) {
+			result.insert(arr[i], at: index)
 		}
 	}
-}
-
-for i in 1..<size[0]!-1 {
-	for j in 1..<size[1]!-1 {
-		if inputArr[i][j] == "*" {
-			let maxCrossSize = min(min(size[0]!-1-i, i), min(size[1]!-1-j, j))
-			var crossSize = maxCrossSize // 최대한의 십자가 크기
-			var checkCross = 0 // 십자가가 있으면 카운트
-			while crossSize > 0 { // 십자가 탐색
-				if inputArr[i-crossSize][j] == "*" && inputArr[i+crossSize][j] == "*" && inputArr[i][j-crossSize] == "*" && inputArr[i][j+crossSize] == "*" {
-					if checkIfCross(inputArr, n1: i, n2: j, size: crossSize) == 0 {
-						checkCross += 1
-						for k in (1...crossSize).reversed() {
-							result.append("\(i+1) \(j+1) \(k)")
-							copyInput[i-k][j] = "."
-							copyInput[i+k][j] = "."
-							copyInput[i][j-k] = "."
-							copyInput[i][j+k] = "."
-						}
-						crossSize = 0
-					}
-				}
-				crossSize -= 1
-			}
-			if checkCross > 0 { // 현재 좌표를 기준으로 십자가가 있었다면 배열 복사본의 현재 좌표를 .으로 바꿔줌
-				copyInput[i][j] = "."
-			}
-		}
+	
+	loopCount += 1
+	if loopCount > arr.count + 1 {
+		index = 0
+		loopCount = 0
 	}
 }
 
-
-
-
-var checkStar = 0
-for i in 0..<size[0]! {
-	if copyInput[i].contains("*") {
-		checkStar += 1
-		break
-	}
-}
-
-if checkStar > 0 {
-	print(-1)
-} else {
-	print(result.count)
-	for i in 0..<result.count {
-		print(result[i])
-	}
-}
+print(result)
 
 
