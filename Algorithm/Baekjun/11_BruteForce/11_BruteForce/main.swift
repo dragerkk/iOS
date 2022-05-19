@@ -331,39 +331,82 @@
 //	}
 //}
 
-// 16932 나3곱2 - 시간초과
+//// 16936 나3곱2 - 시간초과
+//
+//let size = Int(readLine()!)!
+//let arr = readLine()!.split(separator: " ").map{Int64(String($0))!}
+//
+//var result = [Int64]()
+//result.append(arr[0])
+//
+//var index = 0
+//var loopCount = 0
+//
+//while result.count != size {
+//	for i in 0..<arr.count {
+//		if arr[i] / 2 == result[index] && !result.contains(arr[i]) {
+//			result.append(arr[i])
+//			index = result.endIndex-1
+//		} else if arr[i] * 3 == result[index] && !result.contains(arr[i]) {
+//			result.append(arr[i])
+//			index = result.endIndex-1
+//		} else if arr[i] * 2 == result[index] && !result.contains(arr[i]) {
+//			result.insert(arr[i], at: index)
+//		} else if arr[i] / 3 == result[index] && !result.contains(arr[i]) {
+//			result.insert(arr[i], at: index)
+//		}
+//	}
+//
+//	loopCount += 1
+//	if loopCount > arr.count + 1 {
+//		index = 0
+//		loopCount = 0
+//	}
+//}
+//
+//print(result)
 
-let size = Int(readLine()!)!
-let arr = readLine()!.split(separator: " ").map{Int64(String($0))!}
 
-var result = [Int64]()
-result.append(arr[0])
+//// 16936 나3곱2
+//
+//let size = Int(readLine()!)!
+//var arr = readLine()!.split(separator: " ").map{Int64(String($0))!}
+//
+//var result = [Int64]()
+//
+//for i in arr {
+//	result.append(i)
+//	result = sortByRule(num: i, array: arr, index: 1, resultArray: result)
+//	
+//	if result.count == size {
+//		for j in result {
+//			print(j, terminator: " ")
+//		}
+//		print("")
+//	}
+//}
+//
+//func sortByRule(num: Int64, array:[Int64], index:Int, resultArray:[Int64]) -> [Int64] {
+//	let multipleTwo = num * 2
+//	let dividedThree = num / 3
+//	let res = num % 3
+//	var result = resultArray
+//	
+//	if index == array.count {
+//		return result
+//	}
+//	
+//	if array.contains(multipleTwo) {
+//		result.append(multipleTwo)
+//		return sortByRule(num: multipleTwo, array: array, index: index+1, resultArray: result)
+//	} else if array.contains(dividedThree) && res == 0 {
+//		result.append(dividedThree)
+//		return sortByRule(num: dividedThree, array: array, index: index+1, resultArray: result)
+//	} else {
+//		result.removeAll()
+//		return result
+//	}
+//}
 
-var index = 0
-var loopCount = 0
-
-while result.count != size {
-	for i in 0..<arr.count {
-		if arr[i] / 2 == result[index] && !result.contains(arr[i]) {
-			result.append(arr[i])
-			index = result.endIndex-1
-		} else if arr[i] * 3 == result[index] && !result.contains(arr[i]) {
-			result.append(arr[i])
-			index = result.endIndex-1
-		} else if arr[i] * 2 == result[index] && !result.contains(arr[i]) {
-			result.insert(arr[i], at: index)
-		} else if arr[i] / 3 == result[index] && !result.contains(arr[i]) {
-			result.insert(arr[i], at: index)
-		}
-	}
-	
-	loopCount += 1
-	if loopCount > arr.count + 1 {
-		index = 0
-		loopCount = 0
-	}
-}
-
-print(result)
 
 
