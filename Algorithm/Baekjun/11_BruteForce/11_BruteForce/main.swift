@@ -408,5 +408,47 @@
 //	}
 //}
 
-
+//// 16937 두 스티커
+//
+//let size = readLine()!.split(separator: " ").map{Int(String($0))!}
+//let n = Int(readLine()!)!
+//var sticker = [[Int]]()
+//for _ in 0..<n {
+//	sticker.append(readLine()!.split(separator: " ").map{Int(String($0))!})
+//}
+//
+//var area = [Int]()
+//
+//for i in 0..<sticker.count-1 {
+//	for j in i+1..<sticker.count {
+//		let stickerSize = sticker[i][0]*sticker[i][1] + sticker[j][0]*sticker[j][1]
+//
+//		if sticker[i][0] + sticker[j][0] <= size[0] && max(sticker[i][1], sticker[j][1]) <= size[1] {
+//			area.append(stickerSize)
+//		} else if sticker[i][1] + sticker[j][0] <= size[0] && max(sticker[i][0], sticker[j][1]) <= size[1] {
+//			area.append(stickerSize)
+//		} else if sticker[i][1] + sticker[j][1] <= size[0] && max(sticker[i][0], sticker[j][0]) <= size[1] {
+//			area.append(stickerSize)
+//		} else if sticker[i][0] + sticker[j][1] <= size[0] && max(sticker[i][1], sticker[j][0]) <= size[1] {
+//			area.append(stickerSize)
+//		}
+//
+//		if sticker[i][0] + sticker[j][0] <= size[1] && max(sticker[i][1], sticker[j][1]) <= size[0] {
+//			area.append(stickerSize)
+//		} else if sticker[i][1] + sticker[j][0] <= size[1] && max(sticker[i][0], sticker[j][1]) <= size[0] {
+//			area.append(stickerSize)
+//		} else if sticker[i][1] + sticker[j][1] <= size[1] && max(sticker[i][0], sticker[j][0]) <= size[0] {
+//			area.append(stickerSize)
+//		} else if sticker[i][0] + sticker[j][1] <= size[1] && max(sticker[i][1], sticker[j][0]) <= size[0] {
+//			area.append(stickerSize)
+//		}
+//
+//	}
+//}
+//
+//if area.count == 0 {
+//	print(0)
+//} else {
+//	print(area.max()!)
+//}
 
