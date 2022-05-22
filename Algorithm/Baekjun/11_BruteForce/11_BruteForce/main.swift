@@ -455,5 +455,18 @@
 
 // 16943 숫자 재배치
 
-let num = readLine()!.split(separator: " ").map{Int(String($0))!}
+var num = readLine()!.split(separator: " ").map{Int(String($0))!}
+
+var a = [Int]()
+var b = num[1]
+var result = b
+
+while true {
+	if num[0] >= 1 {
+		a.append(num[0]%10)
+		num[0] /= 10
+	} else {
+		break
+	}
+}
 
