@@ -452,3 +452,8 @@
 //	print(area.max()!)
 //}
 
+
+// 16943 숫자 재배치
+
+let num = readLine()!.split(separator: " ").map{Int(String($0))!}
+
