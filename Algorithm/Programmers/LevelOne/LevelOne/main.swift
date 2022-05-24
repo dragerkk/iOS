@@ -180,4 +180,166 @@
 //
 
 
+//// 이상한 문자 만들기
 //
+//func solution(_ s:String) -> String {
+//
+//	var n = 0
+//	var result = String()
+//
+//	for i in s {
+//		if n % 2 == 0 {
+//			result.append(i.uppercased())
+//		} else {
+//			result.append(i.lowercased())
+//		}
+//		n += 1
+//		if i == " " {
+//			n = 0
+//		}
+//	}
+//	return result
+//}
+
+
+//// 약수의 합 -1
+//
+//func solution(_ n:Int) -> Int {
+//	var sum = 0
+//	if n == 0 {
+//		return 0
+//	}
+//	for i in 1...n {
+//		if n % i == 0 {
+//			sum += i
+//		}
+//	}
+//	return sum
+//}
+
+
+// 약수의 합 -2
+
+//func solution(_ n:Int) -> Int {
+//	return n != 0 ? (1...n).filter{n % $0 == 0}.reduce(0, +) : 0
+//}
+
+
+//// 시저 암호
+//
+//func solution(_ s:String, _ n:Int) -> String {
+//	var str = Array(s)
+//	let upper : [Character] = Array("abcdefghijklmnopqrstuvwxyz".uppercased())
+//	let lower : [Character] = Array("abcdefghijklmnopqrstuvwxyz")
+//
+//	for i in 0..<str.count {
+//		if str[i] == " " {
+//			continue
+//		}
+//		if upper.contains(str[i]) {
+//			let index = upper.firstIndex(of: str[i])! + n
+//			str[i] = upper[index%26]
+//		} else if lower.contains(str[i]) {
+//			let index = lower.firstIndex(of: str[i])! + n
+//			str[i] = lower[index%26]
+//
+//		}
+//	}
+//
+//	return String(str)
+//}
+
+
+//// 문자열을 정수로 바꾸기
+//
+//func solution(_ s:String) -> Int {
+//	var arr = Array(s)
+//	var sign = 1
+//
+//	if arr[0] == "-" {
+//		sign = -1
+//		arr.remove(at:0)
+//	} else if arr[0] == "+" {
+//		arr.remove(at:0)
+//	}
+//
+//	return Int(String(arr))! * sign
+//}
+
+
+////// 수박수박수박수박수박수? -1
+////
+//func solution(_ n:Int) -> String {
+//	var str = String()
+//	for i in 0..<n {
+//		if i%2 == 0 {
+//			str.append("수")
+//		} else {
+//			str.append("박")
+//		}
+//	}
+//	return str
+//}
+//
+//
+//// 수박수박수박수박수박수? -2
+//
+//func solution(_ n:Int) -> String {
+//	return (0...n).map{$0 % 2 == 0 ? "수" : "박"}.reduce("", +)
+//}
+
+
+// 소수 찾기 -1
+
+//func solution(_ n:Int) -> Int {
+//	if n == 2 {
+//		return 1
+//	} else if n == 3 {
+//		return 2
+//	}
+//	var prime = Array(repeating: 1, count: n+1)
+//	var count = 0
+//
+//	prime[0] = 0
+//	prime[1] = 0
+//
+//	for i in 2...Int(Double(n).squareRoot()) {
+//		for j in stride(from: i+i, through: n, by: i) {
+//			prime[j] = 0
+//		}
+//	}
+//
+//	for i in 0...n {
+//		if prime[i] != 0 {
+//			count += 1
+//		}
+//	}
+//
+//	return count
+//}
+
+
+// 소수 찾기 -2 ----- 빠름, 소수 '찾기' 에서는 유용할 듯 함.
+
+//func solution(_ n:Int) -> Int {
+//	var notPrime = Array(repeating: false, count: n+1)
+//
+//	notPrime[0] = true
+//	notPrime[1] = true
+//
+//	var count = 0
+//
+//	for i in 2...n {
+//		if notPrime[i] == false {
+//			count += 1
+//		}
+//		if n/i >= i {
+//			for j in 2...n/i {
+//				notPrime[i*j] = true
+//			}
+//		}
+//	}
+//	return count
+//}
+
+
