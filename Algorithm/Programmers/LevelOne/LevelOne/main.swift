@@ -343,3 +343,84 @@
 //}
 
 
+//// 문자열 다루기 기본 -1
+//
+//func solution(_ s:String) -> Bool {
+//
+//	if s.count != 4 && s.count != 6 {
+//		return false
+//	}
+//	for i in s {
+//		if i < "0" || i > "9" {
+//			return false
+//		}
+//	}
+//
+//	return true
+//}
+
+
+//// 문자열 다루기 기본 -2
+//
+//func solution(_ s:String) -> Bool {
+//	return ( Int(s) != nil && (s.count == 4 || s.count == 6) ) ? true : false
+//}
+
+
+//// 문자열 내 p와 y의 개수
+//
+//func solution(_ s:String) -> Bool {
+//	let p = s.filter{$0 == "p" || $0 == "P"}
+//	let y = s.filter{$0 == "y" || $0 == "Y"}
+//
+//
+//	return p.count==y.count ? true : false
+//}
+
+
+//// 문자열 내 마음대로 정렬하기
+//
+//func solution(_ strings:[String], _ n:Int) -> [String] {
+//	let index = strings[0].index(strings[0].startIndex, offsetBy:n)
+//
+//	let result = strings.sorted(by: {(s1, s2) in
+//		if s1[index] == s2[index] {
+//			return s1 < s2
+//		} else {
+//			return s1[index] < s2[index]
+//		}
+//	})
+//
+//	return result
+//}
+
+
+// 두 정수 사이의 합 -1
+
+//func solution(_ a:Int, _ b:Int) -> Int64 {
+//	if a == b {
+//		return Int64(a)
+//	}
+//
+//	let n1 = min(a,b)
+//	let n2 = max(a, b)
+//
+//	var sum = 0
+//	for i in n1...n2 {
+//		sum += i
+//	}
+//	return Int64(sum)
+//}
+
+
+//// 두 정수 사이의 합 -2
+//
+//func solution(_ a:Int, _ b:Int) -> Int64 {
+//	let n1 = min(a, b)
+//	let n2 = max(a, b)
+//	let sum = (n2-n1+1) * (n1+n2) / 2
+//	return Int64(sum)
+//}
+
+
+
