@@ -9,6 +9,8 @@ class WeatherViewController: UIViewController {
 	@IBOutlet weak var cityLabel: UILabel!
 	@IBOutlet weak var searchTextField: UITextField!
 	
+	
+	
 	var weatherManager = WeatherManager()
 	let locationManager = CLLocationManager() // getting hold of the current GPS location of the phone
 	
@@ -28,7 +30,10 @@ class WeatherViewController: UIViewController {
 		
 	}
 	
-	
+	@IBAction func locationPressed(_ sender: UIButton) {
+		locationManager.requestLocation()
+	}
+
 }
 
 //MARK: - UITextFieldDelegate
@@ -82,6 +87,7 @@ extension WeatherViewController: WeatherManagerDelegate { //weathermanagerdelega
 		DispatchQueue.main.async {
 			self.temperatureLabel.text = weather.temperatureString
 			self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+			self.cityLabel.text = weather.cityName
 		}
 		
 	}
@@ -95,9 +101,10 @@ extension WeatherViewController: WeatherManagerDelegate { //weathermanagerdelega
 //MARK: - CLLocationManagerDelegate
 
 extension WeatherViewController: CLLocationManagerDelegate {
-	
+
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		if let location = locations.last { // locations는 배열로 되어있고, 가장 최근의 위치값이 배열의 마지막에 저장되어있음
+			locationManager.stopUpdatingLocation()
 			let lat = location.coordinate.latitude
 			let lon = location.coordinate.longitude
 			
@@ -108,5 +115,9 @@ extension WeatherViewController: CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print(error)
 	}
+
+
+
+
 
 }
