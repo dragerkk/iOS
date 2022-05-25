@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
 	
@@ -9,15 +10,24 @@ class WeatherViewController: UIViewController {
 	@IBOutlet weak var searchTextField: UITextField!
 	
 	var weatherManager = WeatherManager()
+	let locationManager = CLLocationManager() // getting hold of the current GPS location of the phone
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		locationManager.delegate = self // 얘가 locationManager.requestLocation()과 같은 다른 메서드들보다 먼저(상단에) 와야 함.
+		
+		locationManager.requestWhenInUseAuthorization() // trigger a permission request
+		locationManager.requestLocation() // request the one-time delivery of the user's current location
+		// 이 메서드를 실행하면 delegate의 locationManager(_:didUpdateLocations: ) method가 호출됨
 		
 		searchTextField.delegate = self
 		//textfile should report back to VC,, self == current VC
 		weatherManager.delegate = self
 		//set this class as the delegate
+		
 	}
+	
 	
 }
 
@@ -79,4 +89,24 @@ extension WeatherViewController: WeatherManagerDelegate { //weathermanagerdelega
 	func didFailWithError(error: Error) {
 		print(error)
 	}
+}
+
+
+//MARK: - CLLocationManagerDelegate
+
+extension WeatherViewController: CLLocationManagerDelegate {
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		if let location = locations.last { // locations는 배열로 되어있고, 가장 최근의 위치값이 배열의 마지막에 저장되어있음
+			let lat = location.coordinate.latitude
+			let lon = location.coordinate.longitude
+			
+			weatherManager.fetchWeather(latitude: lat, longitude: lon)
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+		print(error)
+	}
+
 }
