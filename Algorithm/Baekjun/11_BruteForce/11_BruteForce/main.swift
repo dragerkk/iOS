@@ -453,34 +453,32 @@
 //}
 
 
-// 16943 숫자 재배치
-
-var num = readLine()!.split(separator: " ").map{Int(String($0))!}
-
-if String(num[0]).count > String(num[1]).count {
-	print(-1)
-} else {
-	var a = [Int]()
-	let b = num[1]
-	
-	while true {
-		if num[0] >= 1 {
-			a.append(num[0]%10)
-			num[0] /= 10
-		} else {
-			break
-		}
-	}
-	
-	calculate(arr: a, max: b)
-
-}
-
-
-func calculate(arr:[Int], max:Int) {
-	var count = arr.count-1
-	var result = [Int]
-	
-}
-
-
+//// 16943 숫자 재배치
+//
+//var num = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//if String(num[0]).count > String(num[1]).count {
+//	print(-1)
+//} else {
+//	var a = [Int]()
+//	let b = num[1]
+//
+//	while true {
+//		if num[0] >= 1 {
+//			a.append(num[0]%10)
+//			num[0] /= 10
+//		} else {
+//			break
+//		}
+//	}
+//
+//	calculate(arr: a, max: b)
+//
+//}
+//
+//
+//func calculate(arr:[Int], max:Int) {
+//	var count = arr.count-1
+//	var result = [Int]
+//
+//}
