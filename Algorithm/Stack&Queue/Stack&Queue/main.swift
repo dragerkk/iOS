@@ -20,12 +20,15 @@ struct CheckParanthesis {
 			if openPara.contains(i) {
 				stack.append(i)
 			} else if closePara.contains(i) {
-				poped = stack.popLast()!
+				poped = stack.popLast()
 				if poped == nil {
 					print("error2: missing opening paranthesis.")
+					break
 				} else {
 					if i != pairPara[poped!] {
 						print("error3: paranthesises are missmatched.")
+						stack.removeAll()
+						break
 					}
 				}
 			}
@@ -38,3 +41,14 @@ struct CheckParanthesis {
 
 var check1 = CheckParanthesis(data: "(var x = 2")
 check1.test()
+// output-- error1: missing closing paranthesis.
+
+var check2 = CheckParanthesis(data: "var x = 2)")
+check2.test()
+// output-- error2: missing opening paranthesis.
+
+var check3 = CheckParanthesis(data: "(var x = [1,2,3)]")
+check3.test()
+// output-- error3: paranthesises are missmatched.
+
+
