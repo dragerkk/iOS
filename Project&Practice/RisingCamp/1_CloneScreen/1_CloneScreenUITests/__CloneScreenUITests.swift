@@ -2,7 +2,7 @@
 //  __CloneScreenUITests.swift
 //  1_CloneScreenUITests
 //
-//  Created by 강주원 on 2022/05/27.
+//  Created by 강주원 on 2022/05/31.
 //
 
 import XCTest
