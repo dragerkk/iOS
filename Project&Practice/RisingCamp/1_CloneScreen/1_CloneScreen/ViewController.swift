@@ -9,8 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var stackView: UIStackView!
+	@IBOutlet weak var secondView: UIView!
+	
+	func customMargin() {
+		stackView.setCustomSpacing(3, after: secondView)
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		customMargin()
 		// Do any additional setup after loading the view.
 	}
 
