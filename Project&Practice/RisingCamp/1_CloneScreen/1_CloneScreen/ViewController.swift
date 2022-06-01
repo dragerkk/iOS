@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 	@IBOutlet weak var stackView: UIStackView!
 	@IBOutlet weak var secondView: UIView!
 	
-	@IBOutlet weak var naviLogo: UIBarButtonItem!
 	
 	func customMargin() {
 		stackView.setCustomSpacing(3, after: secondView)
