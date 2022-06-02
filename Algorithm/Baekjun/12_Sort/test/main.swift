@@ -267,26 +267,56 @@ import Darwin
 //	return Array(arraySet)
 //}
 //
-// 18870 좌표 압축, for문 사용하지 않고 작성,
-let caseNum = Int(readLine()!)!
-let inputNum = readLine()!.split(separator: " ").map{Int(String($0))!}
-
-var numSet : Set<Int> = []
-var numDict : [Int:Int] = [:]
-
-inputNum.forEach{numSet.insert($0)}
-let sortedArr = numSet.sorted()
-Array(0..<sortedArr.count).forEach{numDict[sortedArr[$0]] = $0}
-
-print(inputNum.map{String(numDict[$0]!)}.joined(separator: " "))
-//let input = [1,2,2,5,3]
+//// 18870 좌표 압축, for문 사용하지 않고 작성,
+//let caseNum = Int(readLine()!)!
+//let inputNum = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
 //var numSet : Set<Int> = []
 //var numDict : [Int:Int] = [:]
 //
-//input.forEach{numSet.insert($0)}
-//print("numset: \(numSet)")
-//let sorted = numSet.sorted()
-//print("sorted = \(sorted)")
-//Array(0..<sorted.count).forEach{ numDict[sorted[$0]] = $0}
-//print("dict = \(numDict)")
-//print(input.map{String(numDict[$0]!)}.joined(separator: " "))
+//inputNum.forEach{numSet.insert($0)}
+//let sortedArr = numSet.sorted()
+//Array(0..<sortedArr.count).forEach{numDict[sortedArr[$0]] = $0}
+//
+//print(inputNum.map{String(numDict[$0]!)}.joined(separator: " "))
+////let input = [1,2,2,5,3]
+////var numSet : Set<Int> = []
+////var numDict : [Int:Int] = [:]
+////
+////input.forEach{numSet.insert($0)}
+////print("numset: \(numSet)")
+////let sorted = numSet.sorted()
+////print("sorted = \(sorted)")
+////Array(0..<sorted.count).forEach{ numDict[sorted[$0]] = $0}
+////print("dict = \(numDict)")
+////print(input.map{String(numDict[$0]!)}.joined(separator: " "))
+
+
+//// 1931 회의실 배정
+//let n = Int(readLine()!)!
+//var input = Array(repeating: Array(repeating: 0, count: 2), count: n)
+//
+//for i in 0..<n {
+//	input[i] = readLine()!.split(separator: " ").map{Int(String($0))!}
+//}
+//
+//input.sort{
+//	if $0[1] == $1[1] {
+//		return $0[0] < $1[0]
+//	} else {
+//		return $0[1] < $1[1]
+//	}
+//}
+//
+//var result = 0
+//var endTime = 0
+//for i in 0..<n {
+//	if input[i][0] >= endTime {
+//		endTime = input[i][1]
+//		result += 1
+//	}
+//}
+//
+//print(result)
+
+
