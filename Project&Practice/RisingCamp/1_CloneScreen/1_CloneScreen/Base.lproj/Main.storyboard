@@ -121,7 +121,7 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="1hz-xS-5du"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tv0-nb-jKL">
-                                        <rect key="frame" x="0.0" y="140" width="428" height="1436"/>
+                                        <rect key="frame" x="0.0" y="140" width="428" height="1406"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYJ-4E-Sax" userLabel="Second View">
                                                 <rect key="frame" x="15" y="8" width="398" height="300"/>
@@ -307,23 +307,87 @@
                                                     <constraint firstAttribute="height" constant="90" id="wjT-cu-5Th"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-30-QWT" userLabel="Seventh View">
-                                                <rect key="frame" x="15" y="768" width="398" height="150"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-nU-9hy" userLabel="Seventh View_Scroll View">
+                                                <rect key="frame" x="15" y="768" width="398" height="120"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh1" translatesAutoresizingMaskIntoConstraints="NO" id="4sF-j2-YLb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="150"/>
-                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-30-QWT" userLabel="Seventh View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="4776" height="120"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBy-Gd-SjL" userLabel="Seventh View_Stack View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="4776" height="120"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_1" translatesAutoresizingMaskIntoConstraints="NO" id="4sF-j2-YLb">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_2" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-Kz-nCx">
+                                                                        <rect key="frame" x="398" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_3" translatesAutoresizingMaskIntoConstraints="NO" id="hs6-Yo-JGo">
+                                                                        <rect key="frame" x="796" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_4" translatesAutoresizingMaskIntoConstraints="NO" id="ADa-yB-qyi">
+                                                                        <rect key="frame" x="1194" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_5" translatesAutoresizingMaskIntoConstraints="NO" id="NNN-fV-ZZa">
+                                                                        <rect key="frame" x="1592" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_6" translatesAutoresizingMaskIntoConstraints="NO" id="J0h-K7-ebK">
+                                                                        <rect key="frame" x="1990" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_7" translatesAutoresizingMaskIntoConstraints="NO" id="74d-uC-7ak">
+                                                                        <rect key="frame" x="2388" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_8" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-kJ-4Lv">
+                                                                        <rect key="frame" x="2786" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_9" translatesAutoresizingMaskIntoConstraints="NO" id="BaP-z6-Pyz">
+                                                                        <rect key="frame" x="3184" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_10" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-5f-ZGM">
+                                                                        <rect key="frame" x="3582" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_11" translatesAutoresizingMaskIntoConstraints="NO" id="T1w-Rx-cZi">
+                                                                        <rect key="frame" x="3980" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seventh_12" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-XF-CRC">
+                                                                        <rect key="frame" x="4378" y="0.0" width="398" height="120"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="sBy-Gd-SjL" firstAttribute="top" secondItem="hfl-30-QWT" secondAttribute="top" id="72A-VU-NeI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sBy-Gd-SjL" secondAttribute="trailing" id="LcC-lJ-Vf3"/>
+                                                            <constraint firstItem="sBy-Gd-SjL" firstAttribute="leading" secondItem="hfl-30-QWT" secondAttribute="leading" id="nRO-v5-Xa0"/>
+                                                            <constraint firstItem="sBy-Gd-SjL" firstAttribute="centerY" secondItem="hfl-30-QWT" secondAttribute="centerY" id="xzQ-AY-Za6"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="4sF-j2-YLb" secondAttribute="trailing" id="AdY-xH-7pz"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4sF-j2-YLb" secondAttribute="bottom" id="P2P-W7-lEH"/>
-                                                    <constraint firstItem="4sF-j2-YLb" firstAttribute="top" secondItem="hfl-30-QWT" secondAttribute="top" id="e3v-lP-f29"/>
-                                                    <constraint firstItem="4sF-j2-YLb" firstAttribute="leading" secondItem="hfl-30-QWT" secondAttribute="leading" id="ihL-9R-iFj"/>
-                                                    <constraint firstAttribute="height" constant="150" id="lrQ-mO-HPG"/>
+                                                    <constraint firstItem="hfl-30-QWT" firstAttribute="top" secondItem="fKl-nU-9hy" secondAttribute="top" id="7VC-4Y-cuW"/>
+                                                    <constraint firstItem="74d-uC-7ak" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="DsI-FB-ZfZ"/>
+                                                    <constraint firstItem="sBy-Gd-SjL" firstAttribute="height" secondItem="Ouo-mD-YgR" secondAttribute="height" id="HZs-wI-pkU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hfl-30-QWT" secondAttribute="bottom" id="IyK-Ig-Bes"/>
+                                                    <constraint firstItem="ahd-5f-ZGM" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="J5j-L1-iYh"/>
+                                                    <constraint firstItem="T1w-Rx-cZi" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="MOv-fO-KmS"/>
+                                                    <constraint firstAttribute="height" constant="120" id="N7A-Eg-GkR"/>
+                                                    <constraint firstItem="6Pq-kJ-4Lv" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="PFm-8x-Ls9"/>
+                                                    <constraint firstItem="NNN-fV-ZZa" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="So3-xv-Vdt"/>
+                                                    <constraint firstItem="BaP-z6-Pyz" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="YyW-Op-VwR"/>
+                                                    <constraint firstItem="4sF-j2-YLb" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="cv7-6D-3b3"/>
+                                                    <constraint firstItem="J0h-K7-ebK" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="euE-kr-m1g"/>
+                                                    <constraint firstItem="eOe-XF-CRC" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="jf6-Jq-znu"/>
+                                                    <constraint firstItem="hs6-Yo-JGo" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="mK4-am-tjc"/>
+                                                    <constraint firstItem="hfl-30-QWT" firstAttribute="leading" secondItem="fKl-nU-9hy" secondAttribute="leading" id="nSx-mE-P2a"/>
+                                                    <constraint firstItem="J3d-Kz-nCx" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="smj-Ya-mfs"/>
+                                                    <constraint firstItem="ADa-yB-qyi" firstAttribute="width" secondItem="Ouo-mD-YgR" secondAttribute="width" id="xOU-iW-Rgo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hfl-30-QWT" secondAttribute="trailing" id="zLf-Ob-hzn"/>
                                                 </constraints>
-                                            </view>
+                                                <viewLayoutGuide key="contentLayoutGuide" id="q7p-sc-9C4"/>
+                                                <viewLayoutGuide key="frameLayoutGuide" id="Ouo-mD-YgR"/>
+                                            </scrollView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-bE-8Cg" userLabel="Eighth View">
-                                                <rect key="frame" x="15" y="928" width="398" height="500"/>
+                                                <rect key="frame" x="15" y="898" width="398" height="500"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPw-hb-QvS">
                                                         <rect key="frame" x="0.0" y="0.0" width="398" height="40"/>
@@ -448,7 +512,18 @@
         <image name="second_1" width="517" height="859"/>
         <image name="second_2" width="533" height="432"/>
         <image name="second_3" width="518" height="420"/>
-        <image name="seventh1" width="356" height="150"/>
+        <image name="seventh_1" width="1044" height="444"/>
+        <image name="seventh_10" width="1044" height="444"/>
+        <image name="seventh_11" width="1044" height="444"/>
+        <image name="seventh_12" width="1044" height="444"/>
+        <image name="seventh_2" width="1044" height="444"/>
+        <image name="seventh_3" width="1044" height="444"/>
+        <image name="seventh_4" width="1044" height="444"/>
+        <image name="seventh_5" width="1044" height="444"/>
+        <image name="seventh_6" width="1044" height="444"/>
+        <image name="seventh_7" width="1044" height="444"/>
+        <image name="seventh_8" width="1044" height="444"/>
+        <image name="seventh_9" width="1044" height="444"/>
         <image name="sidemenu" width="31" height="25"/>
         <image name="sixth1" width="168" height="90"/>
         <image name="sixth2" width="170" height="90"/>
