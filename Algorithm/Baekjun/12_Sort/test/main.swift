@@ -292,31 +292,57 @@ import Darwin
 ////print(input.map{String(numDict[$0]!)}.joined(separator: " "))
 
 
-// 1931 회의실 배정
-let n = Int(readLine()!)!
-var input = Array(repeating: Array(repeating: 0, count: 2), count: n)
+//// 1931 회의실 배정
+//let n = Int(readLine()!)!
+//var input = Array(repeating: Array(repeating: 0, count: 2), count: n)
+//
+//for i in 0..<n {
+//	input[i] = readLine()!.split(separator: " ").map{Int(String($0))!}
+//}
+//
+//input.sort{
+//	if $0[1] == $1[1] {
+//		return $0[0] < $1[0]
+//	} else {
+//		return $0[1] < $1[1]
+//	}
+//}
+//
+//var result = 0
+//var endTime = 0
+//for i in 0..<n {
+//	if input[i][0] >= endTime {
+//		endTime = input[i][1]
+//		result += 1
+//	}
+//}
+//
+//print(result)
 
-for i in 0..<n {
-	input[i] = readLine()!.split(separator: " ").map{Int(String($0))!}
-}
 
-input.sort{
-	if $0[1] == $1[1] {
-		return $0[0] < $1[0]
-	} else {
-		return $0[1] < $1[1]
-	}
-}
-
-var result = 0
-var endTime = 0
-for i in 0..<n {
-	if input[i][0] >= endTime {
-		endTime = input[i][1]
-		result += 1
-	}
-}
-
-print(result)
-
+//// 2309 일곱 난쟁이
+//var numArr = [Int]()
+//for _ in 1...9 {
+//	numArr.append(Int(readLine()!)!)
+//}
+//var diff = numArr.reduce(0, +) - 100
+//
+//var result = expel(numArr, diff).sorted(by: <)
+//for i in 0..<result.count {
+//	print(result[i])
+//}
+//
+//func expel(_ arr:[Int], _ num:Int) -> [Int] {
+//	var resultArr = arr
+//	for i in 0..<arr.count-1 {
+//		for j in i+1..<arr.count {
+//			if arr[j] == num - arr[i] {
+//				resultArr.remove(at: j)
+//				resultArr.remove(at: i)
+//				return resultArr
+//			}
+//		}
+//	}
+//	return []
+//}
 
