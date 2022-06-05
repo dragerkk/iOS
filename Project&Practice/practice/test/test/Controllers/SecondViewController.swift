@@ -19,7 +19,6 @@ class SecondViewController: UIViewController {
 		
 //		let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_:)))
 		panGestureRecognizer.delegate = self
-//		self.view.addGestureRecognizer(panGestureRecognizer)
 		scrollView2.addGestureRecognizer(panGestureRecognizer)
 	}
 	
