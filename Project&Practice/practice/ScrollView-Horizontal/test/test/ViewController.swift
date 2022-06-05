@@ -10,6 +10,7 @@ import Kingfisher
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var button1: UIButton!
 	@IBOutlet weak var image1: UIImageView!
 	
 	let url = URL(string:"https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201812022340")
@@ -19,9 +20,7 @@ class ViewController: UIViewController {
 		image1.kf.setImage(with: url)
 		
 		// Do any additional setup after loading the view.
-		
 	}
-
 
 }
 
