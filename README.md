@@ -1,1 +1,1 @@
-# iOS 공부기록
+# Personal Archives of studying Algorithms and Projects with SWIFT
