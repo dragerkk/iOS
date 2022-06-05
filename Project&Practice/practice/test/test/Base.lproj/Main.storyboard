@@ -138,7 +138,7 @@
         <!--Item-->
         <scene sceneID="swk-O8-ubv">
             <objects>
-                <viewController id="njt-7G-rZM" sceneMemberID="viewController">
+                <viewController id="njt-7G-rZM" customClass="SecondViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNl-Lx-rwr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,6 +199,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="oQD-aX-Jqq" firstAttribute="trailing" secondItem="1Z1-Vo-Gu5" secondAttribute="trailing" id="7Dg-iz-Zez"/>
                                     <constraint firstItem="1Z1-Vo-Gu5" firstAttribute="bottom" secondItem="mqa-YH-Ro7" secondAttribute="bottom" id="8kn-J7-rWD"/>
@@ -218,6 +219,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p1l-rS-i4e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4gz-pb-NCs" firstAttribute="top" secondItem="p1l-rS-i4e" secondAttribute="top" id="7KF-DY-w34"/>
                             <constraint firstItem="p1l-rS-i4e" firstAttribute="bottom" secondItem="ZT4-8Y-exm" secondAttribute="bottom" id="8LD-Qf-o0W"/>
@@ -227,12 +229,25 @@
                             <constraint firstItem="4gz-pb-NCs" firstAttribute="width" secondItem="wNl-Lx-rwr" secondAttribute="width" id="fNq-zg-1WF"/>
                             <constraint firstItem="p1l-rS-i4e" firstAttribute="trailing" secondItem="ZT4-8Y-exm" secondAttribute="trailing" id="fPc-36-8Kc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZxJ-Rq-GJ4" appends="YES" id="4d3-Zh-Mwf"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="wct-cP-CPl"/>
+                    <connections>
+                        <outlet property="button1" destination="ZT4-8Y-exm" id="djW-Dz-nyv"/>
+                        <outlet property="panGestureRecognizer" destination="ZxJ-Rq-GJ4" id="MdC-Fz-5CS"/>
+                        <outlet property="scrollView2" destination="4gz-pb-NCs" id="DiY-D7-ICY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQT-Gd-STf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ZxJ-Rq-GJ4">
+                    <connections>
+                        <action selector="panAction:" destination="njt-7G-rZM" id="YYa-K1-KCT"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="909.375"/>
+            <point key="canvasLocation" x="129" y="979"/>
         </scene>
         <!--Item-->
         <scene sceneID="0eF-5Y-GtI">

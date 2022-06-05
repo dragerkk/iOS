@@ -21,12 +21,6 @@ class ViewController: UIViewController {
 		image1.kf.setImage(with: url)
 		// Do any additional setup after loading the view.
 	}
-	
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		if scrollView.isDragging {
-			button1.backgroundColor = .blue
-		}
-	}
 
 }
 
