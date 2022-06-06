@@ -16,7 +16,8 @@ class SecondViewController: UIViewController {
 
 	override func viewDidLoad() {
 		button1.backgroundColor = .brown
-		button1.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
+		button1.setImage(UIImage(named: "btn1_resize.png"), for: .normal)
+//		button1.setBackgroundImage(UIImage(named:"button1.png"), for: .normal)
 		
 //		let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_:)))
 		panGestureRecognizer.delegate = self
@@ -31,8 +32,11 @@ class SecondViewController: UIViewController {
 //		velocity.y < 0 ? print("scroll down") : print("scroll up")
 		if velocity.y > 0 {
 			button1.backgroundColor = .red
+			button1.setImage(UIImage(named: "btn2_resize.png"), for: .normal)
+			
 		} else {
 			button1.backgroundColor = .blue
+			button1.setImage(UIImage(named: "btn1_resize.png"), for: .normal)
 		}
 	}
 }
