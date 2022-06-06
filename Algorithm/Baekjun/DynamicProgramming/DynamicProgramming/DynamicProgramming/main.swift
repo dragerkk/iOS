@@ -124,28 +124,31 @@
 //}
 
 
-// 9251 LCS -1, for문 두개 : 44ms
+//// 9251 LCS -1, for문 두개 : 44ms
+//
+//var input1 = readLine()!.map{String($0)}
+//var input2 = readLine()!.map{String($0)}
+//
+//input1.insert(" ", at: 0)
+//input2.insert(" ", at: 0)
+//
+//var arr = Array(repeating: Array(repeating: 0, count: input2.count+1), count: input1.count+1)
+//print(arr)
+//for i in 0..<input1.count {
+//	for j in 0..<input2.count {
+//		if i == 0 || j == 0 {
+//			arr[i][j] = 0
+//		} else if input1[i] == input2[j] {
+//			arr[i][j] = arr[i-1][j-1] + 1
+//		} else {
+//			arr[i][j] = max(arr[i-1][j], arr[i][j-1])
+//		}
+//		if i == input1.count - 1 && j == input2.count - 1 {
+//			print(arr[i][j])
+//		}
+//	}
+//
+//}
 
-var input1 = readLine()!.map{String($0)}
-var input2 = readLine()!.map{String($0)}
 
-input1.insert(" ", at: 0)
-input2.insert(" ", at: 0)
-
-var arr = Array(repeating: Array(repeating: 0, count: input2.count+1), count: input1.count+1)
-print(arr)
-for i in 0..<input1.count {
-	for j in 0..<input2.count {
-		if i == 0 || j == 0 {
-			arr[i][j] = 0
-		} else if input1[i] == input2[j] {
-			arr[i][j] = arr[i-1][j-1] + 1
-		} else {
-			arr[i][j] = max(arr[i-1][j], arr[i][j-1])
-		}
-		if i == input1.count - 1 && j == input2.count - 1 {
-			print(arr[i][j])
-		}
-	}
-
-}
+// 9251 LCS -2, DP
