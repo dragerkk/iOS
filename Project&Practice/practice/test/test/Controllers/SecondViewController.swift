@@ -16,6 +16,7 @@ class SecondViewController: UIViewController {
 
 	override func viewDidLoad() {
 		button1.backgroundColor = .brown
+		button1.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
 		
 //		let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_:)))
 		panGestureRecognizer.delegate = self

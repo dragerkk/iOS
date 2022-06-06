@@ -1,5 +1,5 @@
-import Foundation
-
+//import Foundation
+//
 //// 9095 : DP - 1,2,3 더하기
 ////f(n) = f(n-1) + f(n-2) + f(n-3)
 ////f(1) = 1, f(2) = 2, f(3) = 4
@@ -107,18 +107,45 @@ import Foundation
 
 
 
-// 11052 카드 구매하기
+//// 11052 카드 구매하기
+//
+//let n = Int(readLine()!)!
+//var input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var priceDict = [Int:Int]()
+//
+//for i in 0..<n {
+//	priceDict[i+1] = input[i]
+//}
+//
+//var sumArr = [[Int]]()
+//
+//for i in 1...n {
+//
+//}
 
-let n = Int(readLine()!)!
-var input = readLine()!.split(separator: " ").map{Int(String($0))!}
-var priceDict = [Int:Int]()
 
-for i in 0..<n {
-	priceDict[i+1] = input[i]
-}
+// 9251 LCS -1, for문 두개 : 44ms
 
-var sumArr = [[Int]]()
+var input1 = readLine()!.map{String($0)}
+var input2 = readLine()!.map{String($0)}
 
-for i in 1...n {
-	
+input1.insert(" ", at: 0)
+input2.insert(" ", at: 0)
+
+var arr = Array(repeating: Array(repeating: 0, count: input2.count+1), count: input1.count+1)
+print(arr)
+for i in 0..<input1.count {
+	for j in 0..<input2.count {
+		if i == 0 || j == 0 {
+			arr[i][j] = 0
+		} else if input1[i] == input2[j] {
+			arr[i][j] = arr[i-1][j-1] + 1
+		} else {
+			arr[i][j] = max(arr[i-1][j], arr[i][j-1])
+		}
+		if i == input1.count - 1 && j == input2.count - 1 {
+			print(arr[i][j])
+		}
+	}
+
 }
