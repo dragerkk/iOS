@@ -8,4 +8,4 @@
 - scroll view pinned when scroll down
 
 ### include 
-- scroll view, navigation bar, tab bar
+- scroll view, navigation bar, tab bar, collection view
