@@ -165,22 +165,40 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-gd-cNl">
+                                <rect key="frame" x="320" y="734" width="84" height="69"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="btn1_resize"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cJi-2e-cT8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="55L-0Z-jdl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cJi-2e-cT8" secondAttribute="bottom" id="8Sy-L0-TOd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JJg-gd-cNl" secondAttribute="trailing" constant="10" id="EmK-5B-n7d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cJi-2e-cT8" secondAttribute="trailing" id="GeY-QQ-SZ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JJg-gd-cNl" secondAttribute="bottom" constant="10" id="WUz-FP-CYI"/>
                             <constraint firstItem="cJi-2e-cT8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YAj-Nc-K3e"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DYu-Hw-UsG" appends="YES" id="NFr-yn-Oz0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="loJ-dO-m7Y"/>
                     <connections>
+                        <outlet property="button" destination="JJg-gd-cNl" id="Ubp-12-EZa"/>
                         <outlet property="collectionView" destination="cJi-2e-cT8" id="hrg-4V-AbV"/>
+                        <outlet property="panGestureRecognizer" destination="DYu-Hw-UsG" id="Edy-gj-nBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="DYu-Hw-UsG">
+                    <connections>
+                        <action selector="panAction:" destination="BYZ-38-t0r" id="sXq-Sd-Mnl"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="125.89285714285714"/>
         </scene>
@@ -291,6 +309,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn1_resize" width="60" height="55"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

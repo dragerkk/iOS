@@ -11,18 +11,35 @@ class FirstViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	
+	@IBOutlet weak var button: UIButton!
+	@IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
+	
 	private let sections = CollectionViewData.shared.pageData //C.V.Data로부터 pagadata 가져옴
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		panGestureRecognizer.delegate = self
+		
 		collectionView.delegate = self
 		collectionView.dataSource = self
 		
+		collectionView.addGestureRecognizer(panGestureRecognizer)
+		
 		collectionView.collectionViewLayout = createLayout()
 	}
+	//MARK: func - panGesture for button change when scroll
+	@IBAction func panAction(_ sender: UIPanGestureRecognizer) {
+		let velocity = sender.velocity(in: collectionView)
+		
+		if velocity.y > 0 {
+			button.setImage(UIImage(named: "btn2_resize.png"), for: .normal)
+		} else {
+			button.setImage(UIImage(named: "btn1_resize.png"), for: .normal)
+		}
+	}
 	
-	// MARK: - Create Layout
+	// MARK: - Create Layout (CollectionView CompositionalLayout)
 	
 	private func createLayout() -> UICollectionViewCompositionalLayout {
 		UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
@@ -103,7 +120,7 @@ class FirstViewController: UIViewController {
 	
 }
 
-// MARK: - Extension
+// MARK: - Extension - CollectionView
 extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return sections.count
@@ -151,8 +168,12 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
 			return UICollectionReusableView()
 		}
 	}
-	
+}
 
-	
+//MARK: Extexsion - GestureRecognizer for Button
+extension FirstViewController: UIGestureRecognizerDelegate {
+	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
 }
 
