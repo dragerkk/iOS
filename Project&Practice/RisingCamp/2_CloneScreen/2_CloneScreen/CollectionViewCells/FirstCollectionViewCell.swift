@@ -12,6 +12,5 @@ class FirstCollectionViewCell: UICollectionViewCell {
 	
 	func setup(_ item: ListItem) {
 		cellImageView.image = UIImage(named: item.image)
-		cellImageView.layoutIfNeeded()
 	}
 }

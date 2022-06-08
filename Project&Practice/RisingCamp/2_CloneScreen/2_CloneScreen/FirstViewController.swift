@@ -22,6 +22,8 @@ class FirstViewController: UIViewController {
 		collectionView.collectionViewLayout = createLayout()
 	}
 	
+	// MARK: - Create Layout
+	
 	private func createLayout() -> UICollectionViewCompositionalLayout {
 		UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
 			guard let self = self else { return nil }
@@ -29,39 +31,79 @@ class FirstViewController: UIViewController {
 			switch section {
 				// 1. item, 2. group, 3. section 이렇게 세 가지가 필요함.
 			case .firstCell(_):
-				let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))) // item
-				let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)), subitems: [item]) // group, 크기?
+				// CompositionalLayout : struct in CollectionViewRelated group
 				
+				//-------한셀안에서처리실패-----------
+				let item1 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.3), spacing: 5)
+				let item2 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.5), spacing: 5)
+				let item3 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.2), spacing: 5)
+				
+				let group = CompositionalLayout.createMultiLayoutGroup(alignment: .vertical, width: .fractionalWidth(1), height: .absolute(900), items: [item1, item2, item3])
+
 				let section = NSCollectionLayoutSection(group: group) // section
 				return section
 				
 			case .secondCell(_):
-				let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-				let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(300), heightDimension: .absolute(280)), subitems: [item])
+//				let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+//																	heightDimension: .fractionalHeight(1)))
+//				let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.6),
+//																				 heightDimension: .fractionalHeight(0.4)), subitems: [item])
+				
+				let item = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 5)
+				let group = CompositionalLayout.createSingleLayoutGroup(alignment: .horizontal, width: .fractionalWidth(0.7), height: .fractionalHeight(0.4), item: item, count: 1)
 				let section = NSCollectionLayoutSection(group: group)
-				
 				section.orthogonalScrollingBehavior = .continuous// 가로로 스크롤되게 만듬
+//				section.boundarySupplementaryItems = [self.suppl]
+				//header
+				section.boundarySupplementaryItems = [self.supplementaryHeaderItem()]  
 				
-				section.interGroupSpacing = 10
-				section.contentInsets = .init(top: 0, leading: 10, bottom: 30, trailing: 10)
+				
+//				section.interGroupSpacing = 10
+//				section.contentInsets = .init(top: 0, leading: 10, bottom: 30, trailing: 10)
+				
 				return section
-//				return nil// 나중에 ㄲㄲ
+
 			case .thirdCell(_):
-				return nil
+				let item = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.3), spacing: 5)
+				let group = CompositionalLayout.createSingleLayoutGroup(alignment: .vertical, width: .fractionalWidth(1), height: .absolute(500), item: item, count: 2)
+				let section = NSCollectionLayoutSection(group: group)
+				return section
+				
 			case .fourthCell(_):
-				return nil
+				let item = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 5)
+				let group = CompositionalLayout.createSingleLayoutGroup(alignment: .horizontal, width: .fractionalWidth(0.4), height: .fractionalHeight(0.3), item: item, count: 1)
+				let section = NSCollectionLayoutSection(group: group)
+				section.orthogonalScrollingBehavior = .continuous
+				section.boundarySupplementaryItems = [self.supplementaryHeaderItem()]
+				return section
+				
 			case .fifthCell(_):
-				return nil
+				let item1 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1/4), spacing: 5)
+				let item2 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1/8), spacing: 5)
+				let item3 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1/8), spacing: 5)
+				let item4 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1/4), spacing: 5)
+				let item5 = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1/4), spacing: 5)
+				let group = CompositionalLayout.createMultiLayoutGroup(alignment: .vertical, width: .fractionalWidth(1), height: .absolute(2000), items: [item1, item2, item3, item4, item5])
+				
+				let section = NSCollectionLayoutSection(group: group)
+				section.interGroupSpacing = 1
+				return section
 			}
 		}
 		
 	}
 	
-	
+	private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+		.init(
+			layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)),
+			elementKind: UICollectionView.elementKindSectionHeader,
+			alignment: .top)
+	}
 	
 	
 }
 
+// MARK: - Extension
 extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return sections.count
@@ -96,11 +138,21 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
 		}
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		switch kind {
+		case UICollectionView.elementKindSectionHeader:
+			let header = collectionView.dequeueReusableSupplementaryView(
+				ofKind: kind,
+				withReuseIdentifier: "CollectionViewHeaderReusableView",
+				for: indexPath) as! CollectionViewHeaderReusableView
+			header.setup(title: sections[indexPath.section].title)
+			return header
+		default:
+			return UICollectionReusableView()
+		}
+	}
+	
+
+	
 }
 
-//extension FirstViewController: UICollectionViewDelegateFlowLayout {
-//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//	}
-//}
-//
