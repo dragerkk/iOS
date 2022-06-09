@@ -209,7 +209,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcY-ge-nud">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcY-ge-nud">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ex-4t-Skr">
@@ -289,11 +289,13 @@
                         <constraints>
                             <constraint firstItem="rcY-ge-nud" firstAttribute="bottom" secondItem="sZd-dp-unI" secondAttribute="bottom" id="KXr-wR-G52"/>
                             <constraint firstAttribute="trailing" secondItem="rcY-ge-nud" secondAttribute="trailing" id="Yfr-El-v7l"/>
-                            <constraint firstItem="rcY-ge-nud" firstAttribute="top" secondItem="sZd-dp-unI" secondAttribute="top" id="f72-WB-c0d"/>
                             <constraint firstItem="rcY-ge-nud" firstAttribute="leading" secondItem="q7n-qw-hEm" secondAttribute="leading" id="rlC-BV-mhd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="p2K-mK-rgp"/>
+                    <connections>
+                        <outlet property="scrollView" destination="rcY-ge-nud" id="hVa-tH-5NV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtT-Px-PtT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
