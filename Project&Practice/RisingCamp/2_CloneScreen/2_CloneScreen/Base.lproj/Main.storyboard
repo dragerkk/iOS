@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cJi-2e-cT8">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cJi-2e-cT8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lz5-t2-FNR">
@@ -180,7 +180,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JJg-gd-cNl" secondAttribute="trailing" constant="10" id="EmK-5B-n7d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cJi-2e-cT8" secondAttribute="trailing" id="GeY-QQ-SZ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JJg-gd-cNl" secondAttribute="bottom" constant="10" id="WUz-FP-CYI"/>
-                            <constraint firstItem="cJi-2e-cT8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YAj-Nc-K3e"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DYu-Hw-UsG" appends="YES" id="NFr-yn-Oz0"/>
@@ -214,26 +213,44 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ex-4t-Skr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="649"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MmL-7K-RGa">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="dtW-Ni-44Z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                        <rect key="frame" x="0.0" y="-56" width="414" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="csZ-aX-jCc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yM-bb-A55">
-                                                        <rect key="frame" x="0.0" y="300" width="414" height="400"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스타벅스 카드를 등록해보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yM-bb-A55">
+                                                        <rect key="frame" x="0.0" y="244" width="414" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="400" id="0eG-Gn-6ih"/>
+                                                            <constraint firstAttribute="height" constant="100" id="0eG-Gn-6ih"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWx-0c-byQ">
+                                                        <rect key="frame" x="0.0" y="344" width="414" height="300"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장과 사이렌오더에서 쉽고 편리하게 사용할 수 있고, 별도 적립할 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnD-Fe-jNj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="pnD-Fe-jNj" firstAttribute="leading" secondItem="uWx-0c-byQ" secondAttribute="leading" id="6nY-ZJ-Itp"/>
+                                                            <constraint firstAttribute="height" constant="300" id="NuN-xO-MJH"/>
+                                                            <constraint firstItem="pnD-Fe-jNj" firstAttribute="top" secondItem="uWx-0c-byQ" secondAttribute="top" id="ZHU-42-JcU"/>
+                                                            <constraint firstItem="pnD-Fe-jNj" firstAttribute="centerX" secondItem="uWx-0c-byQ" secondAttribute="centerX" id="oFB-4x-UjL"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>

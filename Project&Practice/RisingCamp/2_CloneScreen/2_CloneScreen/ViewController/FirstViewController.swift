@@ -16,9 +16,12 @@ class FirstViewController: UIViewController {
 	
 	private let sections = CollectionViewData.shared.pageData //C.V.Data로부터 pagadata 가져옴
 	
+	let headerView = FirstHeaderView()
+	var headerViewTopConstraint: NSLayoutConstraint?
+	
+	// MARK: - ViewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		panGestureRecognizer.delegate = self
 		
 		collectionView.delegate = self
@@ -27,6 +30,8 @@ class FirstViewController: UIViewController {
 		collectionView.addGestureRecognizer(panGestureRecognizer)
 		
 		collectionView.collectionViewLayout = createLayout()
+		
+		headerViewSetup()
 	}
 	//MARK: func - panGesture for button change when scroll
 	@IBAction func panAction(_ sender: UIPanGestureRecognizer) {
@@ -177,3 +182,42 @@ extension FirstViewController: UIGestureRecognizerDelegate {
 	}
 }
 
+// MARK: Extension - Header
+extension FirstViewController {
+	
+	func headerViewSetup() {
+		headerView.translatesAutoresizingMaskIntoConstraints = false
+		view.addSubview(headerView)
+		
+		headerViewTopConstraint = headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+		
+		NSLayoutConstraint.activate([
+			headerViewTopConstraint!,
+			headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			headerView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5)
+		])
+	}
+}
+
+// MARK: - Collapse Header
+extension FirstViewController: UIScrollViewDelegate {
+	
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let y = scrollView.contentOffset.y
+		
+		let scrollDown = y <= 0
+		let shouldSnap = y > 30
+		let disappearHeight = headerView.headerLabel.frame.height + headerView.headerImageView.frame.height + 16
+		
+		UIView.animate(withDuration: 0.3) {
+			self.headerView.headerLabel.alpha = scrollDown ? 1.0 : 0.0
+			self.headerView.headerImageView.alpha = scrollDown ? 1.0 : 0.0
+		}
+		
+		UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
+			self.headerViewTopConstraint?.constant = shouldSnap ? -disappearHeight : 0
+			self.view.layoutIfNeeded()
+		})
+	}
+}
