@@ -10,7 +10,6 @@ target 'test' do
   pod 'Kingfisher', '~> 7.2'
 
 
-
   target 'testTests' do
     inherit! :search_paths
     # Pods for testing
