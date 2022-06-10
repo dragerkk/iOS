@@ -1,16 +1,20 @@
 PODS:
+  - GSKStretchyHeaderView (1.0.4)
   - Kingfisher (7.2.2)
 
 DEPENDENCIES:
+  - GSKStretchyHeaderView (~> 1.0)
   - Kingfisher (~> 7.2)
 
 SPEC REPOS:
   trunk:
+    - GSKStretchyHeaderView
     - Kingfisher
 
 SPEC CHECKSUMS:
+  GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
 
-PODFILE CHECKSUM: 495282bbff099553e914298dc86c1fc0dba010a1
+PODFILE CHECKSUM: 2e55ad21b4d3fb00d00ce99c94de7dc4f116a89b
 
 COCOAPODS: 1.11.3

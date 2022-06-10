@@ -10,7 +10,6 @@ import UIKit
 class FourthViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
-	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,7 +18,6 @@ class FourthViewController: UIViewController {
 		
 		collectionView.delegate = self
 		collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-		
 	}
 }
 

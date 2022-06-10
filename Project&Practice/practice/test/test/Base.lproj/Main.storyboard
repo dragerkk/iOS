@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="1038" y="2954"/>
         </scene>
-        <!--Item-->
+        <!--FourthViewController-->
         <scene sceneID="wdd-oj-qiH">
             <objects>
-                <viewController id="chw-D6-2sW" customClass="FourthViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FourthViewController" id="chw-D6-2sW" customClass="FourthViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xuc-fV-P8d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

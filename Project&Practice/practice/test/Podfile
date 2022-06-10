@@ -8,6 +8,7 @@ target 'test' do
   # Pods for test
 
   pod 'Kingfisher', '~> 7.2'
+  pod 'GSKStretchyHeaderView', '~> 1.0'
 
 
   target 'testTests' do
