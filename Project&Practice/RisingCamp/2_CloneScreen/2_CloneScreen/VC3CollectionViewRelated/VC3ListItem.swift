@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct VC3ListItem {
+	let image: String
+	
+}

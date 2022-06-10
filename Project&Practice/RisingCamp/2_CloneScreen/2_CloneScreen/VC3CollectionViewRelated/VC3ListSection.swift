@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+enum VC3ListSection {
+	
+	case menuCell([VC3ListItem])
+	case bottomCell([VC3ListItem])
+	
+	var items: [VC3ListItem] {
+		switch self {
+		case .menuCell(let items),
+				.bottomCell(let items):
+			return items
+		}
+	}
+	
+	var count: Int {
+		return items.count
+	}
+	
+}

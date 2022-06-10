@@ -8,10 +8,9 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
-	
 	@IBOutlet weak var cellImageView: UIImageView!
 	
-	func setup(_ item: ListItem) {
+	func setup(_ item: VC3ListItem) {
 		cellImageView.image = UIImage(named: item.image)
 	}
 }

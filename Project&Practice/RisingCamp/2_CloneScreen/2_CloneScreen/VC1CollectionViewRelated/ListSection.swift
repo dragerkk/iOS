@@ -8,7 +8,7 @@
 import Foundation
 
 enum ListSection {
-//	3'11''
+
 	case firstCell([ListItem])
 	case secondCell([ListItem])
 	case thirdCell([ListItem])

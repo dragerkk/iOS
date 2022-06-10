@@ -8,5 +8,9 @@
 import UIKit
 
 class BottomCollectionViewCell: UICollectionViewCell {
-    
+	@IBOutlet weak var cellImageView: UIImageView!
+	
+	func setup(_ item: VC3ListItem) {
+		cellImageView.image = UIImage(named: item.image)
+	}
 }
