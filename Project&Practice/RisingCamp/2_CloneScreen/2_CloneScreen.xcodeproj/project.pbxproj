@@ -10,6 +10,7 @@
 		3D60A99C2852410300338855 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A99B2852410300338855 /* FirstHeaderView.swift */; };
 		3D60A99E2852581E00338855 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A99D2852581E00338855 /* HeaderView.swift */; };
 		3D60A9A02852614F00338855 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A99F2852614F00338855 /* ThirdViewController.swift */; };
+		3D60A9A428527E1300338855 /* mySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A9A328527E1300338855 /* mySegmentedControl.swift */; };
 		3DD1B3F7284DF35200C46E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1B3F6284DF35200C46E5E /* AppDelegate.swift */; };
 		3DD1B3F9284DF35200C46E5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1B3F8284DF35200C46E5E /* SceneDelegate.swift */; };
 		3DD1B3FB284DF35200C46E5E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1B3FA284DF35200C46E5E /* FirstViewController.swift */; };
@@ -53,6 +54,7 @@
 		3D60A99B2852410300338855 /* FirstHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
 		3D60A99D2852581E00338855 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3D60A99F2852614F00338855 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		3D60A9A328527E1300338855 /* mySegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mySegmentedControl.swift; sourceTree = "<group>"; };
 		3DD1B3F3284DF35200C46E5E /* 2_CloneScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2_CloneScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1B3F6284DF35200C46E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD1B3F8284DF35200C46E5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				3DD1B3F8284DF35200C46E5E /* SceneDelegate.swift */,
 				3DD9B6D9285118140051F97A /* ViewController */,
 				3DD1B3FC284DF35200C46E5E /* Main.storyboard */,
+				3D60A9A328527E1300338855 /* mySegmentedControl.swift */,
 				3D60A99D2852581E00338855 /* HeaderView.swift */,
 				3D60A99B2852410300338855 /* FirstHeaderView.swift */,
 				3DF6C6B8284FB16D00EE653A /* CollectionViewCells */,
@@ -326,6 +329,7 @@
 			files = (
 				3D60A9A02852614F00338855 /* ThirdViewController.swift in Sources */,
 				3DF6C6C2284FB1E100EE653A /* FifthCollectionViewCell.swift in Sources */,
+				3D60A9A428527E1300338855 /* mySegmentedControl.swift in Sources */,
 				3DF6C6BE284FB1D100EE653A /* ThirdCollectionViewCell.swift in Sources */,
 				3DD1B3FB284DF35200C46E5E /* FirstViewController.swift in Sources */,
 				3DF6C6C4284FB47F00EE653A /* ListItem.swift in Sources */,

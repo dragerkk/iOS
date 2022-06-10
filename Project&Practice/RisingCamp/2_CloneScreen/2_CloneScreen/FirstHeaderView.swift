@@ -53,32 +53,34 @@ extension FirstHeaderView {
 		addSubview(headerView)
 		headerView.addSubview(inboxButton)
 		
+		
 		NSLayoutConstraint.activate([
 			headerLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
 			headerLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
 			trailingAnchor.constraint(equalToSystemSpacingAfter: headerLabel.trailingAnchor, multiplier: 1),
-			
-			headerImageView.topAnchor.constraint(equalToSystemSpacingBelow: headerLabel.bottomAnchor, multiplier: 2),
+
+			headerImageView.topAnchor.constraint(equalToSystemSpacingBelow: headerLabel.bottomAnchor, multiplier: 1),
 			headerImageView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
 			headerImageView.trailingAnchor.constraint(equalToSystemSpacingAfter: trailingAnchor, multiplier: 1),
-			
+//			headerImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+
 			headerView.topAnchor.constraint(
 				equalToSystemSpacingBelow: headerImageView.bottomAnchor, multiplier: 2),
 			headerView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
 			trailingAnchor.constraint(equalToSystemSpacingAfter: headerView.trailingAnchor, multiplier: 2),
 			bottomAnchor.constraint(equalToSystemSpacingBelow: headerView.bottomAnchor, multiplier: 1),
-			
+
 			inboxButton.topAnchor.constraint(equalTo: headerView.topAnchor),
 			inboxButton.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
 			inboxButton.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4)
-			
+//
 		])
 		
 		
 	}
 	
 	override var intrinsicContentSize: CGSize {
-		return CGSize(width: 100, height: 50)
+		return CGSize(width: 100, height: 100)
 	}
 }
 
@@ -91,13 +93,16 @@ extension FirstHeaderView {
 		let image = UIImage(named: "headerImage")
 		
 		headerImageView.image = image
+		
+		
+//		headerImageView.frame.size.height = 200
 		headerImageView.contentMode = .scaleAspectFit
 	}
 	
 	func makeInboxButton() {
 		inboxButton.translatesAutoresizingMaskIntoConstraints = false
 		
-		let image = UIImage(named: "inBoxButton")
+		let image = UIImage(named: "inboxButton")
 		
 		inboxButton.setImage(image, for: .normal)
 		inboxButton.imageView?.tintColor = .secondaryLabel
