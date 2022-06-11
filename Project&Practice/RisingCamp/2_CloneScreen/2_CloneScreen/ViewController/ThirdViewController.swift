@@ -9,79 +9,50 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 	
-	@IBOutlet weak var segmentControl: UISegmentedControl!
-	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var table: UITableView!
 	
-	private let sections = VC3CollectionViewData.shared.pagaData
-	//	let tableView = UITableView
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		table.delegate = self
+		table.dataSource = self
 		
-		collectionView.delegate = self
-		collectionView.dataSource = self
-		
-		collectionView.collectionViewLayout = createLayout()
 	}
 	
-	@IBAction func segmentCtrTapped(_ sender: Any) {
+	struct Menu {
+		let imageName: String
+	}
+	let menuData: [Menu] = [
+	Menu(imageName: "m1"),
+	Menu(imageName: "m2"),
+	Menu(imageName: "m3"),
+	Menu(imageName: "m4"),
+	Menu(imageName: "m5"),
+	Menu(imageName: "m6"),
+	Menu(imageName: "m7"),
+	Menu(imageName: "m8"),
+	Menu(imageName: "m9"),
+	Menu(imageName: "m10"),
+	
+	]
+	
+	
+}
+
+extension ThirdViewController: UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return menuData.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let menu = menuData[indexPath.row]
+		let cell = table.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
+		cell.iconImageView.image = UIImage(named: menu.imageName)
+		return cell
 	}
 }
 
 
-// MARK: Extension - CollectionView
-
-extension ThirdViewController: UICollectionViewDataSource {
-	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return sections.count
-	}
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return sections[section].count
-	}
-}
-
-extension ThirdViewController: UICollectionViewDelegate {
+extension ThirdViewController:UITableViewDelegate {
 	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		
-		switch sections[indexPath.section] {
-		
-		case .menuCell(let items) :
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
-			cell.setup(items[indexPath.row])
-			return cell
-			
-		case .bottomCell(let items) :
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath) as! BottomCollectionViewCell
-			cell.setup(items[indexPath.row])
-			return cell
-		}
-	}
-	
-}
-
-extension ThirdViewController {
-	
-	private func createLayout() -> UICollectionViewCompositionalLayout {
-		UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
-			guard let self = self else { return nil }
-			
-			let section = self.sections[sectionIndex]
-			
-			switch section {
-				
-			case .menuCell(_):
-				let item = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 5)
-				let group = CompositionalLayout.createSingleLayoutGroup(alignment: .vertical, width: .fractionalWidth(1), height: .absolute(800), item: item, count: 10)
-				let section = NSCollectionLayoutSection(group: group)
-				return section
-				
-			case .bottomCell(_):
-				let item = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 5)
-				let group = CompositionalLayout.createSingleLayoutGroup(alignment: .horizontal, width: .fractionalWidth(1), height: .fractionalHeight(1), item: item, count: 1)
-				let section = NSCollectionLayoutSection(group: group)
-				return section
-				
-			}
-		}
-	}
 }
