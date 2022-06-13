@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E3922AE2E00683F39603985 /* Pods_test_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD00EC98F1F0F60EFD76847 /* Pods_test_testUITests.framework */; };
 		3D0F7733284E472F0097154C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F7732284E472F0097154C /* ThirdViewController.swift */; };
+		3D51FBEC285726F20018740C /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51FBEB285726F20018740C /* NavViewController.swift */; };
 		3D60A9982851C7B900338855 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A9972851C7B900338855 /* FifthViewController.swift */; };
 		3D60A99A2851E36000338855 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A9992851E36000338855 /* HeaderView.swift */; };
 		3D64162B284F2F5C0060F488 /* FruitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64162A284F2F5C0060F488 /* FruitCollectionViewCell.swift */; };
@@ -51,6 +52,7 @@
 		1E1C46A5EC255E98426B761D /* Pods-test-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-testUITests.debug.xcconfig"; path = "Target Support Files/Pods-test-testUITests/Pods-test-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		35475E90DA4A6DC60E4C2DD5 /* Pods-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTests.debug.xcconfig"; path = "Target Support Files/Pods-testTests/Pods-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D0F7732284E472F0097154C /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		3D51FBEB285726F20018740C /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		3D60A9972851C7B900338855 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		3D60A9992851E36000338855 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3D64162A284F2F5C0060F488 /* FruitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				3D0F7732284E472F0097154C /* ThirdViewController.swift */,
 				3DA4D728284F2B7500AA3269 /* FourthViewController.swift */,
 				3D60A9972851C7B900338855 /* FifthViewController.swift */,
+				3D51FBEB285726F20018740C /* NavViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				3D60A99A2851E36000338855 /* HeaderView.swift in Sources */,
 				3D0F7733284E472F0097154C /* ThirdViewController.swift in Sources */,
 				3DD8A4842847FDFA00ED7E31 /* AppDelegate.swift in Sources */,
+				3D51FBEC285726F20018740C /* NavViewController.swift in Sources */,
 				3DD8A4862847FDFA00ED7E31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
