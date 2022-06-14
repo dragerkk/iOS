@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DDD8F572858D004000E1026 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F562858D004000E1026 /* Memo.swift */; };
+		3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F582858D155000E1026 /* FolderTableVC.swift */; };
 		3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9928577EF600F676BA /* AppDelegate.swift */; };
 		3DF10F9C28577EF600F676BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9B28577EF600F676BA /* SceneDelegate.swift */; };
 		3DF10F9E28577EF600F676BA /* FolderManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9D28577EF600F676BA /* FolderManageVC.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DDD8F562858D004000E1026 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		3DDD8F582858D155000E1026 /* FolderTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableVC.swift; sourceTree = "<group>"; };
 		3DF10F9628577EF500F676BA /* 3_Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3_Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF10F9928577EF600F676BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DF10F9B28577EF600F676BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				3DF10FCA2857821B00F676BA /* Main */,
 				3DF10FCB2857822B00F676BA /* Input */,
 				3DF10F9928577EF600F676BA /* AppDelegate.swift */,
+				3DDD8F562858D004000E1026 /* Memo.swift */,
+				3DDD8F582858D155000E1026 /* FolderTableVC.swift */,
 				3DF10F9B28577EF600F676BA /* SceneDelegate.swift */,
 				3DF10F9F28577EF600F676BA /* Main.storyboard */,
 				3DF10FA228577EFA00F676BA /* Assets.xcassets */,
@@ -291,6 +297,8 @@
 				3DF10FCF2857827C00F676BA /* InputVC.swift in Sources */,
 				3DF10F9E28577EF600F676BA /* FolderManageVC.swift in Sources */,
 				3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */,
+				3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */,
+				3DDD8F572858D004000E1026 /* Memo.swift in Sources */,
 				3DF10F9C28577EF600F676BA /* SceneDelegate.swift in Sources */,
 				3DF10FCD2857825900F676BA /* MainVC.swift in Sources */,
 			);
