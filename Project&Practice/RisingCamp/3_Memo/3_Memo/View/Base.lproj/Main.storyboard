@@ -38,9 +38,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="fsd-lJ-cDs">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <segue destination="RPO-em-3Vg" kind="popoverPresentation" popoverAnchorBarButtonItem="fsd-lJ-cDs" id="QgN-HR-mzL">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <action selector="addButtonTapped:" destination="jeB-6h-Np1" id="Lpt-5c-meG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,7 +52,7 @@
             <objects>
                 <navigationController id="RPO-em-3Vg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sb2-0H-e9t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -137,7 +135,6 @@
         <!--Navigation Controller-->
         <scene sceneID="dXl-c8-554">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-rc-nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="bWn-TZ-A36" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="lLT-E7-J47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Gmy-bI-1po">
@@ -148,6 +145,7 @@
                         <segue destination="dDu-Gi-cb7" kind="relationship" relationship="rootViewController" id="lOL-MH-7oG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-rc-nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="1572"/>
         </scene>
@@ -172,17 +170,17 @@
             <objects>
                 <viewController id="ftU-nQ-nh4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ixh-rd-E33">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New Folder Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvh-ai-q4k">
-                                <rect key="frame" x="20" y="61" width="374" height="21"/>
+                                <rect key="frame" x="20" y="93" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Folder Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pNI-hS-Pfa">
-                                <rect key="frame" x="20" y="87" width="374" height="34"/>
+                                <rect key="frame" x="20" y="119" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

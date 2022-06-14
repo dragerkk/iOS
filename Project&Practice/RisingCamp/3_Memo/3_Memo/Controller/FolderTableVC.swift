@@ -9,7 +9,7 @@ import UIKit
 
 class FolderTableVC: UITableViewController {
 
-	var folders = [Folder]()
+	var folders = [Folder]() 
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,7 @@ class FolderTableVC: UITableViewController {
 		} else {
 			folders = Folder.loadFolderSamples()
 		}
+//		updateFolder()
 		
 		navigationItem.leftBarButtonItem = editButtonItem
 		editButtonItem.tintColor = .systemRed
@@ -27,7 +28,39 @@ class FolderTableVC: UITableViewController {
 	@IBAction func unwindToFolderList(segue: UIStoryboardSegue) {
 		
 	}
+	
+//	func updateFolder() {
+//		if let savedFolders = Folder.loadFolders() {
+//			folders = savedFolders
+//		} else {
+//			folders = Folder.loadFolderSamples()
+//		}
+//	}
+	
+	
+	
+	// MARK: - Add New Folder with Alert
+	@IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+		let alert = UIAlertController(title: "New Folder", message: "Enter New Folder Name", preferredStyle: .alert)
+		let save = UIAlertAction(title: "Save", style: .default) { (save) in
+			let title = alert.textFields?[0].text
+			let newIndexPath = IndexPath(row: self.folders.count, section: 0)
+			self.folders.append(Folder(title: title ?? ""))
+			self.tableView.insertRows(at: [newIndexPath], with: .automatic)
 
+//			self.folders.append(Folder(title: alert.textFields?[0].text ?? ""))
+		}
+		let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+		
+		alert.addAction(cancel)
+		alert.addAction(save)
+		alert.addTextField { (myTextField) in
+			myTextField.placeholder = "Enter New Folder Name"
+		}
+		
+		self.present(alert, animated: true, completion: nil)
+	}
+	
     // MARK: - Table view data source
 //
 //    override func numberOfSections(in tableView: UITableView) -> Int {
