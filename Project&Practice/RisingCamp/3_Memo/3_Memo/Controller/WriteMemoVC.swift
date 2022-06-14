@@ -1,13 +1,14 @@
 //
-//  MainViewController.swift
+//  WriteMemoVC.swift
 //  3_Memo
 //
-//  Created by 강주원 on 2022/06/13.
+//  Created by 강주원 on 2022/06/15.
 //
 
 import UIKit
 
-class MainVC: UIViewController {
+class WriteMemoVC: UIViewController {
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()

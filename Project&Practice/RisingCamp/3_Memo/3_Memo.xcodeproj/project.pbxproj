@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		3DDD8F572858D004000E1026 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F562858D004000E1026 /* Memo.swift */; };
 		3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F582858D155000E1026 /* FolderTableVC.swift */; };
+		3DDD8F5B2858E527000E1026 /* MemoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */; };
+		3DDD8F5D2858E630000E1026 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F5C2858E630000E1026 /* Folder.swift */; };
+		3DDD8F6228590490000E1026 /* WriteMemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F6128590490000E1026 /* WriteMemoVC.swift */; };
 		3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9928577EF600F676BA /* AppDelegate.swift */; };
 		3DF10F9C28577EF600F676BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9B28577EF600F676BA /* SceneDelegate.swift */; };
-		3DF10F9E28577EF600F676BA /* FolderManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9D28577EF600F676BA /* FolderManageVC.swift */; };
 		3DF10FA128577EF600F676BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF10F9F28577EF600F676BA /* Main.storyboard */; };
 		3DF10FA328577EFA00F676BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF10FA228577EFA00F676BA /* Assets.xcassets */; };
 		3DF10FA628577EFA00F676BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF10FA428577EFA00F676BA /* LaunchScreen.storyboard */; };
 		3DF10FB128577EFA00F676BA /* __MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10FB028577EFA00F676BA /* __MemoTests.swift */; };
 		3DF10FBB28577EFA00F676BA /* __MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10FBA28577EFA00F676BA /* __MemoUITests.swift */; };
 		3DF10FBD28577EFA00F676BA /* __MemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10FBC28577EFA00F676BA /* __MemoUITestsLaunchTests.swift */; };
-		3DF10FCD2857825900F676BA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10FCC2857825900F676BA /* MainVC.swift */; };
-		3DF10FCF2857827C00F676BA /* InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10FCE2857827C00F676BA /* InputVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,12 @@
 /* Begin PBXFileReference section */
 		3DDD8F562858D004000E1026 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		3DDD8F582858D155000E1026 /* FolderTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableVC.swift; sourceTree = "<group>"; };
+		3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableVC.swift; sourceTree = "<group>"; };
+		3DDD8F5C2858E630000E1026 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		3DDD8F6128590490000E1026 /* WriteMemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoVC.swift; sourceTree = "<group>"; };
 		3DF10F9628577EF500F676BA /* 3_Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3_Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF10F9928577EF600F676BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DF10F9B28577EF600F676BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DF10F9D28577EF600F676BA /* FolderManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderManageVC.swift; sourceTree = "<group>"; };
 		3DF10FA028577EF600F676BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DF10FA228577EFA00F676BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DF10FA528577EFA00F676BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		3DF10FB628577EFA00F676BA /* 3_MemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3_MemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF10FBA28577EFA00F676BA /* __MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __MemoUITests.swift; sourceTree = "<group>"; };
 		3DF10FBC28577EFA00F676BA /* __MemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __MemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3DF10FCC2857825900F676BA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		3DF10FCE2857827C00F676BA /* InputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DDD8F5E2858FA94000E1026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD8F562858D004000E1026 /* Memo.swift */,
+				3DDD8F5C2858E630000E1026 /* Folder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DDD8F5F2858FB19000E1026 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD8F582858D155000E1026 /* FolderTableVC.swift */,
+				3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */,
+				3DDD8F6128590490000E1026 /* WriteMemoVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3DDD8F602858FBB3000E1026 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DF10F9F28577EF600F676BA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3DF10F8D28577EF500F676BA = {
 			isa = PBXGroup;
 			children = (
@@ -107,16 +134,13 @@
 		3DF10F9828577EF500F676BA /* 3_Memo */ = {
 			isa = PBXGroup;
 			children = (
-				3DF10FC92857820A00F676BA /* FolderManage */,
-				3DF10FCA2857821B00F676BA /* Main */,
-				3DF10FCB2857822B00F676BA /* Input */,
-				3DF10F9928577EF600F676BA /* AppDelegate.swift */,
-				3DDD8F562858D004000E1026 /* Memo.swift */,
-				3DDD8F582858D155000E1026 /* FolderTableVC.swift */,
+				3DDD8F5E2858FA94000E1026 /* Model */,
+				3DDD8F602858FBB3000E1026 /* View */,
+				3DDD8F5F2858FB19000E1026 /* Controller */,
 				3DF10F9B28577EF600F676BA /* SceneDelegate.swift */,
-				3DF10F9F28577EF600F676BA /* Main.storyboard */,
 				3DF10FA228577EFA00F676BA /* Assets.xcassets */,
 				3DF10FA428577EFA00F676BA /* LaunchScreen.storyboard */,
+				3DF10F9928577EF600F676BA /* AppDelegate.swift */,
 				3DF10FA728577EFA00F676BA /* Info.plist */,
 			);
 			path = 3_Memo;
@@ -137,30 +161,6 @@
 				3DF10FBC28577EFA00F676BA /* __MemoUITestsLaunchTests.swift */,
 			);
 			path = 3_MemoUITests;
-			sourceTree = "<group>";
-		};
-		3DF10FC92857820A00F676BA /* FolderManage */ = {
-			isa = PBXGroup;
-			children = (
-				3DF10F9D28577EF600F676BA /* FolderManageVC.swift */,
-			);
-			path = FolderManage;
-			sourceTree = "<group>";
-		};
-		3DF10FCA2857821B00F676BA /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				3DF10FCC2857825900F676BA /* MainVC.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		3DF10FCB2857822B00F676BA /* Input */ = {
-			isa = PBXGroup;
-			children = (
-				3DF10FCE2857827C00F676BA /* InputVC.swift */,
-			);
-			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,13 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF10FCF2857827C00F676BA /* InputVC.swift in Sources */,
-				3DF10F9E28577EF600F676BA /* FolderManageVC.swift in Sources */,
 				3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */,
+				3DDD8F6228590490000E1026 /* WriteMemoVC.swift in Sources */,
+				3DDD8F5B2858E527000E1026 /* MemoTableVC.swift in Sources */,
 				3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */,
 				3DDD8F572858D004000E1026 /* Memo.swift in Sources */,
 				3DF10F9C28577EF600F676BA /* SceneDelegate.swift in Sources */,
-				3DF10FCD2857825900F676BA /* MainVC.swift in Sources */,
+				3DDD8F5D2858E630000E1026 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
