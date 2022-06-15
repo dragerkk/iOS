@@ -8,7 +8,7 @@
 import UIKit
 
 struct Memo {
-	let id = UUID()
+//	let id = UUID()
 	var title: String
 	var content: String?
 	var finalDate: Date

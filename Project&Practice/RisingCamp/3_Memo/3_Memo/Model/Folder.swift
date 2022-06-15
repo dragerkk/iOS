@@ -8,7 +8,7 @@
 import Foundation
 
 struct Folder {
-	let id = UUID()
+//	let id = UUID()
 	let title: String
 	
 	static func loadFolders() -> [Folder]? {

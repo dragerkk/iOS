@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5A7EC82859B5EB0047049E /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5A7EC72859B5EB0047049E /* MemoTableViewCell.swift */; };
 		3DDD8F572858D004000E1026 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F562858D004000E1026 /* Memo.swift */; };
 		3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F582858D155000E1026 /* FolderTableVC.swift */; };
-		3DDD8F5B2858E527000E1026 /* MemoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */; };
+		3DDD8F5B2858E527000E1026 /* MemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F5A2858E527000E1026 /* MemoVC.swift */; };
 		3DDD8F5D2858E630000E1026 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F5C2858E630000E1026 /* Folder.swift */; };
 		3DDD8F6228590490000E1026 /* WriteMemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD8F6128590490000E1026 /* WriteMemoVC.swift */; };
 		3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF10F9928577EF600F676BA /* AppDelegate.swift */; };
@@ -40,9 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D5A7EC72859B5EB0047049E /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		3DDD8F562858D004000E1026 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		3DDD8F582858D155000E1026 /* FolderTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableVC.swift; sourceTree = "<group>"; };
-		3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableVC.swift; sourceTree = "<group>"; };
+		3DDD8F5A2858E527000E1026 /* MemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoVC.swift; sourceTree = "<group>"; };
 		3DDD8F5C2858E630000E1026 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		3DDD8F6128590490000E1026 /* WriteMemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoVC.swift; sourceTree = "<group>"; };
 		3DF10F9628577EF500F676BA /* 3_Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3_Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 			children = (
 				3DDD8F562858D004000E1026 /* Memo.swift */,
 				3DDD8F5C2858E630000E1026 /* Folder.swift */,
+				3D5A7EC72859B5EB0047049E /* MemoTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				3DDD8F582858D155000E1026 /* FolderTableVC.swift */,
-				3DDD8F5A2858E527000E1026 /* MemoTableVC.swift */,
+				3DDD8F5A2858E527000E1026 /* MemoVC.swift */,
 				3DDD8F6128590490000E1026 /* WriteMemoVC.swift */,
 			);
 			path = Controller;
@@ -296,7 +299,8 @@
 			files = (
 				3DF10F9A28577EF600F676BA /* AppDelegate.swift in Sources */,
 				3DDD8F6228590490000E1026 /* WriteMemoVC.swift in Sources */,
-				3DDD8F5B2858E527000E1026 /* MemoTableVC.swift in Sources */,
+				3DDD8F5B2858E527000E1026 /* MemoVC.swift in Sources */,
+				3D5A7EC82859B5EB0047049E /* MemoTableViewCell.swift in Sources */,
 				3DDD8F592858D155000E1026 /* FolderTableVC.swift in Sources */,
 				3DDD8F572858D004000E1026 /* Memo.swift in Sources */,
 				3DF10F9C28577EF600F676BA /* SceneDelegate.swift in Sources */,
