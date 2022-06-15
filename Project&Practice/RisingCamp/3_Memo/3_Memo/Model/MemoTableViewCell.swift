@@ -10,16 +10,13 @@ import UIKit
 class MemoTableViewCell: UITableViewCell {
 	
 	static let identifier = "MemoCellIdentifier"
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+	
+	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var descriptionLabel: UILabel!
+	
+	func setup(memo: Memo) {
+		titleLabel.text = memo.title
+		descriptionLabel.text = memo.desc
+	}
 }
+	

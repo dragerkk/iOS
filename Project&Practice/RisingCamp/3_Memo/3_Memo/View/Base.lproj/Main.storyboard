@@ -57,40 +57,41 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCellIdentifier" id="tF7-Am-Ai5" customClass="MemoTableViewCell" customModule="__Memo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="40.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tF7-Am-Ai5" id="RyD-9c-2Cx">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-mN-jC4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-mN-jC4">
+                                            <rect key="frame" x="10" y="10" width="394" height="42"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g58-GN-1ly">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEH-P1-WRH">
-                                                    <rect key="frame" x="0.0" y="22" width="414" height="18.5"/>
+                                                    <rect key="frame" x="0.0" y="24" width="394" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="DcC-bb-lA2"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Kcv-mN-jC4" firstAttribute="top" secondItem="RyD-9c-2Cx" secondAttribute="top" id="Qvz-OZ-ya0"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kcv-mN-jC4" secondAttribute="trailing" id="hpX-tE-66H"/>
-                                        <constraint firstAttribute="bottom" secondItem="Kcv-mN-jC4" secondAttribute="bottom" id="kBQ-55-VJ2"/>
-                                        <constraint firstItem="Kcv-mN-jC4" firstAttribute="leading" secondItem="RyD-9c-2Cx" secondAttribute="leading" id="zd7-eB-8Ip"/>
+                                        <constraint firstItem="Kcv-mN-jC4" firstAttribute="top" secondItem="RyD-9c-2Cx" secondAttribute="top" constant="10" id="Qvz-OZ-ya0"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kcv-mN-jC4" secondAttribute="trailing" constant="10" id="hpX-tE-66H"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kcv-mN-jC4" secondAttribute="bottom" constant="10" id="kBQ-55-VJ2"/>
+                                        <constraint firstItem="Kcv-mN-jC4" firstAttribute="leading" secondItem="RyD-9c-2Cx" secondAttribute="leading" constant="10" id="zd7-eB-8Ip"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="uEH-P1-WRH" id="Np6-0m-Sa8"/>
+                                    <outlet property="titleLabel" destination="g58-GN-1ly" id="7Yo-p7-p0A"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -111,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1923" y="800"/>
         </scene>
-        <!--Write MemoVC-->
+        <!--Edit MemoVC-->
         <scene sceneID="R3U-cG-HRZ">
             <objects>
-                <viewController id="4lX-dp-hMQ" customClass="WriteMemoVC" customModule="__Memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4lX-dp-hMQ" customClass="EditMemoVC" customModule="__Memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ulk-vk-50J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
