@@ -20,9 +20,10 @@ class EditMemoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//		updateSaveButtonState()
 
-        // Do any additional setup after loading the view.
+		if let memo = memo {
+			memoTextView.text = memo.content
+		}
     }
     
 	override func viewDidAppear(_ animated: Bool) {
@@ -33,18 +34,9 @@ class EditMemoVC: UIViewController {
 		self.view.endEditing(true)
 	}
 	
-	// MARK: updateSaveButtonState - Disable Save Button when memoTextView is empty
-//	func updateSaveButtonState() {
-//		let shouldEnableSaveButton = memoTextView.text?.isEmpty == false
-//		saveButton.isEnabled = shouldEnableSaveButton
-//	}
-	
-	@IBAction func textEditingChanged(_ sender: UITextView) {
-//		updateSaveButtonState()
-	}
 
     
-    // MARK: - Navigation
+    // MARK: - Send edited data to MemoVC
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,11 +53,19 @@ class EditMemoVC: UIViewController {
 		var desc: String {
 			var lines = memoTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
 			lines.removeFirst()
-			return "\(finalDate.formatted()) \(lines.first ?? "")" //return second line.
+//			return "\(finalDate.formatted()) \(lines.first ?? "")" //return second line.
+			return lines.first ?? "" //return second line.
 		}
 		let content = memoTextView.text
 		
-		memo = Memo(title: title, desc: desc, content: content, finalDate: finalDate)
+		if memo != nil { // in Edit memo
+			memo?.title = title
+			memo?.desc = desc
+			memo?.content = content
+			memo?.finalDate = finalDate
+		} else { // in New memo
+			memo = Memo(title: title, desc: desc, content: content, finalDate: finalDate)
+		}
     }
 
 }

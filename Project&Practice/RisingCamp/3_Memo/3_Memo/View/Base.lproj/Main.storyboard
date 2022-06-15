@@ -91,6 +91,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="uEH-P1-WRH" id="Np6-0m-Sa8"/>
                                     <outlet property="titleLabel" destination="g58-GN-1ly" id="7Yo-p7-p0A"/>
+                                    <segue destination="4lX-dp-hMQ" kind="show" identifier="editMemoSegue" destinationCreationSelector="editMemo:sender:" id="rBK-hr-a0I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -103,7 +104,7 @@
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="R9Y-eO-p4s">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <segue destination="4lX-dp-hMQ" kind="show" id="ZLO-Bh-S7d"/>
+                                <segue destination="4lX-dp-hMQ" kind="show" identifier="newMemoSegue" id="ZLO-Bh-S7d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -164,9 +165,6 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="dDu-Gi-cb7" kind="relationship" relationship="rootViewController" id="lOL-MH-7oG"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-rc-nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,7 +188,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lOL-MH-7oG"/>
+        <segue reference="ZLO-Bh-S7d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemRedColor"/>
     <resources>

@@ -23,6 +23,26 @@ class MemoTableVC: UITableViewController {
 		self.navigationController?.isToolbarHidden = false
 
     }
+	
+	// MARK: - Edit Memo List
+	
+	@IBSegueAction func editMemo(_ coder: NSCoder, sender: Any?) -> EditMemoVC? {
+		
+		let editMemoController = EditMemoVC(coder: coder)
+		
+		guard let cell = sender as? UITableViewCell,
+			  let indexPath = tableView.indexPath(for: cell) else {
+			// if sender is 'Add' Button, return an empty controller
+			return editMemoController
+		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
+		editMemoController?.memo = memoes[indexPath.row]
+		
+		return editMemoController
+	}
+	
+	
 
     // MARK: - Table view data source
 
@@ -59,22 +79,23 @@ class MemoTableVC: UITableViewController {
     }
 
     
-    // MARK: - Navigation
+    // MARK: - from EditMemoVC -- Save Button tapped
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
 	@IBAction func unwindToMemoVC(segue: UIStoryboardSegue) {
 		guard segue.identifier == "Save" else { return }
 		let sourceViewController = segue.source as! EditMemoVC
 		
 		if let memo = sourceViewController.memo {
-			let newIndexPath = IndexPath(row: memoes.count, section: 0)
 			
-			memoes.append(memo)
-			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			if let indexOfExistingMemo = memoes.firstIndex(of: memo) { // if Edited Memo was sended
+				memoes[indexOfExistingMemo] = memo
+				tableView.reloadRows(at: [IndexPath(row: indexOfExistingMemo, section: 0)], with: .automatic)
+			} else { // if New memo was sended
+				let newIndexPath = IndexPath(row: memoes.count, section: 0)
+				
+				memoes.append(memo)
+				tableView.insertRows(at: [newIndexPath], with: .automatic)
+			}
 		}
 		
 	}

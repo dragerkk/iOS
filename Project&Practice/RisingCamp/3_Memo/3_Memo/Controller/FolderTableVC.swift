@@ -19,25 +19,11 @@ class FolderTableVC: UITableViewController {
 		} else {
 			folders = Folder.loadFolderSamples()
 		}
-//		updateFolder()
 		
 		navigationItem.leftBarButtonItem = editButtonItem
 		editButtonItem.tintColor = .systemRed
     }
-	
-	@IBAction func unwindToFolderList(segue: UIStoryboardSegue) {
 		
-	}
-	
-//	func updateFolder() {
-//		if let savedFolders = Folder.loadFolders() {
-//			folders = savedFolders
-//		} else {
-//			folders = Folder.loadFolderSamples()
-//		}
-//	}
-	
-	
 	
 	// MARK: - Add New Folder with Alert
 	@IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
@@ -48,7 +34,6 @@ class FolderTableVC: UITableViewController {
 			self.folders.append(Folder(title: title ?? ""))
 			self.tableView.insertRows(at: [newIndexPath], with: .automatic)
 
-//			self.folders.append(Folder(title: alert.textFields?[0].text ?? ""))
 		}
 		let cancel = UIAlertAction(title: "Cancel", style: .cancel)
 		
@@ -99,16 +84,4 @@ class FolderTableVC: UITableViewController {
         }
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
