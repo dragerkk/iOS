@@ -482,3 +482,29 @@
 //	var result = [Int]
 //
 //}
+
+// 1476 날짜 계산
+
+let n = readLine()!.split(separator: " ").map{Int(String($0))!}
+var E = n[0]
+var S = n[1]
+var M = n[2]
+if E == 15 {
+	E = 0
+}
+if S == 28 {
+	S = 0
+}
+if M == 19 {
+	M = 0
+}
+
+var num = 1
+
+while true {
+	if num%19 == M && num%28 == S && num%15 == E {
+		print(num)
+		break
+	}
+	num += 1
+}
