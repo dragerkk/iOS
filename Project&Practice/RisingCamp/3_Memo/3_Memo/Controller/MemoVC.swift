@@ -9,6 +9,7 @@ import UIKit
 
 class MemoTableVC: UITableViewController {
 
+	@IBOutlet weak var backToFolderButton: UIBarButtonItem!
 	var memoes = [Memo]()
 	
     override func viewDidLoad() {
@@ -16,13 +17,13 @@ class MemoTableVC: UITableViewController {
 		
 		if let savedMemoes = Memo.loadMemoes() {
 			memoes = savedMemoes
-		} else {
-			memoes = Memo.loadSamples()
+			
 		}
 		
 		self.navigationController?.isToolbarHidden = false
 
     }
+	
 	
 	// MARK: - Edit Memo List
 	
@@ -99,5 +100,15 @@ class MemoTableVC: UITableViewController {
 		}
 		
 	}
+	
+	// MARK: - Send Data to Folder
+	
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		super.prepare(for: segue, sender: sender)
+//
+//		guard segue.identifier ==
+//	}
 
 }
+
+

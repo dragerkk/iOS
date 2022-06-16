@@ -10,14 +10,17 @@ import Foundation
 struct Folder {
 //	let id = UUID()
 	let title: String
+	let content: [Memo]?
 	
 	static func loadFolders() -> [Folder]? {
 		return nil
 	}
 	
 	static func loadFolderSamples() -> [Folder] {
-		let folder1 = Folder(title: "Simple memo")
-		let folder2 = Folder(title: "cooking recipes")
+//		let folder1 = Folder(title: "Default Folder")
+//		let folder2 = Folder(title: "Recipes")
+		let folder1 = Folder(title: "Default Folder", content: Memo.folderSample1())
+		let folder2 = Folder(title: "cooking recipes", content: Memo.folderSample2())
 		
 		return [folder1, folder2]
 	}

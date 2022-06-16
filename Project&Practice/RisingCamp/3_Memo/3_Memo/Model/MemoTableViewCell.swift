@@ -16,7 +16,7 @@ class MemoTableViewCell: UITableViewCell {
 	
 	func setup(memo: Memo) {
 		titleLabel.text = memo.title
-		descriptionLabel.text = "\(memo.finalDate.formatted()) \(memo.desc!)"
+		descriptionLabel.text = "\(memo.finalDate.formatted()) \(memo.desc ?? "")"
 	}
 }
 	

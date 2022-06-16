@@ -30,5 +30,24 @@ struct Memo: Equatable {
 		return [memo1, memo2]
 	}
 	
+	static func folderSample1() -> [Memo] {
+		
+	let sample1 = [
+		Memo(title: "sample memo", finalDate: Date()),
+		Memo(title: "sample2", finalDate: Date())
+	]
+		return sample1
+	}
+	
+	static func folderSample2() -> [Memo] {
+		
+		let sample2 = [
+			Memo(title: "sample recipe", finalDate: Date()),
+			Memo(title: "cake recipe", desc: "requires milk etc.", content: nil, finalDate: Date())
+		]
+		
+		return sample2
+	}
+	
 
 }

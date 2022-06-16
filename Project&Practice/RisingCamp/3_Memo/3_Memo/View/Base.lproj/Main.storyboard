@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dDu-Gi-cb7" kind="show" id="JPq-UH-v0q"/>
+                                    <segue destination="dDu-Gi-cb7" kind="show" identifier="goToMemoListIdentifier" destinationCreationSelector="goToMemoList:sender:" id="JPq-UH-v0q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

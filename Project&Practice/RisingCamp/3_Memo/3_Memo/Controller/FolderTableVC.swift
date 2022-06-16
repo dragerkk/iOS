@@ -31,7 +31,8 @@ class FolderTableVC: UITableViewController {
 		let save = UIAlertAction(title: "Save", style: .default) { (save) in
 			let title = alert.textFields?[0].text
 			let newIndexPath = IndexPath(row: self.folders.count, section: 0)
-			self.folders.append(Folder(title: title ?? ""))
+//			self.folders.append(Folder(title: title ?? ""))
+			self.folders.append(Folder(title: title ?? "", content: nil))
 			self.tableView.insertRows(at: [newIndexPath], with: .automatic)
 
 		}
@@ -84,4 +85,21 @@ class FolderTableVC: UITableViewController {
         }
     }
     
+	// MARK: - View & Send Data to selected Folder's memo list
+	
+	@IBSegueAction func goToMemoList(_ coder: NSCoder, sender: Any?) -> MemoTableVC? {
+		
+		let goToMemoListController = MemoTableVC(coder: coder)
+		
+		guard let cell = sender as? UITableViewCell,
+			  let indexPath = tableView.indexPath(for: cell) else {
+			return goToMemoListController
+		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
+		goToMemoListController?.memoes = folders[indexPath.row].content ?? []
+		goToMemoListController?.navigationItem.title = folders[indexPath.row].title
+		
+		return goToMemoListController
+	}
 }
