@@ -1,11 +1,16 @@
 # practice with projects. 
 
-
 ## practice
-### test specific function
-- horizontal scroll view with stackview
-- button design changed when scroll up
-- scroll view pinned when scroll down
+- test specific functions or layouts.
 
-### include 
-- scroll view, navigation bar, tab bar, collection view
+## RisingCamp
+- projects from scratch
+
+## Bootcamp
+- clone code with online lecture
+
+## playground
+- swift grammer summary 
+
+
+#details are in each folder.
