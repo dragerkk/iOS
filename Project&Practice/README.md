@@ -1,15 +1,18 @@
 # practice with projects. 
 
-## practice
+
+## StudyWithProject ---- main
+- projects from scratch
+
+
+## Practice
 - test specific functions or layouts.
 
-## RisingCamp
-- projects from scratch
 
 ## Bootcamp
 - clone code with online lecture
 
-## playground
+## Playground
 - swift grammer summary 
 
 
