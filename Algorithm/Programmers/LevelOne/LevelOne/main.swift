@@ -423,4 +423,421 @@
 //}
 
 
+//// 나누어 떨어지는 숫자 배열
+//
+//func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
+//	var result = [Int]()
+//	for i in 0..<arr.count {
+//		if arr[i] % divisor == 0 {
+//			result.append(arr[i])
+//		}
+//	}
+//	result.sort()
+//	return result.count == 0 ? [-1] : result
+//}
+
+//// 2018 KAKAO BLIND RECRUITMENT 다트게임 -1, 0.06~0.09ms
+//import Foundation
+//
+//func solution(_ dartResult:String) -> Int {
+//	var str = dartResult.map{String($0)}
+//
+//	var result : [String] = ["","",""]
+//	var index = 0
+//	result[0] = str[0]
+//
+//	for i in 1..<str.count {
+//		if str[i] == "D" || str[i] == "S" || str[i] == "T" || str[i] == "*" || str[i] == "#" {
+//			result[index] += str[i]
+//		} else if str[i] == "0" {
+//			if result[index].count == 1 {
+//				result[index] += str[i]
+//			} else {
+//				index += 1
+//				result[index] = str[i]
+//			}
+//		}  else {
+//			index += 1
+//			result[index] = str[i]
+//		}
+//}
+//
+//	var sumArr : [Int] = []
+//
+//	for i in 0..<result.count {
+//		let resultArr = result[i].map{String($0)}
+//		var sum = Int(resultArr[0])!
+//
+//		for j in 1..<resultArr.count {
+//			if resultArr[j] == "0" {
+//				sum *= 10
+//			} else if resultArr[j] == "D" {
+//				sum = Int(pow(Double(sum), 2))
+//			} else if resultArr[j] == "T" {
+//				sum = Int(pow(Double(sum), 3))
+//			} else if resultArr[j] == "S" {
+//				continue
+//			} else if resultArr[j] == "*" {
+//				if i == 0 {
+//					sum *= 2
+//				} else {
+//					sumArr[i-1] *= 2
+//					sum *= 2
+//				}
+//			} else if resultArr[j] == "#" {
+//				sum *= (-1)
+//			}
+//		}
+//	sumArr.append(sum)
+//	}
+//
+//
+//	return sumArr.reduce(0, +)
+//}
+//
+//print(solution("1S2D*3T"))
+
+
+//// 2018 KAKAO BLIND RECRUITMENT 다트게임-2, 0.17~0.19ms
+//func solution(_ dartResult: String) -> Int {
+//
+//	let numList = dartResult.split(whereSeparator: { $0.isLetter || $0 == "*" || $0 == "#"})
+//	let letterList = dartResult.split(whereSeparator: { $0.isNumber })
+//
+//	var result = 0
+//
+//	for (i, (number, letter)) in zip(numList, letterList).enumerated() {
+//
+//		var score = 0
+//
+//		if let num = Int(number) {
+//			score = letter.contains("D") ? num*num : letter.contains("T") ? num*num*num : num
+//		}
+//
+//		if letter.contains("*") {
+//			score *= 2
+//		} else if letter.contains("#") {
+//			score *= (-1)
+//		}
+//
+//		if i != 2 {
+//			if letterList[i+1].contains("*") {
+//				score *= 2
+//			}
+//		}
+//
+//		result += score
+//	}
+//
+//	return result
+//}
+//
+//print(solution("1S2D*3T"))
+
+
+//// 가운데 글자 가져오기
+//
+//func solution(_ s:String) -> String {
+//	if s.count % 2 == 0 {
+//		return String(Array(s)[s.count/2-1...s.count/2])
+//	} else {
+//		return String(Array(s)[s.count/2])
+//	}
+//}
+
+//// 2018 카카오 블채 비밀지도
+//func solution(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
+//	var input1 = arr1
+//	var input2 = arr2
+//	var num1 = [Int]()
+//	var num2 = [Int]()
+//	var answer: [String] = Array(repeating: "", count: n)
+//
+//	for i in 0..<n {
+//		for _ in 0..<n {
+//			num1.insert(input1[i]%2, at:0)
+//			num2.insert(input2[i]%2, at:0)
+//			input1[i]/=2
+//			input2[i]/=2
+//		}
+//		for j in 0..<n {
+//			if num1[j] == 1 || num2[j] == 1 {
+//				answer[i] += "#"
+//			} else {
+//				answer[i] += " "
+//			}
+//		}
+//	}
+//	return answer
+//}
+
+
+//// 부족한 금액 계산하기
+//
+//import Foundation
+//
+//func solution(_ price:Int, _ money:Int, _ count:Int) -> Int64{
+//	var sum = 0
+//
+//	for i in 1...count {
+//		sum += i * price
+//	}
+//
+//	return sum > money ? Int64(sum-money) : 0
+//}
+
+
+//// 나머지가 1이 되는 수 찾기
+//import Foundation
+//
+//func solution(_ n:Int) -> Int {
+//	if n == 3 {
+//		return 2
+//	}
+//	for i in 2..<n {
+//		if n % i == 1 {
+//			return i
+//		}
+//	}
+//	return 0
+//}
+
+
+//// 부족한 금액 계산하기
+//import Foundation
+//
+//func solution(_ price:Int, _ money:Int, _ count:Int) -> Int64{
+//	var sum = 0
+//
+//	for i in 1...count {
+//		sum += i * price
+//	}
+//
+//	return sum > money ? Int64(sum-money) : 0
+//}
+
+
+//// 최소 직사각형
+//import Foundation
+//
+//func solution(_ sizes:[[Int]]) -> Int {
+//	var maxW = 0
+//	var maxH = 0
+//	for i in 0..<sizes.count {
+//		let max = sizes[i].max()!
+//		let min = sizes[i].min()!
+//		if maxW < max {
+//			maxW = max
+//		}
+//		if maxH < min {
+//			maxH = min
+//		}
+//	}
+//	return maxH*maxW
+//}
+
+
+//// 2016년
+//func solution(_ a:Int, _ b:Int) -> String {
+//	let dict = [1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31]
+//	let dayWeek = ["FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"]
+//
+//	var day = 0
+//	for i in 1..<a {
+//		day += dict[i]!
+//	}
+//	day += b
+//	return day%7==0 ? dayWeek[6] : dayWeek[day%7-1]
+//}
+
+
+//// 두 개 뽑아서 더하기
+//import Foundation
+//
+//func solution(_ numbers:[Int]) -> [Int] {
+//	var result : Set<Int> = []
+//
+//	for i in 0..<numbers.count {
+//		for j in 1..<numbers.count {
+//			if i != j {
+//				result.insert(numbers[i]+numbers[j])
+//			}
+//		}
+//	}
+//	return result.sorted()
+//}
+
+
+//// 예산
+//import Foundation
+//
+//func solution(_ d:[Int], _ budget:Int) -> Int {
+//	var num = d.sorted()
+//	var sum = 0
+//	var count = 0
+//
+//	for i in 0..<num.count {
+//		if sum >= budget {
+//			break
+//		} else {
+//			sum += num[i]
+//			count += 1
+//		}
+//	}
+//	return sum <= budget ? count : count-1
+//}
+
+
+//// 3진법 뒤집기
+//import Foundation
+//
+//func solution(_ n:Int) -> Int {
+//	return Int(String(String(n, radix: 3).reversed()), radix:3)!
+//}
+
+//
+//// 약수의 개수와 덧셈
+//import Foundation
+//
+//func solution(_ left:Int, _ right:Int) -> Int {
+//	var sum = 0
+//	for i in left...right {
+//		var count = 0
+//		for j in 1...i {
+//			if i % j == 0 {
+//				count+=1
+//			}
+//		}
+//		if count % 2 == 0 {
+//			sum += i
+//		} else {
+//			sum -= i
+//		}
+//	}
+//	return sum
+//}
+
+
+//// 실패율
+//import Foundation
+//
+//func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+//
+//	var userLevel = stages.sorted()
+//	var stageCleared = Array(repeating: 0, count: N+1)
+//
+//	for i in 0..<userLevel.count {
+//		if userLevel[i] == 1 {
+//		} else {
+//			for j in 1..<userLevel[i] {
+//				stageCleared[j] += 1
+//			}
+//		}
+//	}
+//
+//	var dict : [Int:Int] = [:]
+//	for i in 0...N {
+//		dict[i] = stageCleared[i]
+//	}
+//
+//	var failRate : [Int:Double] = [:] // stage : failRate
+//	stageCleared[0] = stages.count
+//
+//	for i in 1...N {
+//		if stageCleared[i-1] == 0 {
+//			failRate[i] = 0
+//		} else {
+//			failRate[i] = (1 - (Double(stageCleared[i])) / Double(stageCleared[i-1]))
+//		}
+//	}
+//
+//
+//	let result = failRate.sorted {
+//		if $0.1 == $1.1 {
+//			return $0 < $1
+//		} else {
+//			return $0.1 > $1.1
+//		}
+//	}
+//
+//	var returnArr : [Int] = []
+//	for i in 0..<result.count {
+//		returnArr.append(result[i].key)
+//	}
+//	return returnArr
+//}
+
+
+//// 체육복
+//import Foundation
+//
+//func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+//	var setZero : Set<Int> = Set(lost).subtracting(reserve)
+//var setTwo : Set<Int> = Set(reserve).subtracting(lost)
+//
+//var haveZero = setZero.sorted()
+//var haveTwo = setTwo.sorted()
+//
+//var count = n - haveZero.count
+//
+//for i in 0..<haveZero.count {
+//	for j in 0..<haveTwo.count {
+//		if haveZero[i] - 1 == haveTwo[j] || haveZero[i] + 1 == haveTwo[j] {
+//			count += 1
+//			haveTwo.remove(at: j)
+//			break
+//		}
+//	}
+//}
+//	return count
+//}
+
+
+//// 모의고사
+//import Foundation
+//
+//func solution(_ answers:[Int]) -> [Int] {
+//	let n = answers.count
+//	var arr1 = [1,2,3,4,5]
+//	var arr2 = [2,1,2,3,2,4,2,5]
+//	var arr3 = [3,3,1,1,2,2,4,4,5,5]
+//
+//	var dict = [1 : 0, 2 : 0, 3 : 0]
+//
+//	for i in 0..<answers.count {
+//		if answers[i] == arr1[i%5] {
+//			dict[1]! += 1
+//		}
+//		if answers[i] == arr2[i%8] {
+//			dict[2]! += 1
+//		}
+//		if answers[i] == arr3[i%10] {
+//			dict[3]! += 1
+//		}
+//	}
+//
+//	var max = dict.values.max()!
+//
+//	for i in 1...3 {
+//		if dict[i] != max {
+//			dict[i] = nil
+//		}
+//	}
+//
+//	var sortedDict = dict.sorted {
+//		if $0.1 == $1.1 {
+//			return $0 < $1
+//		} else {
+//			return $0.1 > $1.1
+//		}
+//	}
+//
+//	var result = [Int]()
+//
+//	for i in sortedDict {
+//		result.append(i.key)
+//	}
+//		return result
+//}
+
 
