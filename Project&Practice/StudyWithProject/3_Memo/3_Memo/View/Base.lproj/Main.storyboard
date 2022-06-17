@@ -157,20 +157,6 @@
             <point key="canvasLocation" x="2772" y="800"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="dXl-c8-554">
-            <objects>
-                <navigationController id="bWn-TZ-A36" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="lLT-E7-J47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Gmy-bI-1po">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-rc-nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1922" y="98"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="qs5-jN-baA">
             <objects>
                 <navigationController id="Agn-bJ-dvi" sceneMemberID="viewController">

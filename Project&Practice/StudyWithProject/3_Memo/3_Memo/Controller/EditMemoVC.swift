@@ -22,7 +22,7 @@ class EditMemoVC: UIViewController {
         super.viewDidLoad()
 
 		if let memo = memo {
-			memoTextView.text = memo.content
+			memoTextView.text = memo.title + (memo.desc ?? "") + (memo.content ?? "")
 		}
     }
     
