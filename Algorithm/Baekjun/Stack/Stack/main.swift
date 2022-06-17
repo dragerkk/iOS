@@ -173,4 +173,74 @@
 //print(answer.joined(separator: "\n")) -- 90ms
 
 
+//// 1406 에디터 -1,  시간초과
+//
+//var a = readLine()!
+//var b = a.map{String($0)}
+//var n = Int(readLine()!)!
+//var command = [String]()
+//var index = b.count
+//
+//for _ in 1...n {
+//	command.append(readLine()!)
+//}
+//
+//for i in command {
+//	if i == "L" && index != 0 {
+//		index -= 1
+//	} else if i == "D" && index != b.count {
+//		index += 1
+//	} else if i == "B" && index != 0 {
+//		b.remove(at: index-1)
+//	} else if i.starts(with: "P") {
+//		b.insert(String(i.last!), at: index)
+//		index += 1
+//	}
+//}
+//print(b.joined(separator: ""))
 
+
+//// 1406 에디터 -2, 시간 초과 -- string, arr 두가지 모두 시간초과뜸
+//
+//var left = readLine()!
+//var n = Int(readLine()!)!
+//var right = ""
+//
+//for _ in 1...n {
+//	var input = readLine()!
+//
+//	if input == "L" && left != "" {
+//		right = String(left.last!) + right
+//		left.removeLast()
+//	} else if input == "D" && right != "" {
+//		left += String(right.first!)
+//		right.removeFirst()
+//	} else if input == "B" && left != "" {
+//		left.removeLast()
+//	} else if input.starts(with: "P") {
+//		input.removeFirst(2)
+//		left += input
+//	}
+//}
+//print(left+right)
+
+
+//// 1406 에디터
+//
+//var left = readLine()!
+//var n = Int(readLine()!)!
+//var right = ""
+//
+//for _ in 1...n {
+//	let input = readLine()!
+//
+//	if input == "L" && left != "" {
+//		right.append(left.popLast()!)
+//	} else if input == "D" && right != "" {
+//		left.append(right.popLast()!)
+//	} else if input == "B" && left != "" {
+//		left.removeLast()
+//	} else if input.starts(with: "P") {
+//		left.append(input.last!)
+//	}
+//}
