@@ -47,3 +47,130 @@
 //}
 
 
+//// 1874 스택 수열 -1 , 메모리 초과..
+//
+//let n = Int(readLine()!)!
+//var compare = [Int]()
+//var stack = [Int]()
+//var result = [Int]()
+//
+//for _ in 1...n {
+//	compare.append(Int(readLine()!)!)
+//}
+//
+//var index = 0
+//var num = 1
+//var calArr : [String] = []
+//
+//while true {
+//	if compare.count == 0 {
+//		calArr.forEach({print($0)})
+//		break
+//	}
+//	if result.contains(n) && stack[stack.count-1] != compare[0] {
+//		print("NO")
+//		break
+//	}
+//
+//	if !result.contains(n) {
+//
+//		if num == compare[0] {
+//			calArr.append("+")
+//			compare.removeFirst()
+//			calArr.append("-")
+//			result.append(num)
+//		} else {
+//			stack.append(num)
+//			calArr.append("+")
+//		}
+//	}
+//	if stack.count != 0 && stack[stack.count-1] == compare[0] {
+//		stack.removeLast()
+//		compare.removeFirst()
+//		calArr.append("-")
+//		result.append(num)
+//	}
+//
+//	if !result.contains(n) {
+//	num += 1
+//	}
+//
+//}
+
+
+//// 1874 스택 수열 -2, 시간초과
+//
+//let n = Int(readLine()!)!
+//var compare = [Int]()
+//var stack = [Int]()
+//
+//for _ in 1...n {
+//	compare.append(Int(readLine()!)!)
+//}
+//
+//var index = 0
+//var num = 1
+//var calArr : [String] = []
+//
+//while true {
+//	if compare.count == 0 {
+//		calArr.forEach({print($0)})
+//		break
+//	}
+//	if !compare.contains(n) && stack[stack.count-1] != compare[0] {
+//		print("NO")
+//		break
+//	}
+//
+//	if compare.contains(n) {
+//
+//		if num == compare[0] {
+//			calArr.append("+")
+//			compare.removeFirst()
+//			calArr.append("-")
+//		} else {
+//			stack.append(num)
+//			calArr.append("+")
+//		}
+//		num += 1
+//	}
+//
+//	if stack.count != 0 && stack[stack.count-1] == compare[0] {
+//		stack.removeLast()
+//		compare.removeFirst()
+//		calArr.append("-")
+//	}
+//}
+
+
+// 1874 - 스택 수열 -3
+
+//import Foundation
+//
+//let n = Int(readLine()!)!
+//
+//var stack = [Int]()
+//var answer = [String]()
+//var num = 1
+//
+//for _ in 1...n {
+//	let input = Int(readLine()!)!
+//	while num <= input {
+//		stack.append(num)
+//		answer.append("+")
+//		num += 1
+//	}
+//	if stack.last == input {
+//		stack.removeLast()
+//		answer.append("-")
+//	} else {
+//		print("NO")
+//		exit(0)
+//	}
+//}
+//answer.forEach{print($0)} -- 140ms
+//for i in answer { print(i) } -- 140ms
+//print(answer.joined(separator: "\n")) -- 90ms
+
+
+
