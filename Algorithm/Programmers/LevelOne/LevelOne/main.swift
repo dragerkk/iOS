@@ -841,3 +841,148 @@
 //}
 
 
+//// K번째 수
+//
+//func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+//	let caseNum = commands.count
+//	var answer = [Int]()
+//	for i in 0..<caseNum {
+//		var result = array
+//		let count = result.count
+//		result.removeFirst(commands[i][0]-1)
+//		result.removeLast(count-commands[i][1])
+//		result.sort()
+//		answer.append(result[commands[i][2]-1])
+//	}
+//	return answer
+//}
+//
+//print(solution([1, 5, 2, 6, 3, 7, 4]	, [[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
+//// [5,6,3]
+
+
+//// 소수 만들기
+//
+//func solution(_ nums:[Int]) -> Int {
+//
+//	var prime = [2]
+//	var answer = [Int]()
+//
+//	for i in 3...3000 {
+//		if isPrime(i) {
+//			prime.append(i)
+//		}
+//	}
+//
+//	for i in 0..<nums.count {
+//		for j in i+1..<nums.count {
+//			for k in j+1..<nums.count {
+//				if i != j && j != k && i != k {
+//					let sum = nums[i]+nums[j]+nums[k]
+//					if prime.contains(sum) {
+//						answer.append(sum)
+//					}
+//				}
+//			}
+//		}
+//	}
+//	return answer.count
+//}
+//
+//func isPrime(_ n:Int) -> Bool {
+//
+//	for i in 2..<n {
+//		if n%i == 0 {
+//			return false
+//		}
+//	}
+//	return true
+//}
+//
+//print(solution([1,2,7,6,4]))
+//print(solution([1,2,3,4]))
+
+
+//// 내적
+//
+//import Foundation
+//
+//func solution(_ a:[Int], _ b:[Int]) -> Int {
+//
+//	let n = a.count
+//	var sum = 0
+//	for i in 0..<n {
+//		sum += a[i]*b[i]
+//	}
+//
+//	return sum
+//}
+
+
+//// 음양 더하기
+//
+//import Foundation
+//
+//func solution(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+//	let n = absolutes.count
+//	var sum = 0
+//
+//	for i in 0..<n {
+//		if signs[i] {
+//			sum += absolutes[i]
+//		} else {
+//			sum -= absolutes[i]
+//		}
+//	}
+//
+//	return sum
+//}
+//
+//print(solution([4,7,12], [true,false,true]))
+
+
+//// 음양 더하기 -2
+//
+//import Foundation
+//
+//func solution(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+//	return (0..<absolutes.count).map{ signs[$0] ? absolutes[$0] : -absolutes[$0]}.reduce(0, +)
+//}
+//
+//print(solution([4,7,12], [true,false,true]))
+
+
+//// 퀸
+//
+//import Foundation
+//
+//func solution(_ n:Int) -> Int {
+//	var count = 0
+//
+//	for i in 0..<n {
+//		var index : [Int:Bool] = [:]
+//
+//			
+//			if j != i && j != i-1 && j != i+1 {
+//				index[j] = true
+//			}
+//		}
+//
+//		print(index)
+////		if index.count == n-1 {
+////			count += 1
+////		}
+//	
+//	return count
+//}
+//
+//func queen(_ n:Int) -> Bool {
+//	for i in 0..<n {
+//		for j in 0..<n {
+//			
+//		}
+//	}
+//}
+//	
+//print(solution(4))
+//
