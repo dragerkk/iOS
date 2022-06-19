@@ -30,10 +30,21 @@
 //}
 
 
-// 1546 평균
-let n = Float(readLine()!)!
-let score = readLine()!.split(separator : " ").map{Float(String($0))!}
-let maxScore = score.max()!
-let fakeScore = score.map{$0/maxScore*100}
-let fakeAvarage = fakeScore.reduce(0,+)/n
-print(fakeAvarage)
+//// 1546 평균
+//let n = Float(readLine()!)!
+//let score = readLine()!.split(separator : " ").map{Float(String($0))!}
+//let maxScore = score.max()!
+//let fakeScore = score.map{$0/maxScore*100}
+//let fakeAvarage = fakeScore.reduce(0,+)/n
+//print(fakeAvarage)
+
+
+// 5691 평균 중앙값 문제
+
+while true {
+	let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+	if input[0] == 0 && input[1] == 0 {
+		break
+	}
+	print(2*input[0]-input[1])
+}
