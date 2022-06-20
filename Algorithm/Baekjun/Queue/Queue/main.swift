@@ -1,3 +1,4 @@
+import Darwin
 //// 10845 큐
 //
 //let n = Int(readLine()!)!
@@ -36,3 +37,48 @@
 //	}
 //}
 
+
+//// 요세푸스 문제 -1, 시간초과
+//
+//let jos = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var queue = Array(1...jos[0])
+//var index = jos[1] - 1
+//
+//var result = [Int]()
+//
+//while queue.count > 0 {
+//	for _ in 0..<index {
+//		queue.append(queue.removeFirst())
+////		queue.append(queue[0])
+////		queue.removeFirst()
+//	}
+//
+//	result.append(queue.removeFirst())
+////	result.append(queue[0])
+////	queue.removeFirst()
+//}
+//
+//print("<" + result.map{String($0)}.joined(separator: ", ") + ">")
+
+
+//// 요세푸스 문제 -2
+//
+//let jos = readLine()!.split(separator: " ").map{Int(String($0))!}
+//var queue = Array(1...jos[0])
+//var count = jos[1] - 1
+//
+////var result = [Int]()
+//var result = [String]()
+//var index = 0
+//
+//while result.count != jos[0] {
+//	for _ in 0..<count {
+//		queue.append(queue[index])
+//		index += 1
+//	}
+//
+//	result.append(String(queue[index]))
+//	index += 1
+//}
+//
+//print("<" + result.joined(separator: ", ") + ">")
