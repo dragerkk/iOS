@@ -38,7 +38,7 @@ import Darwin
 //}
 
 
-//// 요세푸스 문제 -1, 시간초과
+//// 1158 요세푸스 문제 -1, 시간초과
 //
 //let jos = readLine()!.split(separator: " ").map{Int(String($0))!}
 //var queue = Array(1...jos[0])
@@ -61,7 +61,7 @@ import Darwin
 //print("<" + result.map{String($0)}.joined(separator: ", ") + ">")
 
 
-//// 요세푸스 문제 -2
+//// 1158 요세푸스 문제 -2
 //
 //let jos = readLine()!.split(separator: " ").map{Int(String($0))!}
 //var queue = Array(1...jos[0])
@@ -82,3 +82,67 @@ import Darwin
 //}
 //
 //print("<" + result.joined(separator: ", ") + ">")
+
+
+//// 1158 요세푸스 문제 -3 (with LinkedList) - 시간초과
+//
+//class Node<T> {
+//	var data: T?
+//	var next: Node?
+//
+//	init(data: T?, next: Node? = nil) {
+//		self.data = data
+//		self.next = next
+//	}
+//}
+//
+//class LinkedList<T> {
+//	var head: Node<T>?
+//
+//	init(head: Node<T>?) {
+//		self.head = head
+//	}
+//
+//	func append(data: T?) {
+//		if head == nil {
+//			head = Node(data: data)
+//			return
+//		}
+//		var node = head
+//		while node?.next != nil {
+//			node = node?.next
+//		}
+//		node?.next = Node(data: data)
+//	}
+//
+//	func removeFirstNode() {
+//		if head == nil {
+//			return
+//		}
+//		head = head?.next
+//	}
+//
+//
+//}
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//let n = input[0]
+//let k = input[1]
+//
+//var list = LinkedList<Int>(head: nil)
+//
+//for i in 1...n {
+//	list.append(data: i)
+//}
+//
+//var result = [String]()
+//
+//while result.count != n {
+//	for _ in 1..<k {
+//		list.append(data: list.head?.data)
+//		list.removeFirstNode()
+//	}
+//	result.append(String((list.head?.data)!))
+//}
+//
+//print("<\(result.joined(separator: ", "))>")
