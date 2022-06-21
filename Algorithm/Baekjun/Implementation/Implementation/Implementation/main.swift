@@ -38,3 +38,44 @@ import CoreFoundation
 //		print(ch, terminator: "")
 //	}
 //}
+
+
+// 11970 AB
+
+let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+let n = input[0]
+let k = input[1]
+
+var result = ""
+for i in 1..<n {
+	if k == 0 {
+		result += "B"
+		result += Array(repeating: "A", count: n-1)
+		break
+	}
+	if i * (n-i) == k {
+		result += Array(repeating: "A", count: i)
+		result += Array(repeating: "B", count: n-i)
+		break
+	} else if i * (n-1-i) == k {
+		result += "B"
+		result += Array(repeating: "A", count: i)
+		result += Array(repeating: "B", count: n-1-i)
+		break
+	}
+}
+if result.count == 0 {
+	print(-1)
+} else {
+	print(result)
+}
+
+
+
+
+
+//if max.max() >= k {
+//	print()
+//} else {
+//	print(-1)
+//}
