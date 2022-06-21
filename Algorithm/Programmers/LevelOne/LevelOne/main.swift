@@ -986,3 +986,97 @@
 //	
 //print(solution(4))
 //
+
+
+//// 크레인 인형뽑기 게임
+//import Foundation
+//
+//func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
+//
+//	var doll = board
+//	let n = doll[0].count
+//	var result = [Int]()
+//
+//	var sum = 0
+//
+//	for i in 0..<moves.count {
+//		let index = moves[i]-1
+//		for j in 0..<n {
+//			if doll[j][index] != 0 {
+//				result.append(doll[j][index])
+//				doll[j][index] = 0
+//				break
+//			}
+//		}
+//		if result.count >= 2 && result[result.count-1] == result[result.count-2] {
+//			sum += 2
+//			result.removeLast(2)
+//		}
+//	}
+//	return sum
+//}
+//
+//print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4]))
+
+
+
+//// 카카오20인턴 - 키패드 누르기
+//
+//import Foundation
+//
+//func solution(_ numbers:[Int], _ hand:String) -> String {
+//
+//	let dictKeypad : [String:[Int]] = [
+//		"1":[0,0], "4":[0,1], "7":[0,2], "*":[0,3],
+//		"2":[1,0], "5":[1,1], "8":[1,2], "0":[1,3],
+//		"3":[2,0], "6":[2,1], "9":[2,2], "#":[2,3]
+//	]
+//	var leftPos = dictKeypad["*"]!
+//	var rightPos = dictKeypad["#"]!
+//
+//	var result = ""
+//
+//	for i in 0..<numbers.count {
+//		let num = String(numbers[i])
+//		let pos = dictKeypad[num]!
+//
+//		if dictKeypad[num]![0] == 0 {
+//			result += "L"
+//			leftPos = pos
+//		} else if dictKeypad[num]![0] == 2 {
+//			result += "R"
+//			rightPos = pos
+//		} else {
+//			if distance(leftPos, pos) < distance(rightPos, pos) {
+//				result += "L"
+//				leftPos = pos
+//			} else if distance(rightPos, pos) < distance(leftPos, pos) {
+//				result += "R"
+//				rightPos = pos
+//			} else {
+//				if hand == "right" {
+//					result += "R"
+//					rightPos = pos
+//				} else {
+//					result += "L"
+//					leftPos = pos
+//				}
+//			}
+//		}
+//	}
+//
+//	return result
+//}
+//
+//
+//func distance(_ n1:[Int], _ n2:[Int]) -> Int {
+//	var x = n1[0]-n2[0]
+//	var y = n1[1]-n2[1]
+//	x = x < 0 ? -x : x
+//	y = y < 0 ? -y : y
+//	let dis = x+y
+//
+//	return dis
+//}
+//
+
