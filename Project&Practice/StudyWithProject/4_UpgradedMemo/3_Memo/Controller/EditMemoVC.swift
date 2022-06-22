@@ -13,10 +13,10 @@ class EditMemoVC: UIViewController {
 	
 	var memo: Memo?
 	
+//	var sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+	
 	@IBOutlet weak var memoTextView: UITextView!
 	@IBOutlet weak var saveButton: UIBarButtonItem!
-	
-	
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +24,16 @@ class EditMemoVC: UIViewController {
 		if let memo = memo {
 			memoTextView.text = memo.title + (memo.desc ?? "") + (memo.content ?? "")
 		}
-    }
-    
+		
+		
+}
+	
+	
+	
 	override func viewDidAppear(_ animated: Bool) {
 		memoTextView.becomeFirstResponder()
 	}
+	
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.view.endEditing(true)
@@ -69,3 +74,4 @@ class EditMemoVC: UIViewController {
     }
 
 }
+

@@ -140,9 +140,9 @@
 				3DDD8F5E2858FA94000E1026 /* Model */,
 				3DDD8F602858FBB3000E1026 /* View */,
 				3DDD8F5F2858FB19000E1026 /* Controller */,
-				3DF10F9B28577EF600F676BA /* SceneDelegate.swift */,
 				3DF10FA228577EFA00F676BA /* Assets.xcassets */,
 				3DF10FA428577EFA00F676BA /* LaunchScreen.storyboard */,
+				3DF10F9B28577EF600F676BA /* SceneDelegate.swift */,
 				3DF10F9928577EF600F676BA /* AppDelegate.swift */,
 				3DF10FA728577EFA00F676BA /* Info.plist */,
 			);
@@ -245,7 +245,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3DF10F9128577EF500F676BA /* Build configuration list for PBXProject "3_Memo" */;
+			buildConfigurationList = 3DF10F9128577EF500F676BA /* Build configuration list for PBXProject "4_UpgradedMemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -609,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3DF10F9128577EF500F676BA /* Build configuration list for PBXProject "3_Memo" */ = {
+		3DF10F9128577EF500F676BA /* Build configuration list for PBXProject "4_UpgradedMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3DF10FBE28577EFA00F676BA /* Debug */,
