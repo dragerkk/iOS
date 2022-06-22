@@ -1080,3 +1080,46 @@
 //}
 //
 
+
+// 21카카오 인턴 숫자 문자열과 영단어
+//
+//import Foundation
+//
+//func solution(_ s:String) -> Int {
+//	let dict = [
+//		"zero":0, "one":1, "two":2, "three":3, "four":4, "five":5,
+//		"six":6, "seven":7, "eight":8, "nine":9
+//	]
+//
+//	var result = ""
+//	var temp = ""
+//
+//	for i in s {
+//		if i.isLetter {
+//			temp += String(i)
+//		} else {
+//			result += String(i)
+//		}
+//
+//		if dict[temp] != nil {
+//			result += String(dict[temp]!)
+//			temp = ""
+//		}
+//	}
+//
+//	return Int(result) ?? 0
+//}
+
+
+// 21카카오 인턴 숫자 문자열과 영단어 -2, replacingOccurrences 사용
+//import Foundation
+//
+//var str = "23fourfive6one"
+//let arr = ["zero","one","two","three","four","five","six","seven","eight","nine"]
+//
+//for i in 0..<arr.count {
+//	str = str.replacingOccurrences(of: arr[i], with: String(i))
+//}
+//
+//print(Int(str)!)
+//
