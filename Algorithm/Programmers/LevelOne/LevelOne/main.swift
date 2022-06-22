@@ -1123,3 +1123,81 @@
 //
 //print(Int(str)!)
 //
+
+
+//// 21KAKAO 신규 아이디 추천
+//
+//import Foundation
+//
+//func solution(_ new_id:String) -> String {
+//
+//	let availList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+//	"t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","_","."]
+//
+//	var id = new_id.lowercased().map{String($0)}
+//
+//	var result = [String]()
+//
+//	for i in 0..<id.count {
+//		if availList.contains(id[i]) {
+//			result.append(id[i])
+//		}
+//	}
+//
+//	var index = 0
+//
+//	while true {
+//		if index == result.count-1 {
+//			break
+//		}
+//		if result.count >= 2 {
+//			if result[index] == "." && result[index+1] == "." {
+//				result.remove(at:index)
+//				continue
+//			}
+//		} else {
+//			break
+//		}
+//		index += 1
+//
+//	}
+//
+//	while true {
+//		if result.first == "." {
+//			result.removeFirst()
+//			continue
+//		} else if result.last == "." {
+//			result.removeLast()
+//			continue
+//		}
+//
+//		if result.count == 0 {
+//			result.append("a")
+//			continue
+//		}
+//
+//		if result.count > 15 {
+//			result.removeLast(result.count-15)
+//			if result.last == "" {
+//				result.removeLast()
+//			}
+//			continue
+//		}
+//
+//		if result.count < 3 {
+//			result.append(result.last!)
+//			continue
+//		}
+//
+//		break
+//
+//	}
+//
+//	return result.joined()
+//}
+//
+//// print(solution("...!@BaT#*..y.abcdefghijklm"))
+////print(solution("z-+.^."))
+////print(solution("=.="))
+////print(solution("123_.def"))
+////print(solution("abcdefghijklmn.p"))
