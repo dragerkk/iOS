@@ -1201,3 +1201,150 @@
 ////print(solution("=.="))
 ////print(solution("123_.def"))
 ////print(solution("abcdefghijklmn.p"))
+
+
+//// 로또의 최고 순위와 최저 순위
+//
+//import Foundation
+//
+//func solution(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
+//
+//	var checked = 0
+//	var zeroCount = 0
+//
+//	for i in lottos {
+//		if win_nums.contains(i) {
+//			checked += 1
+//		}
+//		if i == 0 {
+//			zeroCount += 1
+//		}
+//	}
+//
+//	var answer = [Int]()
+//
+//	answer.append(getRank(checked + zeroCount))
+//	answer.append(getRank(checked))
+//
+//	return answer
+//}
+//
+//func getRank(_ n:Int) -> Int {
+//	switch n {
+//		case 0,1 :
+//		return 6
+//		case 2 :
+//		return 5
+//		case 3 :
+//		return 4
+//		case 4 :
+//		return 3
+//		case 5 :
+//		return 2
+//		case 6 :
+//		return 1
+//		default :
+//		return 0
+//	}
+//}
+
+
+//// 22카카오 - 신고결과받기 - 3번 시간초과
+//
+//import Foundation
+//
+//func solution(_ id_list:[String], _ report:[String], _ k:Int) -> [Int] {
+//
+//	var reported = [String:Int]()
+//	var user = [String:[String]]()
+//	var suspended = [String]()
+//
+//	for i in id_list { //전체 이용자 딕셔너리
+//		reported[i] = 0
+//	}
+//
+//	// 중복신고 제거, user에 넣기.
+//	var a = Array(Set(report.map{String($0)}))
+//
+//	for i in a {
+//		let s = i.split(separator: " ").map{String($0)}
+//
+//		if user[s[0]] == nil {
+//			user[s[0]] = [s[1]]
+//		} else {
+//			user[s[0]]!.append(s[1])
+//		}
+//
+//		reported[s[1]]! += 1
+//	}
+//
+//	// reported 딕셔너리에서 k만큼 신고받은 유저 찾기 -> suspended
+//
+//	for i in id_list {
+//		if reported[i]! >= k {
+//			suspended.append(i)
+//		}
+//	}
+//
+//	// 정지결과 메일 받을 유저 탐색
+//	var result = [Int]()
+//
+//	for i in id_list {
+//		var count = 0
+//		for j in suspended {
+//			if user[i] != nil {
+//				if user[i]!.contains(j) {
+//					count += 1
+//				}
+//			}
+//		}
+//		result.append(count)
+//	}
+//
+//	return result
+//}
+
+
+//// 22카카오 - 신고결과받기 -2
+//
+//import Foundation
+//
+//func solution(_ id_list:[String], _ report:[String], _ k:Int) -> [Int] {
+//
+//	var userGetMail = [String:Int]()
+//	var user = [String:[String]]()
+//	var result = [Int]()
+//
+//	for i in id_list {
+//		userGetMail[i] = 0
+//	}
+//
+//	// 중복신고 제거, user에 넣기&count 피신고자:[신고자]
+//	let a = Array(Set(report.map{String($0)}))
+//
+//	for i in a {
+//		let s = i.split(separator: " ").map{String($0)}
+//
+//		if user[s[1]] == nil {
+//			user[s[1]] = [s[0]]
+//		} else {
+//			user[s[1]]!.append(s[0])
+//		}
+//	}
+//
+//	// k만큼 신고받은 유저 찾기, 정지결과 메일 받을 유저 탐색
+//	for i in user.keys {
+//		if user[i]!.count >= k {
+//			for j in user[i]! {
+//				userGetMail[j]! += 1
+//			}
+//		}
+//	}
+//
+//	for i in id_list {
+//		result.append(userGetMail[i]!)
+//	}
+//
+//
+//	return result
+//}
