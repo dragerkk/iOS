@@ -40,42 +40,72 @@ import CoreFoundation
 //}
 
 
-// 11970 AB
-
-let input = readLine()!.split(separator: " ").map{Int(String($0))!}
-let n = input[0]
-let k = input[1]
-
-var result = ""
-for i in 1..<n {
-	if k == 0 {
-		result += "B"
-		result += Array(repeating: "A", count: n-1)
-		break
-	}
-	if i * (n-i) == k {
-		result += Array(repeating: "A", count: i)
-		result += Array(repeating: "B", count: n-i)
-		break
-	} else if i * (n-1-i) == k {
-		result += "B"
-		result += Array(repeating: "A", count: i)
-		result += Array(repeating: "B", count: n-1-i)
-		break
-	}
-}
-if result.count == 0 {
-	print(-1)
-} else {
-	print(result)
-}
-
-
-
-
-
-//if max.max() >= k {
-//	print()
-//} else {
-//	print(-1)
+//// 11970 AB
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//let n = input[0]
+//let k = input[1]
+//
+//var result = ""
+//for i in 1..<n {
+//	if k == 0 {
+//		result += "B"
+//		result += Array(repeating: "A", count: n-1)
+//		break
+//	}
+//	if i * (n-i) == k {
+//		result += Array(repeating: "A", count: i)
+//		result += Array(repeating: "B", count: n-i)
+//		break
+//	} else if i * (n-1-i) == k {
+//		result += "B"
+//		result += Array(repeating: "A", count: i)
+//		result += Array(repeating: "B", count: n-1-i)
+//		break
+//	}
 //}
+//if result.count == 0 {
+//	print(-1)
+//} else {
+//	print(result)
+//}
+
+
+// 단어 뒤집기 2
+
+//let input = readLine()!
+//
+//var isTag = false
+//
+//var result = ""
+//var word = ""
+//
+//for i in input {
+//	if isTag == false {
+//		if i == "<" {
+//			isTag = true
+//			result += word.reversed()
+//			result += String(i)
+//			word = ""
+//		} else if i == " " {
+//			result += word.reversed()
+//			word = ""
+//			result += " "
+//		} else {
+//			word += String(i)
+//		}
+//	} else if isTag == true {
+//		if i == ">" {
+//			isTag = false
+//			result += String(i)
+//		} else {
+//			result += String(i)
+//		}
+//	}
+//}
+//if word.count != 0 {
+//	result += word.reversed()
+//}
+//
+//print(result)
+   
