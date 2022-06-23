@@ -16,3 +16,5 @@
 ## 4_upgradeMemo##
 - scenedelegate use
 : view changed when app goes background (for security)
+- folder list edit row
+: can adjust list's position

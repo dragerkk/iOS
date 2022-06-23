@@ -45,6 +45,7 @@ class FolderTableVC: UITableViewController {
 		}
 		
 		self.present(alert, animated: true, completion: nil)
+		
 	}
 	
     // MARK: - Table view data source
@@ -84,6 +85,13 @@ class FolderTableVC: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+	
+	// Edit Cell's position
+	override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		let targetItem = self.folders[sourceIndexPath.row]
+		self.folders.remove(at: sourceIndexPath.row)
+		self.folders.insert(targetItem, at: destinationIndexPath.row)
+	}
     
 	// MARK: - View & Send Data to selected Folder's memo list
 	

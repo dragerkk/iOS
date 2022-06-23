@@ -29,14 +29,8 @@ class EditMemoVC: UIViewController {
 }
 	
 	
-	
 	override func viewDidAppear(_ animated: Bool) {
 		memoTextView.becomeFirstResponder()
-	}
-	
-	
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		self.view.endEditing(true)
 	}
 	
 
