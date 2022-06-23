@@ -10,36 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-	
-	func callBackgroundView(_ getBool: Bool) {
-		let TAG_BG = -101
-		let backgroundView = window?.rootViewController?.view.window?.viewWithTag(TAG_BG)
-		
-		if getBool {
-			if backgroundView == nil {
-				let bgView = UIView()
-				bgView.frame = UIScreen.main.bounds
-				bgView.tag = TAG_BG
-				bgView.backgroundColor = .black
-				
-				let label = UILabel()
-				label.frame = UIScreen.main.bounds
-				label.textAlignment = .center
-				label.font = UIFont.systemFont(ofSize: 30)
-				label.textColor = .yellow
-				label.numberOfLines = 0
-				label.text = "응 안보임"
-				bgView.addSubview(label)
-				
-				window?.rootViewController?.view.window?.addSubview(bgView)
-			}
-		} else {
-			if let backgroundView = backgroundView {
-				backgroundView.removeFromSuperview()
-			}
-		}
-	}
-
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -84,3 +54,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+	func callBackgroundView(_ getBool: Bool) {
+		let TAG_BG = -101
+		let backgroundView = window?.rootViewController?.view.window?.viewWithTag(TAG_BG)
+		
+		if getBool {
+			if backgroundView == nil {
+				let bgView = UIView()
+				bgView.frame = UIScreen.main.bounds
+				bgView.tag = TAG_BG
+				bgView.backgroundColor = .black
+				
+				let label = UILabel()
+				label.frame = UIScreen.main.bounds
+				label.textAlignment = .center
+				label.font = UIFont.systemFont(ofSize: 30)
+				label.textColor = .yellow
+				label.numberOfLines = 0
+				label.text = "응 안보임"
+				bgView.addSubview(label)
+				
+				window?.rootViewController?.view.window?.addSubview(bgView)
+			}
+		} else {
+			if let backgroundView = backgroundView {
+				backgroundView.removeFromSuperview()
+			}
+		}
+	}
+}
