@@ -151,4 +151,33 @@
 //}
 
 
-// 9251 LCS -2, DP
+
+//// 2502 - 떡 먹는 호랑이
+//
+//let input = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//let d = input[0]
+//let k = input[1]
+//
+//var find = false
+//
+//for i in 1...100000 {
+//	if find == true {
+//		break
+//	}
+//	for j in i...100000 {
+//		if k == fibo(d-2)*i + fibo(d-1)*j {
+//			print(i)
+//			print(j)
+//			find = true
+//			break
+//		}
+//	}
+//}
+//
+//func fibo(_ n: Int) -> Int {
+//	if n == 1 || n == 2 {
+//		return 1
+//	}
+//	return fibo(n-1) + fibo(n-2)
+//}
