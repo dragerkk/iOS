@@ -186,3 +186,34 @@
 // 12852 - 1로 만들기 2 -- 그래프 알아야할 듯
 
 
+//// 14002 - 가장 긴 증가하는 부분 수열 4
+//let n = Int(readLine()!)!
+//
+//let num = readLine()!.split(separator: " ").map{Int(String($0))!}
+//
+//var dp = [Int:Int]()
+//var result = [Int]()
+//
+//// LIS (최장부분수열 찾기)
+//for i in 0..<n {
+//	dp[i] = 1
+//	for j in (0..<i).reversed() {
+//		if num[i] > num[j] {
+//			dp[i] = max(dp[i]!, dp[j]!+1)
+//		}
+//	}
+//}
+//
+//// 최장부분수열을 역으로 배열에서 찾아서 출력
+//let lisIndex = dp.keys.filter{dp[$0] == dp.values.max()!}
+//var index = lisIndex[0]
+//result.append(num[index])
+//
+//for i in (0..<lisIndex[0]).reversed() {
+//	if dp[i] == dp[index]! - 1 && num[i] < result.last! {
+//		result.append(num[i])
+//		index = i
+//	}
+//}
+//print(dp[lisIndex[0]]!)
+//print(result.reversed().map{String($0)}.joined(separator: " "))
