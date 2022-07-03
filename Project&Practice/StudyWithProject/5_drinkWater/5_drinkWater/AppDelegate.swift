@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  5_LibraryPractice
+//  5_drinkWater
 //
-//  Created by 강주원 on 2022/06/28.
+//  Created by 강주원 on 2022/07/03.
 //
 
 import UIKit
