@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1226B9C4BF5207D42FE5745D /* Pods_5_drinkWater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E3096F2092B0C1F5A8D273 /* Pods_5_drinkWater.framework */; };
 		3D69493E2871D45F00D49394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69493D2871D45F00D49394 /* AppDelegate.swift */; };
 		3D6949402871D45F00D49394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69493F2871D45F00D49394 /* SceneDelegate.swift */; };
 		3D6949422871D45F00D49394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6949412871D45F00D49394 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		3D6949462871D46100D49394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6949492871D46100D49394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D69494B2871D46100D49394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E3096F2092B0C1F5A8D273 /* Pods_5_drinkWater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_5_drinkWater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82699FD955159DEADB563B23 /* Pods-5_drinkWater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-5_drinkWater.debug.xcconfig"; path = "Target Support Files/Pods-5_drinkWater/Pods-5_drinkWater.debug.xcconfig"; sourceTree = "<group>"; };
+		F008F8FF54855A2F3712410B /* Pods-5_drinkWater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-5_drinkWater.release.xcconfig"; path = "Target Support Files/Pods-5_drinkWater/Pods-5_drinkWater.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1226B9C4BF5207D42FE5745D /* Pods_5_drinkWater.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3D69493C2871D45F00D49394 /* 5_drinkWater */,
 				3D69493B2871D45F00D49394 /* Products */,
+				9DE4C0027D9F744CE5253E6E /* Pods */,
+				F719520C5A57AC8BFC8E2C01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = 5_drinkWater;
 			sourceTree = "<group>";
 		};
+		9DE4C0027D9F744CE5253E6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82699FD955159DEADB563B23 /* Pods-5_drinkWater.debug.xcconfig */,
+				F008F8FF54855A2F3712410B /* Pods-5_drinkWater.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F719520C5A57AC8BFC8E2C01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67E3096F2092B0C1F5A8D273 /* Pods_5_drinkWater.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D69494E2871D46100D49394 /* Build configuration list for PBXNativeTarget "5_drinkWater" */;
 			buildPhases = (
+				4929827198679EB567F76180 /* [CP] Check Pods Manifest.lock */,
 				3D6949362871D45F00D49394 /* Sources */,
 				3D6949372871D45F00D49394 /* Frameworks */,
 				3D6949382871D45F00D49394 /* Resources */,
+				E89AD89418A105E8C9E5ACDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4929827198679EB567F76180 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-5_drinkWater-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E89AD89418A105E8C9E5ACDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-5_drinkWater/Pods-5_drinkWater-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-5_drinkWater/Pods-5_drinkWater-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-5_drinkWater/Pods-5_drinkWater-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D6949362871D45F00D49394 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		3D69494F2871D46100D49394 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82699FD955159DEADB563B23 /* Pods-5_drinkWater.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		3D6949502871D46100D49394 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F008F8FF54855A2F3712410B /* Pods-5_drinkWater.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

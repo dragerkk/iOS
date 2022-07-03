@@ -1,0 +1,6 @@
+framework module Pods_5_drinkWater {
+  umbrella header "Pods-5_drinkWater-umbrella.h"
+
+  export *
+  module * { export * }
+}
