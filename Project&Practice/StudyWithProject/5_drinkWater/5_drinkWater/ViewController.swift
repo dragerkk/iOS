@@ -22,8 +22,11 @@ class ViewController: UIViewController {
 		view.backgroundColor = .white
 		
 		self.view.addSubview(sampleView)
-		sampleView.snp.makeConstraints{ (make) in
-			make.edges.equalTo(view).inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+//		sampleView.snp.makeConstraints{ (make) in
+//			make.edges.equalTo(view).inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+//		}
+		sampleView.snp.makeConstraints {
+			$0.edges.equalTo(view.safeAreaLayoutGuide)
 		}
 	}
 	
