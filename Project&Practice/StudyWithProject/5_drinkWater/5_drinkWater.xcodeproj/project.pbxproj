@@ -80,7 +80,6 @@
 				82699FD955159DEADB563B23 /* Pods-5_drinkWater.debug.xcconfig */,
 				F008F8FF54855A2F3712410B /* Pods-5_drinkWater.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
