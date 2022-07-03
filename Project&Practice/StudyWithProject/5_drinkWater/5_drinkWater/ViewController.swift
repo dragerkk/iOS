@@ -10,26 +10,10 @@ import SnapKit
 
 class ViewController: UIViewController {
 
-	let topView: UIView = {
-		let view = UIView()
-		view.backgroundColor = .white
-		return view
-	} ()
-	
-	let myImageView: UIImageView = {
-		let view = UIImageView()
-		view.backgroundColor = .systemBlue
-		view.image = UIImage(named: "i1")
-		return view
-	} ()
-	
-	var waterButton = UIButton()
-//	let waterButton: UIButton = {
-//		let button = UIButton()
-////		button.backgroundColor = .yellow
-//		button.setBackgroundImage(UIImage(named: "cup"), for: .normal)
-//		return button
-//	} ()
+	let topView = UIView()
+	let myImageView = UIImageView()
+	let waterButton = UIButton()
+	let resetButton = UIButton()
 	
 	var buttonCount = 0
 	
@@ -37,7 +21,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		view.backgroundColor = .systemRed
+//		view.backgroundColor = .systemRed
 		
 		self.setView()
 	}
@@ -47,7 +31,7 @@ class ViewController: UIViewController {
 extension ViewController {
 	
 	func setView() { // Setting Views
-		// MARK: - topView Constraints
+		// MARK: - topView
 		self.view.addSubview(topView)
 		topView.snp.makeConstraints {
 			$0.top.equalTo(view.safeAreaLayoutGuide)
@@ -56,25 +40,37 @@ extension ViewController {
 			$0.height.equalTo(500)
 		}
 		
-		// MARK: - myImageView Constraints
+		// MARK: - myImageView
+		myImageView.image = UIImage(named: "i1")
 		self.topView.addSubview(myImageView)
 		myImageView.snp.makeConstraints {
 			$0.edges.equalTo(topView)
 		}
 		
-		// MARK: - button1, button2
+		// MARK: - watterButton, resetButton
 		self.view.addSubview(self.waterButton)
 		waterButton.setBackgroundImage(UIImage(named: "cup"), for: .normal)
 		waterButton.snp.makeConstraints {
-			$0.top.equalTo(topView.snp.bottom).offset(10)
+			$0.top.equalTo(topView.snp.bottom).offset(20)
+			$0.centerX.equalToSuperview()
+		}
+		
+		self.view.addSubview(self.resetButton)
+		resetButton.setTitle("RESET", for: .normal)
+		resetButton.setTitleColor(UIColor.darkGray, for: .normal)
+		resetButton.titleLabel?.font = UIFont(name: "Verdana", size: 20)
+//		resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+		resetButton.snp.makeConstraints {
+			$0.top.equalTo(waterButton.snp.bottom).offset(30)
 			$0.centerX.equalToSuperview()
 		}
 		
 		// MARK: - Button Event
 		self.waterButton.addTarget(self, action: #selector(waterButtonTapped(_sender:)), for: .touchUpInside)
-		
+		self.resetButton.addTarget(self, action: #selector(resetButtonTapped(_sender:)), for: .touchUpInside)
 	}
 	
+	// MARK: - waterButton Event
 	@objc func waterButtonTapped(_sender: UIButton) {
 		self.buttonCount += 1
 		
@@ -111,5 +107,10 @@ extension ViewController {
 		default:
 			myImageView.image = UIImage(named: "i1")
 		}
+	}
+	
+	@objc func resetButtonTapped(_sender: UIButton) {
+		self.buttonCount = 0
+		setView()
 	}
 }
