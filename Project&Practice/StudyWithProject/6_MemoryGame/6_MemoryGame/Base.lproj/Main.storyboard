@@ -16,29 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-oO-6yf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-oO-6yf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5O-2F-k2p" userLabel="TimeView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-tc-gLs" userLabel="CardView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="491"/>
                                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTU-Uu-ejW" userLabel="ScoreView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
                                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Y5O-2F-k2p" firstAttribute="top" secondItem="ZTL-oO-6yf" secondAttribute="top" id="4j4-uB-vvM"/>
-                                    <constraint firstItem="VTU-Uu-ejW" firstAttribute="top" secondItem="tdv-tc-gLs" secondAttribute="bottom" id="98h-6t-42y"/>
-                                    <constraint firstItem="Y5O-2F-k2p" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="1/5" id="OeO-YR-DdL"/>
-                                    <constraint firstItem="VTU-Uu-ejW" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="1/5" id="PLS-jK-Ez1"/>
-                                    <constraint firstItem="tdv-tc-gLs" firstAttribute="top" secondItem="Y5O-2F-k2p" secondAttribute="bottom" id="YBs-rj-vjN"/>
-                                    <constraint firstItem="tdv-tc-gLs" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="3/5" id="ntr-hV-6GU"/>
+                                    <constraint firstItem="tdv-tc-gLs" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="0.6" id="e64-Ys-8B1"/>
+                                    <constraint firstItem="Y5O-2F-k2p" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="0.2" id="elC-JR-uUN"/>
+                                    <constraint firstItem="VTU-Uu-ejW" firstAttribute="height" secondItem="ZTL-oO-6yf" secondAttribute="height" multiplier="0.2" id="jqA-pj-lAK"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -51,6 +48,9 @@
                             <constraint firstAttribute="trailing" secondItem="ZTL-oO-6yf" secondAttribute="trailing" id="xY2-zI-nvc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="test" destination="Y5O-2F-k2p" id="VJt-Ld-btv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
