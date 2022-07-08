@@ -14,6 +14,8 @@
 		3DC8425D287481320010FA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425C287481320010FA14 /* Assets.xcassets */; };
 		3DC84260287481320010FA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425E287481320010FA14 /* LaunchScreen.storyboard */; };
 		3DCF3B022876AD3200D247F9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B012876AD3200D247F9 /* Card.swift */; };
+		3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B092878330100D247F9 /* CardModel.swift */; };
+		3DCF3B0C2878548400D247F9 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0B2878548400D247F9 /* CardCell.swift */; };
 		D28E5FAED9FC63A29369E27B /* Pods_6_MemoryGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557325367A0E358731249A14 /* Pods_6_MemoryGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,9 +29,9 @@
 		3DC8425F287481320010FA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DC84261287481320010FA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DCF3B012876AD3200D247F9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3DCF3B092878330100D247F9 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		3DCF3B0B2878548400D247F9 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		557325367A0E358731249A14 /* Pods_6_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_6_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CB2AD9B433653252C5D3242 /* Pods-6_MemoryGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-6_MemoryGame.debug.xcconfig"; path = "Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame.debug.xcconfig"; sourceTree = "<group>"; };
-		D0814396612101C655D1908F /* Pods-6_MemoryGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-6_MemoryGame.release.xcconfig"; path = "Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,21 +46,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A68EF32DD4732537A30FA90 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5CB2AD9B433653252C5D3242 /* Pods-6_MemoryGame.debug.xcconfig */,
-				D0814396612101C655D1908F /* Pods-6_MemoryGame.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		3DC842472874812E0010FA14 = {
 			isa = PBXGroup;
 			children = (
 				3DC842522874812E0010FA14 /* 6_MemoryGame */,
 				3DC842512874812E0010FA14 /* Products */,
-				2A68EF32DD4732537A30FA90 /* Pods */,
 				85BA48A00143EA0E777E468D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +70,9 @@
 				3DC842552874812E0010FA14 /* SceneDelegate.swift */,
 				3DC842572874812E0010FA14 /* ViewController.swift */,
 				3DCF3B012876AD3200D247F9 /* Card.swift */,
+				3DCF3B092878330100D247F9 /* CardModel.swift */,
 				3DC842592874812E0010FA14 /* Main.storyboard */,
+				3DCF3B0B2878548400D247F9 /* CardCell.swift */,
 				3DC8425C287481320010FA14 /* Assets.xcassets */,
 				3DC8425E287481320010FA14 /* LaunchScreen.storyboard */,
 				3DC84261287481320010FA14 /* Info.plist */,
@@ -213,6 +207,8 @@
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
 				3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */,
 				3DCF3B022876AD3200D247F9 /* Card.swift in Sources */,
+				3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */,
+				3DCF3B0C2878548400D247F9 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +350,6 @@
 		};
 		3DC84265287481320010FA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CB2AD9B433653252C5D3242 /* Pods-6_MemoryGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,7 +379,6 @@
 		};
 		3DC84266287481320010FA14 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0814396612101C655D1908F /* Pods-6_MemoryGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
