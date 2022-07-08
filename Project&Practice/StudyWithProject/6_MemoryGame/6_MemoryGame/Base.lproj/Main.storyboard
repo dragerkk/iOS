@@ -22,7 +22,19 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5O-2F-k2p" userLabel="TimeView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-E6-NQI">
+                                                <rect key="frame" x="207" y="82" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstItem="EAb-E6-NQI" firstAttribute="centerX" secondItem="Y5O-2F-k2p" secondAttribute="centerX" id="Nf2-04-Lnx"/>
+                                            <constraint firstItem="EAb-E6-NQI" firstAttribute="centerY" secondItem="Y5O-2F-k2p" secondAttribute="centerY" id="z7J-bk-Bj9"/>
+                                        </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-vS-2o3">
                                         <rect key="frame" x="0.0" y="163.5" width="414" height="491"/>
@@ -34,7 +46,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="GSl-Qc-DDx">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="GSl-Qc-DDx" customClass="CardCell" customModule="__MemoryGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kXI-1l-2Et">
@@ -59,6 +71,10 @@
                                                         <constraint firstAttribute="bottom" secondItem="vij-vX-rlB" secondAttribute="bottom" id="tgJ-hB-9FS"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="backImageView" destination="nm3-xb-d75" id="9ft-6k-PKw"/>
+                                                    <outlet property="frontImageView" destination="vij-vX-rlB" id="ktF-IZ-cd6"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -83,6 +99,10 @@
                             <constraint firstAttribute="trailing" secondItem="ZTL-oO-6yf" secondAttribute="trailing" id="xY2-zI-nvc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="VuE-vS-2o3" id="4g2-Kv-Qan"/>
+                        <outlet property="timerLabel" destination="EAb-E6-NQI" id="Zit-cB-1QJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

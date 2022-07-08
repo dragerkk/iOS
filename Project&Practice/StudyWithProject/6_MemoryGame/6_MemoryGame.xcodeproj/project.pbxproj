@@ -16,7 +16,6 @@
 		3DCF3B022876AD3200D247F9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B012876AD3200D247F9 /* Card.swift */; };
 		3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B092878330100D247F9 /* CardModel.swift */; };
 		3DCF3B0C2878548400D247F9 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0B2878548400D247F9 /* CardCell.swift */; };
-		D28E5FAED9FC63A29369E27B /* Pods_6_MemoryGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557325367A0E358731249A14 /* Pods_6_MemoryGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		3DCF3B012876AD3200D247F9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3DCF3B092878330100D247F9 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		3DCF3B0B2878548400D247F9 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		557325367A0E358731249A14 /* Pods_6_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_6_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28E5FAED9FC63A29369E27B /* Pods_6_MemoryGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +48,6 @@
 			children = (
 				3DC842522874812E0010FA14 /* 6_MemoryGame */,
 				3DC842512874812E0010FA14 /* Products */,
-				85BA48A00143EA0E777E468D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,23 +65,15 @@
 				3DC842532874812E0010FA14 /* AppDelegate.swift */,
 				3DC842552874812E0010FA14 /* SceneDelegate.swift */,
 				3DC842572874812E0010FA14 /* ViewController.swift */,
+				3DC842592874812E0010FA14 /* Main.storyboard */,
 				3DCF3B012876AD3200D247F9 /* Card.swift */,
 				3DCF3B092878330100D247F9 /* CardModel.swift */,
-				3DC842592874812E0010FA14 /* Main.storyboard */,
 				3DCF3B0B2878548400D247F9 /* CardCell.swift */,
 				3DC8425C287481320010FA14 /* Assets.xcassets */,
 				3DC8425E287481320010FA14 /* LaunchScreen.storyboard */,
 				3DC84261287481320010FA14 /* Info.plist */,
 			);
 			path = 6_MemoryGame;
-			sourceTree = "<group>";
-		};
-		85BA48A00143EA0E777E468D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				557325367A0E358731249A14 /* Pods_6_MemoryGame.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,11 +83,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DC84264287481320010FA14 /* Build configuration list for PBXNativeTarget "6_MemoryGame" */;
 			buildPhases = (
-				48C51D3DE2CCCB635EC1CA80 /* [CP] Check Pods Manifest.lock */,
 				3DC8424C2874812E0010FA14 /* Sources */,
 				3DC8424D2874812E0010FA14 /* Frameworks */,
 				3DC8424E2874812E0010FA14 /* Resources */,
-				1117B7930E5C79CABECABFCB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,48 +141,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1117B7930E5C79CABECABFCB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		48C51D3DE2CCCB635EC1CA80 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-6_MemoryGame-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DC8424C2874812E0010FA14 /* Sources */ = {

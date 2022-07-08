@@ -28,6 +28,9 @@ class CardModel {
 			let firstCard = Card()
 			let secondCard = Card()
 			
+			firstCard.imageName = "card\(randomNumber)"
+			secondCard.imageName = "card\(randomNumber)"
+			
 			generatedCards += [firstCard, secondCard]
 			
 		}
