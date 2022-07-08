@@ -36,13 +36,13 @@ class CardCell: UICollectionViewCell {
 		}
 	}
 	
-	func flipToFront(speed: TimeInterval = 0.5) {
+	func flipToFront(speed: TimeInterval = 0.3) {
 		UIView.transition(from: backImageView, to: frontImageView, duration: speed, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
 		
 		card?.isFlipped = true
 	}
 	
-	func flipToBack(speed: TimeInterval = 0.5, delay: TimeInterval = 0.5) {
+	func flipToBack(speed: TimeInterval = 0.3, delay: TimeInterval = 0.5) {
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
 			UIView.transition(from: self.frontImageView, to: self.backImageView, duration: speed, options: [.showHideTransitionViews, .transitionFlipFromRight], completion: nil)
 		}
@@ -53,7 +53,7 @@ class CardCell: UICollectionViewCell {
 	func removeCard() {
 		backImageView.isHidden = true
 		
-		UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut, animations: {
+		UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut, animations: {
 			self.frontImageView.isHidden = true
 		}, completion: nil)
 	}

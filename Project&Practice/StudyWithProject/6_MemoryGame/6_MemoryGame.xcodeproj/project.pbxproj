@@ -16,6 +16,8 @@
 		3DCF3B022876AD3200D247F9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B012876AD3200D247F9 /* Card.swift */; };
 		3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B092878330100D247F9 /* CardModel.swift */; };
 		3DCF3B0C2878548400D247F9 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0B2878548400D247F9 /* CardCell.swift */; };
+		3DCF3B102878C28300D247F9 /* SoundManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0F2878C28300D247F9 /* SoundManage.swift */; };
+		3DCF3B122878C73400D247F9 /* bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B112878C73400D247F9 /* bgm.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3DCF3B012876AD3200D247F9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3DCF3B092878330100D247F9 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		3DCF3B0B2878548400D247F9 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		3DCF3B0F2878C28300D247F9 /* SoundManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManage.swift; sourceTree = "<group>"; };
+		3DCF3B112878C73400D247F9 /* bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,21 @@
 				3DCF3B012876AD3200D247F9 /* Card.swift */,
 				3DCF3B092878330100D247F9 /* CardModel.swift */,
 				3DCF3B0B2878548400D247F9 /* CardCell.swift */,
+				3DCF3B0F2878C28300D247F9 /* SoundManage.swift */,
+				3DCF3B0D2878C20200D247F9 /* SoundFile */,
 				3DC8425C287481320010FA14 /* Assets.xcassets */,
 				3DC8425E287481320010FA14 /* LaunchScreen.storyboard */,
 				3DC84261287481320010FA14 /* Info.plist */,
 			);
 			path = 6_MemoryGame;
+			sourceTree = "<group>";
+		};
+		3DCF3B0D2878C20200D247F9 /* SoundFile */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF3B112878C73400D247F9 /* bgm.wav */,
+			);
+			path = SoundFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC84260287481320010FA14 /* LaunchScreen.storyboard in Resources */,
+				3DCF3B122878C73400D247F9 /* bgm.wav in Resources */,
 				3DC8425D287481320010FA14 /* Assets.xcassets in Resources */,
 				3DC8425B2874812E0010FA14 /* Main.storyboard in Resources */,
 			);
@@ -147,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCF3B102878C28300D247F9 /* SoundManage.swift in Sources */,
 				3DC842582874812E0010FA14 /* ViewController.swift in Sources */,
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
 				3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */,

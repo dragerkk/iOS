@@ -20,8 +20,11 @@ class ViewController: UIViewController {
 
 	var firstCardIndex: IndexPath?
 	
+	var soundPlayer = SoundManage()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		timerLabel.textColor = .white
 		
 		cards = model.getCards()
 		
@@ -32,6 +35,11 @@ class ViewController: UIViewController {
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
 		//
 		RunLoop.main.add(timer!, forMode: .common)
+	}
+	
+	// MARK: - play BGM
+	override func viewDidAppear(_ animated: Bool) {
+		soundPlayer.playBGM()
 	}
 	
 	// MARK: - Timer
