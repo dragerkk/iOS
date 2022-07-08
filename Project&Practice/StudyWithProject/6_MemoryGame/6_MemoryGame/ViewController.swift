@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 		RunLoop.main.add(timer!, forMode: .common)
 	}
 	
-	// MARK: - play BGM
+	// MARK: - play BGM, soundEffect
 	override func viewDidAppear(_ animated: Bool) {
 		soundPlayer.playBGM()
 	}
@@ -72,8 +72,11 @@ extension ViewController: UICollectionViewDelegate {
 			return
 		}
 		
+		// card flip
 		if cell.card?.isFlipped == false && cell.card?.isMatched == false {
 			cell.flipToFront()
+			
+			soundPlayer.playSound(effect: .flip)
 			
 			if firstCardIndex == nil {
 				firstCardIndex = indexPath
@@ -96,6 +99,8 @@ extension ViewController: UICollectionViewDelegate {
 		//compare cards
 		if firstCard.imageName == secondCard.imageName {
 			
+			soundPlayer.playSound(effect: .correct)
+			
 			firstCard.isMatched = true
 			secondCard.isMatched = true
 			
@@ -104,6 +109,9 @@ extension ViewController: UICollectionViewDelegate {
 			
 			checkForGameEnd()
 		} else {
+			
+			soundPlayer.playSound(effect: .wrong)
+			
 			firstCard.isFlipped = false
 			secondCard.isFlipped = false
 			
