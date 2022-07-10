@@ -11,12 +11,13 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var timerLabel: UILabel!
+	@IBOutlet weak var scoreLabel: UILabel!
 	
 	let model = CardModel()
 	var cards: [Card] = []
 	
 	var timer: Timer?
-	var timeLimit: Int = 20
+	var timeLimit: Int = 30
 
 	var firstCardIndex: IndexPath?
 	
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		timerLabel.textColor = .white
+		scoreLabel.textColor = .white
 		
 		cards = model.getCards()
 		
@@ -33,11 +35,12 @@ class ViewController: UIViewController {
 		
 		//
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
-		//
 		RunLoop.main.add(timer!, forMode: .common)
+		
+		//
 	}
 	
-	// MARK: - play BGM, soundEffect
+	// MARK: - play BGM
 	override func viewDidAppear(_ animated: Bool) {
 		soundPlayer.playBGM()
 	}
@@ -55,9 +58,14 @@ class ViewController: UIViewController {
 			checkForGameEnd()
 		}
 	}
+	
+	// MARK: - Score
+	
 
 
+	// MARK: - Restart
 }
+
 
 // MARK: - collectionView Delegate
 
@@ -86,6 +94,7 @@ extension ViewController: UICollectionViewDelegate {
 		}
 		
 	}
+
 	
 	// MARK: - check match / game end
 	func checkForMatch(secondCardIndex: IndexPath) {

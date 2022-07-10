@@ -43,6 +43,7 @@ class CardCell: UICollectionViewCell {
 	}
 	
 	func flipToBack(speed: TimeInterval = 0.3, delay: TimeInterval = 0.5) {
+		//시간차 두기
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
 			UIView.transition(from: self.frontImageView, to: self.backImageView, duration: speed, options: [.showHideTransitionViews, .transitionFlipFromRight], completion: nil)
 		}

@@ -47,7 +47,7 @@ class SoundManage {
 	}
 	
 	func playBGM() {
-		var soundFileName = "bgm"
+		let soundFileName = "bgm"
 		
 		guard let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: ".wav") else { return }
 		

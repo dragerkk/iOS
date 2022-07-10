@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +77,18 @@
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTU-Uu-ejW" userLabel="ScoreView">
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-kS-KFS">
+                                                <rect key="frame" x="186.5" y="71.5" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wGq-kS-KFS" firstAttribute="centerX" secondItem="VTU-Uu-ejW" secondAttribute="centerX" id="XvZ-nM-5Bv"/>
+                                            <constraint firstItem="wGq-kS-KFS" firstAttribute="centerY" secondItem="VTU-Uu-ejW" secondAttribute="centerY" id="wdn-EQ-e8B"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -99,6 +109,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="VuE-vS-2o3" id="4g2-Kv-Qan"/>
+                        <outlet property="scoreLabel" destination="wGq-kS-KFS" id="kUt-bw-HYr"/>
                         <outlet property="timerLabel" destination="EAb-E6-NQI" id="Zit-cB-1QJ"/>
                     </connections>
                 </viewController>
@@ -110,8 +121,5 @@
     <resources>
         <image name="1" width="50" height="50"/>
         <image name="back" width="50" height="50"/>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
