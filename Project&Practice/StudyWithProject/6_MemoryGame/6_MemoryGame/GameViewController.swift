@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var timerLabel: UILabel!
@@ -25,8 +25,6 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		timerLabel.textColor = .white
-		scoreLabel.textColor = .white
 		
 		cards = model.getCards()
 		
@@ -69,7 +67,7 @@ class ViewController: UIViewController {
 
 // MARK: - collectionView Delegate
 
-extension ViewController: UICollectionViewDelegate {
+extension GameViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
 		if timeLimit <= 0 {
@@ -166,7 +164,7 @@ extension ViewController: UICollectionViewDelegate {
 
 
 // MARK: - collectionView Datasource
-extension ViewController: UICollectionViewDataSource {
+extension GameViewController: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return cards.count

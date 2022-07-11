@@ -4,31 +4,66 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Sl0-ky-iLF">
             <objects>
-                <viewController id="Too-OK-Tc3" sceneMemberID="viewController">
+                <viewController id="Too-OK-Tc3" customClass="MainViewController" customModule="__MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SX8-FG-L4X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoR-h5-ZLD">
-                                <rect key="frame" x="174" y="433" width="67" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwL-aP-YBa">
+                                <rect key="frame" x="99" y="188" width="216.5" height="117"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoR-h5-ZLD">
+                                <rect key="frame" x="90.5" y="605" width="233" height="58"/>
+                                <color key="tintColor" red="0.94914180039999996" green="0.95678728820000003" blue="0.96078509089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Game Start">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Verdana"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="TsY-I0-0Hz"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="T3o-vl-NbT"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-5f-89w">
+                                <rect key="frame" x="122.5" y="713" width="169.5" height="58"/>
+                                <color key="tintColor" red="0.94914180039999996" green="0.95678728820000003" blue="0.96078509089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Ranking">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Verdana"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0ck-Lf-4l3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.40017661450000003" green="0.37465560440000001" blue="0.35495311019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HwL-aP-YBa" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="6Fg-wP-pSo"/>
+                            <constraint firstItem="OoR-h5-ZLD" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="BCR-yr-qVI"/>
+                            <constraint firstItem="d49-5f-89w" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="Hj9-v9-g3P"/>
+                            <constraint firstItem="OoR-h5-ZLD" firstAttribute="top" secondItem="HwL-aP-YBa" secondAttribute="bottom" constant="300" id="MoG-qO-HfO"/>
+                            <constraint firstItem="HwL-aP-YBa" firstAttribute="top" secondItem="0ck-Lf-4l3" secondAttribute="top" constant="100" id="UR4-qn-Jy0"/>
+                            <constraint firstItem="d49-5f-89w" firstAttribute="top" secondItem="OoR-h5-ZLD" secondAttribute="bottom" constant="50" id="aMJ-8c-koG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7tc-Jd-1ay"/>
                 </viewController>
@@ -36,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="228.98550724637684" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="__MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="__MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +88,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-E6-NQI">
                                                 <rect key="frame" x="207" y="77.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -109,7 +144,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-kS-KFS">
                                                 <rect key="frame" x="186.5" y="67.5" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -168,8 +203,5 @@
     <resources>
         <image name="1" width="50" height="50"/>
         <image name="back" width="50" height="50"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
