@@ -23,6 +23,9 @@ class GameViewController: UIViewController {
 	
 	var soundPlayer = SoundManage()
 	
+	var score: Int = 0
+//	var record = Rank()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -36,6 +39,7 @@ class GameViewController: UIViewController {
 		flowLayout.itemSize = CGSize(width: 70, height: 70)
 		flowLayout.scrollDirection = .vertical
 		collectionView.collectionViewLayout = flowLayout
+		collectionView.backgroundColor = view.backgroundColor
 		
 		//
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
@@ -64,7 +68,12 @@ class GameViewController: UIViewController {
 	}
 	
 	// MARK: - Score
-	
+//
+//	func userScore() {
+//		while true {
+//
+//		}
+//	}
 
 
 	// MARK: - Restart
@@ -120,6 +129,8 @@ extension GameViewController: UICollectionViewDelegate {
 			firstCardCell?.removeCard()
 			secondCardCell?.removeCard()
 			
+			score += 10
+			
 			checkForGameEnd()
 		} else {
 			
@@ -130,6 +141,8 @@ extension GameViewController: UICollectionViewDelegate {
 			
 			firstCardCell?.flipToBack()
 			secondCardCell?.flipToBack()
+			
+			score -= 3
 		}
 		
 		// reset firstCardIndex to nil for next match
@@ -151,10 +164,14 @@ extension GameViewController: UICollectionViewDelegate {
 			showAlert(title: "Wow", message: "You Win")
 			soundPlayer.stopBGM()
 			
+			score += timeLimit * 5
+			
 		} else {
 			if timeLimit <= 0 {
 				showAlert(title: "Game Over", message: "You can do better")
 				soundPlayer.stopBGM()
+				
+				print("end--\(score)--\(timeLimit)")
 			}
 		}
 	}

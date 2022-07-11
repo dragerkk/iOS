@@ -8,6 +8,6 @@
 import Foundation
 
 struct Rank {
-	var rank: [Int]
+	var rank: UserDefaults
 	
 }

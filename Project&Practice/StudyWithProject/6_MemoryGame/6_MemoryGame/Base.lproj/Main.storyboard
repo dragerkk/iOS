@@ -150,15 +150,32 @@
                                         <rect key="frame" x="0.0" y="619" width="414" height="155"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-kS-KFS">
-                                                <rect key="frame" x="186.5" y="67.5" width="41.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="169" y="30" width="76" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f35-zb-Xi4">
+                                                <rect key="frame" x="152" y="88.5" width="110.5" height="43.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Restart">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Verdana"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="1" green="0.45678465909999999" blue="0.36415375030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="wGq-kS-KFS" firstAttribute="centerX" secondItem="VTU-Uu-ejW" secondAttribute="centerX" id="XvZ-nM-5Bv"/>
-                                            <constraint firstItem="wGq-kS-KFS" firstAttribute="centerY" secondItem="VTU-Uu-ejW" secondAttribute="centerY" id="wdn-EQ-e8B"/>
+                                            <constraint firstItem="f35-zb-Xi4" firstAttribute="centerX" secondItem="VTU-Uu-ejW" secondAttribute="centerX" id="ZnZ-uw-YZw"/>
+                                            <constraint firstItem="wGq-kS-KFS" firstAttribute="top" secondItem="VTU-Uu-ejW" secondAttribute="top" constant="30" id="aqg-8f-fsO"/>
+                                            <constraint firstItem="f35-zb-Xi4" firstAttribute="top" secondItem="wGq-kS-KFS" secondAttribute="bottom" constant="20" id="bpk-2S-atR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
