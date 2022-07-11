@@ -31,6 +31,12 @@ class GameViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.dataSource = self
 		
+		let flowLayout = UICollectionViewFlowLayout()
+		flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+		flowLayout.itemSize = CGSize(width: 70, height: 70)
+		flowLayout.scrollDirection = .vertical
+		collectionView.collectionViewLayout = flowLayout
+		
 		//
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
 		RunLoop.main.add(timer!, forMode: .common)
@@ -188,3 +194,9 @@ extension GameViewController: UICollectionViewDataSource {
 		cardCell?.setupCell(card: card)
 	}
 }
+
+//extension GameViewController: UICollectionViewDelegateFlowLayout {
+//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//		return CGSize(width: 100, height: 300)
+//	}
+//}

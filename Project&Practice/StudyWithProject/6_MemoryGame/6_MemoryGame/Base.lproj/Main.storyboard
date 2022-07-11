@@ -133,6 +133,8 @@
                                                         <constraint firstAttribute="bottom" secondItem="vij-vX-rlB" secondAttribute="bottom" id="tgJ-hB-9FS"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <color key="backgroundColor" red="0.40017661450000003" green="0.37465560440000001" blue="0.35495311019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.4957814217" green="0.47952902320000002" blue="0.46448129420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
                                                     <outlet property="backImageView" destination="nm3-xb-d75" id="9ft-6k-PKw"/>
                                                     <outlet property="frontImageView" destination="vij-vX-rlB" id="ktF-IZ-cd6"/>

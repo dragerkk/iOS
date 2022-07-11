@@ -34,6 +34,12 @@ class CardCell: UICollectionViewCell {
 		} else {
 			flipToBack()
 		}
+		
+		//layout
+		backImageView.translatesAutoresizingMaskIntoConstraints = false
+		backImageView.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 20)
+		
+		
 	}
 	
 	func flipToFront(speed: TimeInterval = 0.3) {
