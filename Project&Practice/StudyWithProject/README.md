@@ -33,4 +33,5 @@
 
 - use timer
 - bgm, sound effect 
-- dispatchqueue 
+- dispatchqueue
+- card memory game 
