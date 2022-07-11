@@ -9,18 +9,25 @@ import Foundation
 import AVFoundation
 
 class SoundManage {
-	var audioPlayer: AVAudioPlayer?
 	
-	enum SoundEffect {
-		case flip
-		case wrong
-		case correct
-	}
+//	var audioPlayer: AVAudioPlayer?
 	
-	func playSound(effect: SoundEffect) {
+		enum SoundEffect {
+			case bgm
+			case flip
+			case wrong
+			case correct
+		}
+	
+	var players = [URL:AVAudioPlayer]()
+	var duplicatePlayers = [AVAudioPlayer]()
+	
+	func playSound(soundName: SoundEffect) {
 		var soundFileName = ""
 		
-		switch effect {
+		switch soundName {
+		case .bgm:
+			soundFileName = "bgm"
 		case .flip:
 			soundFileName = "flip"
 		case .wrong:
@@ -29,37 +36,56 @@ class SoundManage {
 			soundFileName = "correct"
 		}
 		
-		guard let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: ".wav") else { return }
-
-		let url = URL(fileURLWithPath: bundlePath)
-		do {
-			// Create the audio Player
-			audioPlayer = try AVAudioPlayer(contentsOf: url)
-			
-			// play
-			audioPlayer?.play()
-			
-		} catch let error {
-			print("\(error.localizedDescription)")
-			return
-		}
+		let soundFileNameURL = URL(fileURLWithPath: Bundle.main.path(forResource: soundFileName, ofType: ".wav")!)
 		
-	}
-	
-	func playBGM() {
-		let soundFileName = "bgm"
-		
-		guard let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: ".wav") else { return }
-		
-		let url = URL(fileURLWithPath: bundlePath)
-		do {
-			audioPlayer = try AVAudioPlayer(contentsOf: url)
-			
-			audioPlayer?.play()
-		} catch let error {
-			print("\(error.localizedDescription)")
-			return
+		if let player = players[soundFileNameURL] { // player has been found
+			if player.isPlaying == false { // player is not in use
+				player.play()
+				print("first?")
+			} else { // player is using, create a duplicate player and use it.
+				let duplicatePlayer = try! AVAudioPlayer(contentsOf: soundFileNameURL)
+				duplicatePlayers.append(duplicatePlayer)
+				duplicatePlayer.play()
+			}
+		} else { // player do not exist, create a new player if possible
+			do {
+				let player = try AVAudioPlayer(contentsOf: soundFileNameURL)
+				players[soundFileNameURL] = player
+				if soundFileName == "bgm" {
+					player.numberOfLoops = -1 // for infinite times.
+					player.play()
+				} else {
+					player.play()
+				}
+				print("do")
+			} catch {
+				print("Could not play sound file")
+			}
 		}
 	}
-	
 }
+
+
+//	func playSound(soundFileName: String) {
+//
+//		let soundFileNameURL = URL(fileURLWithPath: Bundle.main.path(forResource: soundFileName, ofType: ".wav")!)
+//
+//		if let player = players[soundFileNameURL] {
+//			if player.isPlaying == false { // player is not in use
+//				player.play()
+//			} else { // player is using, create a duplicate player and use it.
+//				let duplicatePlayer = try! AVAudioPlayer(contentsOf: soundFileNameURL)
+//				duplicatePlayers.append(duplicatePlayer)
+//				duplicatePlayer.play()
+//			}
+//		} else {
+//			do {
+//				let player = try AVAudioPlayer(contentsOf: soundFileNameURL)
+//				players[soundFileNameURL] = player
+//				player.play()
+//			} catch {
+//				print("Could not play sound file")
+//			}
+//		}
+//	}
+//}
