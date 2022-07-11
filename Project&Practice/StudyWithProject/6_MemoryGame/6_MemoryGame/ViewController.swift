@@ -42,8 +42,6 @@ class ViewController: UIViewController {
 	
 	// MARK: - play BGM
 	override func viewDidAppear(_ animated: Bool) {
-//		soundPlayer.playBGM()
-//		soundPlayer.playSound(soundFileName: "bgm")
 		soundPlayer.playSound(soundName: .bgm)
 	}
 	
@@ -86,8 +84,6 @@ extension ViewController: UICollectionViewDelegate {
 		if cell.card?.isFlipped == false && cell.card?.isMatched == false {
 			cell.flipToFront()
 			
-//			soundPlayer.playSound(effect: .flip)
-//			soundPlayer.playSound(soundFileName: "flip")
 			soundPlayer.playSound(soundName: .flip)
 			
 			if firstCardIndex == nil {
@@ -112,8 +108,6 @@ extension ViewController: UICollectionViewDelegate {
 		//compare cards
 		if firstCard.imageName == secondCard.imageName {
 			
-//			soundPlayer.playSound(effect: .correct)
-//			soundPlayer.playSound(soundFileName: "correct")
 			soundPlayer.playSound(soundName: .correct)
 			
 			firstCard.isMatched = true
@@ -125,8 +119,6 @@ extension ViewController: UICollectionViewDelegate {
 			checkForGameEnd()
 		} else {
 			
-//			soundPlayer.playSound(effect: .wrong)
-//			soundPlayer.playSound(soundFileName: "wrong")
 			soundPlayer.playSound(soundName: .wrong)
 			
 			firstCard.isFlipped = false
@@ -153,9 +145,12 @@ extension ViewController: UICollectionViewDelegate {
 		
 		if userWon {
 			showAlert(title: "Wow", message: "You Win")
+			soundPlayer.stopBGM()
+			
 		} else {
 			if timeLimit <= 0 {
 				showAlert(title: "Game Over", message: "You can do better")
+				soundPlayer.stopBGM()
 			}
 		}
 	}

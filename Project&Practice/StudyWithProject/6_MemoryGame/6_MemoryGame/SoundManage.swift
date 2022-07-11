@@ -10,14 +10,12 @@ import AVFoundation
 
 class SoundManage {
 	
-//	var audioPlayer: AVAudioPlayer?
-	
-		enum SoundEffect {
-			case bgm
-			case flip
-			case wrong
-			case correct
-		}
+	enum SoundEffect {
+		case bgm
+		case flip
+		case wrong
+		case correct
+	}
 	
 	var players = [URL:AVAudioPlayer]()
 	var duplicatePlayers = [AVAudioPlayer]()
@@ -41,7 +39,6 @@ class SoundManage {
 		if let player = players[soundFileNameURL] { // player has been found
 			if player.isPlaying == false { // player is not in use
 				player.play()
-				print("first?")
 			} else { // player is using, create a duplicate player and use it.
 				let duplicatePlayer = try! AVAudioPlayer(contentsOf: soundFileNameURL)
 				duplicatePlayers.append(duplicatePlayer)
@@ -51,41 +48,22 @@ class SoundManage {
 			do {
 				let player = try AVAudioPlayer(contentsOf: soundFileNameURL)
 				players[soundFileNameURL] = player
+				
 				if soundFileName == "bgm" {
 					player.numberOfLoops = -1 // for infinite times.
 					player.play()
 				} else {
 					player.play()
 				}
-				print("do")
 			} catch {
 				print("Could not play sound file")
 			}
 		}
 	}
+
+	func stopBGM() {
+		players.removeAll()
+		print("2:\(players)")
+	}
+	
 }
-
-
-//	func playSound(soundFileName: String) {
-//
-//		let soundFileNameURL = URL(fileURLWithPath: Bundle.main.path(forResource: soundFileName, ofType: ".wav")!)
-//
-//		if let player = players[soundFileNameURL] {
-//			if player.isPlaying == false { // player is not in use
-//				player.play()
-//			} else { // player is using, create a duplicate player and use it.
-//				let duplicatePlayer = try! AVAudioPlayer(contentsOf: soundFileNameURL)
-//				duplicatePlayers.append(duplicatePlayer)
-//				duplicatePlayer.play()
-//			}
-//		} else {
-//			do {
-//				let player = try AVAudioPlayer(contentsOf: soundFileNameURL)
-//				players[soundFileNameURL] = player
-//				player.play()
-//			} catch {
-//				print("Could not play sound file")
-//			}
-//		}
-//	}
-//}
