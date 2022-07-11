@@ -28,3 +28,9 @@
 - use 'Snapkit' library
 : make UI with code & easily give constraints.
 
+
+## 6_memoryGame
+
+- use timer
+- bgm, sound effect 
+- dispatchqueue 

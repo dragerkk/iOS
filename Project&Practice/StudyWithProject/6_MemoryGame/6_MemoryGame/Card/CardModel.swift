@@ -34,9 +34,7 @@ class CardModel {
 			generatedCards += [firstCard, secondCard]
 			
 		}
-		
-		generatedCards.shuffled()
-		
-		return generatedCards
+//		generatedCards = generatedCards.shuffled()
+		return generatedCards.shuffled()
 	}
 }

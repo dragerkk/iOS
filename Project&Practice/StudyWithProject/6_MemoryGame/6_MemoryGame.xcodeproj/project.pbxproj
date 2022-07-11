@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46768D287BF6B30087DAF2 /* Rank.swift */; };
 		3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842532874812E0010FA14 /* AppDelegate.swift */; };
 		3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842552874812E0010FA14 /* SceneDelegate.swift */; };
 		3DC842582874812E0010FA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842572874812E0010FA14 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D46768D287BF6B30087DAF2 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		3DC842502874812E0010FA14 /* 6_MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6_MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC842532874812E0010FA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC842552874812E0010FA14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				3DC842592874812E0010FA14 /* Main.storyboard */,
 				3DC842572874812E0010FA14 /* ViewController.swift */,
 				3DAE89CD28795B7200A5B1A9 /* Card */,
+				3D46768D287BF6B30087DAF2 /* Rank.swift */,
 				3DCF3B0F2878C28300D247F9 /* SoundManage.swift */,
 				3DCF3B0D2878C20200D247F9 /* SoundFile */,
 				3DC8425C287481320010FA14 /* Assets.xcassets */,
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCF3B102878C28300D247F9 /* SoundManage.swift in Sources */,
+				3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */,
 				3DC842582874812E0010FA14 /* ViewController.swift in Sources */,
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
 				3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */,
