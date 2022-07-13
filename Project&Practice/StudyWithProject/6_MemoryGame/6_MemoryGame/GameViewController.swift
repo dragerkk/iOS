@@ -41,12 +41,21 @@ class GameViewController: UIViewController {
 		collectionView.collectionViewLayout = flowLayout
 		collectionView.backgroundColor = view.backgroundColor
 		
-		//
+		//timer
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
 		RunLoop.main.add(timer!, forMode: .common)
 		
-		//
+		//score
+		getScore(score)
 	}
+	
+	// restart Game
+	@IBAction func restartButtonTapped(_ sender: Any) {
+		timeLimit = 30
+		cards = model.getCards()
+		
+	}
+	
 	
 	// MARK: - play BGM
 	override func viewDidAppear(_ animated: Bool) {
@@ -68,12 +77,10 @@ class GameViewController: UIViewController {
 	}
 	
 	// MARK: - Score
-//
-//	func userScore() {
-//		while true {
-//
-//		}
-//	}
+
+	func getScore(_ score:Int) {
+		scoreLabel.text = String(score)
+	}
 
 
 	// MARK: - Restart
@@ -129,7 +136,9 @@ extension GameViewController: UICollectionViewDelegate {
 			firstCardCell?.removeCard()
 			secondCardCell?.removeCard()
 			
+			//
 			score += 10
+			getScore(score)
 			
 			checkForGameEnd()
 		} else {
@@ -142,7 +151,8 @@ extension GameViewController: UICollectionViewDelegate {
 			firstCardCell?.flipToBack()
 			secondCardCell?.flipToBack()
 			
-			score -= 3
+			score -= 2
+			getScore(score)
 		}
 		
 		// reset firstCardIndex to nil for next match
@@ -161,10 +171,13 @@ extension GameViewController: UICollectionViewDelegate {
 		}
 		
 		if userWon {
+			timerLabel.text = "Congratulations!"
 			showAlert(title: "Wow", message: "You Win")
 			soundPlayer.stopBGM()
 			
+			
 			score += timeLimit * 5
+			getScore(score)
 			
 		} else {
 			if timeLimit <= 0 {
@@ -211,9 +224,3 @@ extension GameViewController: UICollectionViewDataSource {
 		cardCell?.setupCell(card: card)
 	}
 }
-
-//extension GameViewController: UICollectionViewDelegateFlowLayout {
-//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//		return CGSize(width: 100, height: 300)
-//	}
-//}

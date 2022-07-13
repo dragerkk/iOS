@@ -169,6 +169,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" red="1" green="0.45678465909999999" blue="0.36415375030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5St-6v-wkh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
