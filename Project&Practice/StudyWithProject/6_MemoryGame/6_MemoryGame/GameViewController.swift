@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
 	var soundPlayer = SoundManage()
 	
 	var score: Int = 0
-//	var record = Rank()
+	var rank = Rank()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -81,40 +81,6 @@ class GameViewController: UIViewController {
 	func getScore(_ score:Int) {
 		scoreLabel.text = String(score)
 	}
-
-
-	// MARK: - Restart
-}
-
-
-// MARK: - collectionView Delegate
-
-extension GameViewController: UICollectionViewDelegate {
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
-		if timeLimit <= 0 {
-			return
-		}
-		
-		guard let cell = collectionView.cellForItem(at: indexPath) as? CardCell else {
-			return
-		}
-		
-		// card flip
-		if cell.card?.isFlipped == false && cell.card?.isMatched == false {
-			cell.flipToFront()
-			
-			soundPlayer.playSound(soundName: .flip)
-			
-			if firstCardIndex == nil {
-				firstCardIndex = indexPath
-			} else {
-				checkForMatch(secondCardIndex: indexPath)
-			}
-		}
-		
-	}
-
 	
 	// MARK: - check match / game end
 	func checkForMatch(secondCardIndex: IndexPath) {
@@ -175,16 +141,24 @@ extension GameViewController: UICollectionViewDelegate {
 			showAlert(title: "Wow", message: "You Win")
 			soundPlayer.stopBGM()
 			
-			
+			timer?.invalidate()
 			score += timeLimit * 5
 			getScore(score)
 			
+			rank.checkRank(score: score)
+			
+			for i in 1...5 {
+				print(UserDefaults.standard.integer(forKey: String(i)))
+			}
+
 		} else {
 			if timeLimit <= 0 {
 				showAlert(title: "Game Over", message: "You can do better")
 				soundPlayer.stopBGM()
 				
-				print("end--\(score)--\(timeLimit)")
+				for i in 1...5 {
+					print(UserDefaults.standard.integer(forKey: String(i)))
+				}
 			}
 		}
 	}
@@ -195,6 +169,42 @@ extension GameViewController: UICollectionViewDelegate {
 		alert.addAction(okAction)
 		present(alert, animated: true, completion: nil)
 	}
+	
+
+
+
+	// MARK: - Restart
+}
+
+
+// MARK: - collectionView Delegate
+
+extension GameViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		
+		if timeLimit <= 0 {
+			return
+		}
+		
+		guard let cell = collectionView.cellForItem(at: indexPath) as? CardCell else {
+			return
+		}
+		
+		// card flip
+		if cell.card?.isFlipped == false && cell.card?.isMatched == false {
+			cell.flipToFront()
+			
+			soundPlayer.playSound(soundName: .flip)
+			
+			if firstCardIndex == nil {
+				firstCardIndex = indexPath
+			} else {
+				checkForMatch(secondCardIndex: indexPath)
+			}
+		}
+		
+	}
+
 	
 }
 
