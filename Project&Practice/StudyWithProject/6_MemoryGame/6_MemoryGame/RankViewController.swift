@@ -21,13 +21,11 @@ class RankViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
-		label1.text = String(rank[0])
-		label2.text = String(rank[1])
-		label3.text = String(rank[2])
-		label4.text = String(rank[3])
-		label5.text = String(rank[4])
-		
-		
+		label1.text = "1st : \(String(rank[4]))"
+		label2.text = "2nd : \(String(rank[3]))"
+		label3.text = "3rd : \(String(rank[2]))"
+		label4.text = "4th : \(String(rank[1]))"
+		label5.text = "5th : \(String(rank[0]))"
     }
     
 
