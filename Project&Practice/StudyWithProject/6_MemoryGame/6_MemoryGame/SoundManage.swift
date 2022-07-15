@@ -63,7 +63,6 @@ class SoundManage {
 
 	func stopBGM() {
 		players.removeAll()
-		print("2:\(players)")
 	}
 	
 }

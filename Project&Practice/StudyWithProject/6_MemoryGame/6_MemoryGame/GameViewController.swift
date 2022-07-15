@@ -69,6 +69,10 @@ class GameViewController: UIViewController {
 		soundPlayer.playSound(soundName: .bgm)
 	}
 	
+	override func viewWillDisappear(_ animated: Bool) {
+		soundPlayer.stopBGM()
+	}
+	
 	// MARK: - Timer
 	@objc func timerStart() {
 		timeLimit -= 1
