@@ -15,17 +15,19 @@ class RankViewController: UIViewController {
 	@IBOutlet weak var label4: UILabel!
 	@IBOutlet weak var label5: UILabel!
 	
+	let ranking = Rank()
+	lazy var rank = ranking.rank
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
+		label1.text = String(rank[0])
+		label2.text = String(rank[1])
+		label3.text = String(rank[2])
+		label4.text = String(rank[3])
+		label5.text = String(rank[4])
 		
-		label1.text = "1st : \(UserDefaults.standard.integer(forKey: "5"))"
-		label2.text = "2nd : \(UserDefaults.standard.integer(forKey: "4"))"
-		label3.text = "3rd : \(UserDefaults.standard.integer(forKey: "3"))"
-		label4.text = "4th : \(UserDefaults.standard.integer(forKey: "2"))"
-		label5.text = "5th : \(UserDefaults.standard.integer(forKey: "1"))"
-
-        // Do any additional setup after loading the view.
+		
     }
     
 
