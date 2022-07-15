@@ -235,8 +235,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCi-D5-fS0">
-                                <rect key="frame" x="94" y="138" width="226" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCi-D5-fS0">
+                                <rect key="frame" x="92.5" y="138" width="229.5" height="61"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -287,6 +287,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l98-Yo-iPG"/>
+                    <connections>
+                        <outlet property="label1" destination="Lil-lN-wpi" id="Dzp-Sz-2Bq"/>
+                        <outlet property="label2" destination="mc9-K0-ESD" id="dcz-zp-WrU"/>
+                        <outlet property="label3" destination="MZX-g8-qoU" id="2Vb-HE-Seh"/>
+                        <outlet property="label4" destination="P1v-cR-FIS" id="wc2-Rs-uH0"/>
+                        <outlet property="label5" destination="sIK-mz-V8V" id="95L-Yx-Jsh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBe-Kg-0ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

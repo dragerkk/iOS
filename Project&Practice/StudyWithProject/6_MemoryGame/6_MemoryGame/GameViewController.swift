@@ -47,6 +47,13 @@ class GameViewController: UIViewController {
 		
 		//score
 		getScore(score)
+		getRank()
+	}
+	
+	// MARK: - rank
+	func getRank() {
+		rank.updateRank()
+//		print("rank:\(rank)")
 	}
 	
 	// restart Game
@@ -101,7 +108,6 @@ class GameViewController: UIViewController {
 			
 			firstCardCell?.removeCard()
 			secondCardCell?.removeCard()
-			
 			//
 			score += 10
 			getScore(score)
@@ -146,19 +152,10 @@ class GameViewController: UIViewController {
 			getScore(score)
 			
 			rank.checkRank(score: score)
-			
-			for i in 1...5 {
-				print(UserDefaults.standard.integer(forKey: String(i)))
-			}
-
 		} else {
 			if timeLimit <= 0 {
 				showAlert(title: "Game Over", message: "You can do better")
 				soundPlayer.stopBGM()
-				
-				for i in 1...5 {
-					print(UserDefaults.standard.integer(forKey: String(i)))
-				}
 			}
 		}
 	}

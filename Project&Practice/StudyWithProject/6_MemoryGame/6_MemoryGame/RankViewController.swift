@@ -9,8 +9,21 @@ import UIKit
 
 class RankViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var label1: UILabel!
+	@IBOutlet weak var label2: UILabel!
+	@IBOutlet weak var label3: UILabel!
+	@IBOutlet weak var label4: UILabel!
+	@IBOutlet weak var label5: UILabel!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		
+		label1.text = "1st : \(UserDefaults.standard.integer(forKey: "5"))"
+		label2.text = "2nd : \(UserDefaults.standard.integer(forKey: "4"))"
+		label3.text = "3rd : \(UserDefaults.standard.integer(forKey: "3"))"
+		label4.text = "4th : \(UserDefaults.standard.integer(forKey: "2"))"
+		label5.text = "5th : \(UserDefaults.standard.integer(forKey: "1"))"
 
         // Do any additional setup after loading the view.
     }

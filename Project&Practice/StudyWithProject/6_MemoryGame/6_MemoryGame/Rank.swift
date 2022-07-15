@@ -7,21 +7,27 @@
 
 import Foundation
 
-struct Rank {
-	var rank: [Int] = [0,0,0,0,0]
+class Rank {
+
+	var rank = UserDefaults.standard.array(forKey: "rankArray") as? [Int] ?? [0,0,0,0,0]
 	
-	mutating func checkRank(score:Int) {
+	func checkRank(score:Int) {
+		
+		rank.sort()
+
 		if rank[0] < score {
 			rank.removeFirst()
 			rank.append(score)
 		}
+
 		rank.sort()
-		updateUserDefault()
+
+		updateRank()
 	}
 	
-	func updateUserDefault() {
-		for i in 0..<rank.count {
-			UserDefaults.standard.set(rank[i], forKey: String(i+1))
-		}
+	func updateRank() {
+
+		UserDefaults.standard.set(rank, forKey: "rankArray")
+//		print("updateRank-- \(UserDefaults.standard.array(forKey: "rankArray") ?? ["err"])")
 	}
 }
