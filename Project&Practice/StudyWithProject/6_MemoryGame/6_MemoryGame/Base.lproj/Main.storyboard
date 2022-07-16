@@ -170,7 +170,7 @@
                                                     <color key="baseBackgroundColor" red="1" green="0.45678465909999999" blue="0.36415375030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5St-6v-wkh"/>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="AlM-TC-I4b"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="117"/>
+            <point key="canvasLocation" x="1101" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rGS-y6-Hpw">

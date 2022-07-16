@@ -34,7 +34,10 @@ class CardModel {
 			generatedCards += [firstCard, secondCard]
 			
 		}
-//		generatedCards = generatedCards.shuffled()
+//		print(selectedCards)
+//		for i in generatedCards {
+//			print(i.imageName)
+//		}
 		return generatedCards.shuffled()
 	}
 }

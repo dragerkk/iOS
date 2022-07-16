@@ -92,11 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				3DC842532874812E0010FA14 /* AppDelegate.swift */,
-				3D46768F287C6FA40087DAF2 /* MainViewController.swift */,
 				3DC842552874812E0010FA14 /* SceneDelegate.swift */,
 				3DC842592874812E0010FA14 /* Main.storyboard */,
-				3D467693287CB9BF0087DAF2 /* RankViewController.swift */,
-				3DC842572874812E0010FA14 /* GameViewController.swift */,
+				3DCED2452882C748007F73A5 /* ViewControllers */,
 				3DAE89CD28795B7200A5B1A9 /* Card */,
 				3D46768D287BF6B30087DAF2 /* Rank.swift */,
 				3DCF3B0F2878C28300D247F9 /* SoundManage.swift */,
@@ -106,6 +104,16 @@
 				3DC84261287481320010FA14 /* Info.plist */,
 			);
 			path = 6_MemoryGame;
+			sourceTree = "<group>";
+		};
+		3DCED2452882C748007F73A5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D46768F287C6FA40087DAF2 /* MainViewController.swift */,
+				3DC842572874812E0010FA14 /* GameViewController.swift */,
+				3D467693287CB9BF0087DAF2 /* RankViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		3DCF3B0D2878C20200D247F9 /* SoundFile */ = {

@@ -26,6 +26,8 @@ class GameViewController: UIViewController {
 	var score: Int = 0
 	var rank = Rank()
 	
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -34,13 +36,6 @@ class GameViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.dataSource = self
 		
-		let flowLayout = UICollectionViewFlowLayout()
-		flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-		flowLayout.itemSize = CGSize(width: 70, height: 70)
-		flowLayout.scrollDirection = .vertical
-		collectionView.collectionViewLayout = flowLayout
-		collectionView.backgroundColor = view.backgroundColor
-		
 		//timer
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerStart), userInfo: nil, repeats: true)
 		RunLoop.main.add(timer!, forMode: .common)
@@ -48,21 +43,39 @@ class GameViewController: UIViewController {
 		//score
 		getScore(score)
 		getRank()
+		
+		cellLayout()
+	}
+	
+	// MARK: - Cell Layout
+	func cellLayout() {
+		let flowLayout = UICollectionViewFlowLayout()
+		flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+		flowLayout.itemSize = CGSize(width: 70, height: 70)
+		flowLayout.scrollDirection = .vertical
+		collectionView.collectionViewLayout = flowLayout
+		collectionView.backgroundColor = view.backgroundColor
 	}
 	
 	// MARK: - rank
 	func getRank() {
 		rank.updateRank()
 //		print("rank:\(rank)")
+		print(cards)
 	}
 	
 	// restart Game
-	@IBAction func restartButtonTapped(_ sender: Any) {
-		timeLimit = 30
-		cards = model.getCards()
-		
-	}
-	
+//	@IBAction func restartButtonTapped(_ sender: UIButton) {
+//		
+//		timeLimit = 30
+//		score = 0
+//		cards = model.getCards()
+//		cellLayout()
+//		getScore(score)
+//		print(cards)
+//		
+//	}
+//	
 	
 	// MARK: - play BGM
 	override func viewDidAppear(_ animated: Bool) {
