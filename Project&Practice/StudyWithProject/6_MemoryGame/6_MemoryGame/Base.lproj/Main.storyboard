@@ -170,7 +170,7 @@
                                                     <color key="baseBackgroundColor" red="1" green="0.45678465909999999" blue="0.36415375030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="AlM-TC-I4b"/>
+                                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txo-l2-tRf"/>
                                                 </connections>
                                             </button>
                                         </subviews>

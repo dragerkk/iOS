@@ -9,6 +9,9 @@ import Foundation
 
 class Rank {
 
+	//singleton
+//	static let shared = Rank()
+	
 	var rank = UserDefaults.standard.array(forKey: "rankArray") as? [Int] ?? [0,0,0,0,0]
 	
 	func checkRank(score:Int) {

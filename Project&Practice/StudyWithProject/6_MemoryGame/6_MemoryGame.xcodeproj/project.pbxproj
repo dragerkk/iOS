@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46768D287BF6B30087DAF2 /* Rank.swift */; };
 		3D467690287C6FA40087DAF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46768F287C6FA40087DAF2 /* MainViewController.swift */; };
-		3D467692287CA05B0087DAF2 /* CardCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D467691287CA05B0087DAF2 /* CardCellLayout.swift */; };
 		3D467694287CB9BF0087DAF2 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D467693287CB9BF0087DAF2 /* RankViewController.swift */; };
+		3DA4987D288461D800726AC3 /* GameViweModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4987C288461D800726AC3 /* GameViweModel.swift */; };
 		3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842532874812E0010FA14 /* AppDelegate.swift */; };
 		3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842552874812E0010FA14 /* SceneDelegate.swift */; };
 		3DC842582874812E0010FA14 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842572874812E0010FA14 /* GameViewController.swift */; };
 		3DC8425B2874812E0010FA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC842592874812E0010FA14 /* Main.storyboard */; };
 		3DC8425D287481320010FA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425C287481320010FA14 /* Assets.xcassets */; };
 		3DC84260287481320010FA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425E287481320010FA14 /* LaunchScreen.storyboard */; };
+		3DCED2472882DEB8007F73A5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCED2462882DEB8007F73A5 /* BaseViewController.swift */; };
+		3DCED2492882EB9F007F73A5 /* GameViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCED2482882EB9F007F73A5 /* GameViewController+CollectionView.swift */; };
 		3DCF3B022876AD3200D247F9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B012876AD3200D247F9 /* Card.swift */; };
 		3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B092878330100D247F9 /* CardModel.swift */; };
 		3DCF3B0C2878548400D247F9 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0B2878548400D247F9 /* CardCell.swift */; };
-		3DCF3B102878C28300D247F9 /* SoundManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0F2878C28300D247F9 /* SoundManage.swift */; };
+		3DCF3B102878C28300D247F9 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B0F2878C28300D247F9 /* SoundManager.swift */; };
 		3DCF3B122878C73400D247F9 /* bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B112878C73400D247F9 /* bgm.wav */; };
 		3DCF3B142878D2C700D247F9 /* flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B132878D2C700D247F9 /* flip.wav */; };
 		3DCF3B162878D2CE00D247F9 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B152878D2CE00D247F9 /* correct.wav */; };
@@ -30,8 +32,8 @@
 /* Begin PBXFileReference section */
 		3D46768D287BF6B30087DAF2 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		3D46768F287C6FA40087DAF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3D467691287CA05B0087DAF2 /* CardCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellLayout.swift; sourceTree = "<group>"; };
 		3D467693287CB9BF0087DAF2 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		3DA4987C288461D800726AC3 /* GameViweModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViweModel.swift; sourceTree = "<group>"; };
 		3DC842502874812E0010FA14 /* 6_MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6_MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC842532874812E0010FA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC842552874812E0010FA14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,10 +42,12 @@
 		3DC8425C287481320010FA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DC8425F287481320010FA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DC84261287481320010FA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCED2462882DEB8007F73A5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3DCED2482882EB9F007F73A5 /* GameViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		3DCF3B012876AD3200D247F9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3DCF3B092878330100D247F9 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		3DCF3B0B2878548400D247F9 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		3DCF3B0F2878C28300D247F9 /* SoundManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManage.swift; sourceTree = "<group>"; };
+		3DCF3B0F2878C28300D247F9 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		3DCF3B112878C73400D247F9 /* bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm.wav; sourceTree = "<group>"; };
 		3DCF3B132878D2C700D247F9 /* flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flip.wav; sourceTree = "<group>"; };
 		3DCF3B152878D2CE00D247F9 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
@@ -61,13 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DA4987E288461E500726AC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DA4987C288461D800726AC3 /* GameViweModel.swift */,
+				3DAE89CD28795B7200A5B1A9 /* Card */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3DAE89CD28795B7200A5B1A9 /* Card */ = {
 			isa = PBXGroup;
 			children = (
 				3DCF3B012876AD3200D247F9 /* Card.swift */,
 				3DCF3B092878330100D247F9 /* CardModel.swift */,
 				3DCF3B0B2878548400D247F9 /* CardCell.swift */,
-				3D467691287CA05B0087DAF2 /* CardCellLayout.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -95,9 +107,9 @@
 				3DC842552874812E0010FA14 /* SceneDelegate.swift */,
 				3DC842592874812E0010FA14 /* Main.storyboard */,
 				3DCED2452882C748007F73A5 /* ViewControllers */,
-				3DAE89CD28795B7200A5B1A9 /* Card */,
+				3DA4987E288461E500726AC3 /* Models */,
 				3D46768D287BF6B30087DAF2 /* Rank.swift */,
-				3DCF3B0F2878C28300D247F9 /* SoundManage.swift */,
+				3DCF3B0F2878C28300D247F9 /* SoundManager.swift */,
 				3DCF3B0D2878C20200D247F9 /* SoundFile */,
 				3DC8425C287481320010FA14 /* Assets.xcassets */,
 				3DC8425E287481320010FA14 /* LaunchScreen.storyboard */,
@@ -110,10 +122,20 @@
 			isa = PBXGroup;
 			children = (
 				3D46768F287C6FA40087DAF2 /* MainViewController.swift */,
-				3DC842572874812E0010FA14 /* GameViewController.swift */,
+				3DCED24A2882EBF1007F73A5 /* GameViewController */,
 				3D467693287CB9BF0087DAF2 /* RankViewController.swift */,
+				3DCED2462882DEB8007F73A5 /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3DCED24A2882EBF1007F73A5 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DC842572874812E0010FA14 /* GameViewController.swift */,
+				3DCED2482882EB9F007F73A5 /* GameViewController+CollectionView.swift */,
+			);
+			path = GameViewController;
 			sourceTree = "<group>";
 		};
 		3DCF3B0D2878C20200D247F9 /* SoundFile */ = {
@@ -202,11 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCF3B102878C28300D247F9 /* SoundManage.swift in Sources */,
+				3DCF3B102878C28300D247F9 /* SoundManager.swift in Sources */,
 				3D467694287CB9BF0087DAF2 /* RankViewController.swift in Sources */,
-				3D467692287CA05B0087DAF2 /* CardCellLayout.swift in Sources */,
+				3DCED2492882EB9F007F73A5 /* GameViewController+CollectionView.swift in Sources */,
+				3DA4987D288461D800726AC3 /* GameViweModel.swift in Sources */,
 				3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */,
 				3DC842582874812E0010FA14 /* GameViewController.swift in Sources */,
+				3DCED2472882DEB8007F73A5 /* BaseViewController.swift in Sources */,
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
 				3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */,
 				3DCF3B022876AD3200D247F9 /* Card.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class SoundManage {
+class SoundManager {
 	
 	enum SoundEffect {
 		case bgm
