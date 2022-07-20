@@ -17,7 +17,6 @@
 		3DC8425B2874812E0010FA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC842592874812E0010FA14 /* Main.storyboard */; };
 		3DC8425D287481320010FA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425C287481320010FA14 /* Assets.xcassets */; };
 		3DC84260287481320010FA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8425E287481320010FA14 /* LaunchScreen.storyboard */; };
-		3DCED2472882DEB8007F73A5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCED2462882DEB8007F73A5 /* BaseViewController.swift */; };
 		3DCED2492882EB9F007F73A5 /* GameViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCED2482882EB9F007F73A5 /* GameViewController+CollectionView.swift */; };
 		3DCF3B022876AD3200D247F9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B012876AD3200D247F9 /* Card.swift */; };
 		3DCF3B0A2878330100D247F9 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF3B092878330100D247F9 /* CardModel.swift */; };
@@ -27,9 +26,12 @@
 		3DCF3B142878D2C700D247F9 /* flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B132878D2C700D247F9 /* flip.wav */; };
 		3DCF3B162878D2CE00D247F9 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B152878D2CE00D247F9 /* correct.wav */; };
 		3DCF3B182878D2D300D247F9 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF3B172878D2D300D247F9 /* wrong.wav */; };
+		FACE3233667AB740B17491D2 /* Pods_6_MemoryGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7071CD0BD97899540D15F7 /* Pods_6_MemoryGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1319F34F5BC91F136E075746 /* Pods-6_MemoryGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-6_MemoryGame.debug.xcconfig"; path = "Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame.debug.xcconfig"; sourceTree = "<group>"; };
+		3C7071CD0BD97899540D15F7 /* Pods_6_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_6_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D46768D287BF6B30087DAF2 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		3D46768F287C6FA40087DAF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D467693287CB9BF0087DAF2 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +44,6 @@
 		3DC8425C287481320010FA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DC8425F287481320010FA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DC84261287481320010FA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DCED2462882DEB8007F73A5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3DCED2482882EB9F007F73A5 /* GameViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		3DCF3B012876AD3200D247F9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3DCF3B092878330100D247F9 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		3DCF3B132878D2C700D247F9 /* flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flip.wav; sourceTree = "<group>"; };
 		3DCF3B152878D2CE00D247F9 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		3DCF3B172878D2D300D247F9 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
+		BD97F4AEB53E79D60D47EABD /* Pods-6_MemoryGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-6_MemoryGame.release.xcconfig"; path = "Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACE3233667AB740B17491D2 /* Pods_6_MemoryGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,8 @@
 			children = (
 				3DC842522874812E0010FA14 /* 6_MemoryGame */,
 				3DC842512874812E0010FA14 /* Products */,
+				68D3F14C17E308FAE465F14F /* Pods */,
+				59C8F2D0C78E18559510C704 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,7 +129,6 @@
 				3D46768F287C6FA40087DAF2 /* MainViewController.swift */,
 				3DCED24A2882EBF1007F73A5 /* GameViewController */,
 				3D467693287CB9BF0087DAF2 /* RankViewController.swift */,
-				3DCED2462882DEB8007F73A5 /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +153,23 @@
 			path = SoundFile;
 			sourceTree = "<group>";
 		};
+		59C8F2D0C78E18559510C704 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C7071CD0BD97899540D15F7 /* Pods_6_MemoryGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68D3F14C17E308FAE465F14F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1319F34F5BC91F136E075746 /* Pods-6_MemoryGame.debug.xcconfig */,
+				BD97F4AEB53E79D60D47EABD /* Pods-6_MemoryGame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DC84264287481320010FA14 /* Build configuration list for PBXNativeTarget "6_MemoryGame" */;
 			buildPhases = (
+				CA667422AADDEA18504EEA6A /* [CP] Check Pods Manifest.lock */,
 				3DC8424C2874812E0010FA14 /* Sources */,
 				3DC8424D2874812E0010FA14 /* Frameworks */,
 				3DC8424E2874812E0010FA14 /* Resources */,
+				94C904777482F3A72D597CE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +242,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94C904777482F3A72D597CE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-6_MemoryGame/Pods-6_MemoryGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA667422AADDEA18504EEA6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-6_MemoryGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DC8424C2874812E0010FA14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,7 +295,6 @@
 				3DA4987D288461D800726AC3 /* GameViweModel.swift in Sources */,
 				3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */,
 				3DC842582874812E0010FA14 /* GameViewController.swift in Sources */,
-				3DCED2472882DEB8007F73A5 /* BaseViewController.swift in Sources */,
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
 				3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */,
 				3DCF3B022876AD3200D247F9 /* Card.swift in Sources */,
@@ -378,6 +442,7 @@
 		};
 		3DC84265287481320010FA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1319F34F5BC91F136E075746 /* Pods-6_MemoryGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -407,6 +472,7 @@
 		};
 		3DC84266287481320010FA14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD97F4AEB53E79D60D47EABD /* Pods-6_MemoryGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

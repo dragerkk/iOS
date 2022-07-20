@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoR-h5-ZLD">
-                                <rect key="frame" x="90.5" y="605" width="233" height="58"/>
+                                <rect key="frame" x="90.5" y="505" width="233" height="58"/>
                                 <color key="tintColor" red="0.94914180039999996" green="0.95678728820000003" blue="0.96078509089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-5f-89w">
-                                <rect key="frame" x="122.5" y="713" width="169.5" height="58"/>
+                                <rect key="frame" x="122.5" y="613" width="169.5" height="58"/>
                                 <color key="tintColor" red="0.94914180039999996" green="0.95678728820000003" blue="0.96078509089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -59,16 +59,41 @@
                                     <segue destination="9L7-qK-VYY" kind="show" id="Zam-Xt-Xxh"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RsW-tb-xFe">
+                                <rect key="frame" x="52" y="771" width="310" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-n5-qXP">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="AMk-qE-RDv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="login_kakao">
+                                            <backgroundConfiguration key="background"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-eV-UdE">
+                                        <rect key="frame" x="160" y="0.0" width="150" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="qNl-Mm-CUN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="login_naver"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0ck-Lf-4l3"/>
                         <color key="backgroundColor" red="0.40017661450000003" green="0.37465560440000001" blue="0.35495311019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HwL-aP-YBa" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="6Fg-wP-pSo"/>
+                            <constraint firstItem="RsW-tb-xFe" firstAttribute="top" secondItem="d49-5f-89w" secondAttribute="bottom" constant="100" id="AOm-dw-WDe"/>
                             <constraint firstItem="OoR-h5-ZLD" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="BCR-yr-qVI"/>
                             <constraint firstItem="d49-5f-89w" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="Hj9-v9-g3P"/>
-                            <constraint firstItem="OoR-h5-ZLD" firstAttribute="top" secondItem="HwL-aP-YBa" secondAttribute="bottom" constant="300" id="MoG-qO-HfO"/>
+                            <constraint firstItem="OoR-h5-ZLD" firstAttribute="top" secondItem="HwL-aP-YBa" secondAttribute="bottom" constant="200" id="MoG-qO-HfO"/>
                             <constraint firstItem="HwL-aP-YBa" firstAttribute="top" secondItem="0ck-Lf-4l3" secondAttribute="top" constant="100" id="UR4-qn-Jy0"/>
                             <constraint firstItem="d49-5f-89w" firstAttribute="top" secondItem="OoR-h5-ZLD" secondAttribute="bottom" constant="50" id="aMJ-8c-koG"/>
+                            <constraint firstItem="RsW-tb-xFe" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="tGN-9p-7Mo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7tc-Jd-1ay"/>
@@ -304,6 +329,8 @@
     <resources>
         <image name="1" width="50" height="50"/>
         <image name="back" width="50" height="50"/>
+        <image name="login_kakao" width="60" height="30"/>
+        <image name="login_naver" width="85" height="30"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

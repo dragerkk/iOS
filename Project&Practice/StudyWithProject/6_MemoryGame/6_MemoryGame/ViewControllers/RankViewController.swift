@@ -7,8 +7,8 @@
 
 import UIKit
 
-//class RankViewController: UIViewController {
-class RankViewController: BaseViewController {
+class RankViewController: UIViewController {
+//class RankViewController: BaseViewController {
 
 	@IBOutlet weak var label1: UILabel!
 	@IBOutlet weak var label2: UILabel!
