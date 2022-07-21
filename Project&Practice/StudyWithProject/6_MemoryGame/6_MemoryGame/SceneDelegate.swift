@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKAuth
+import NaverThirdPartyLogin
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,11 +16,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	// MARK: - kakao SDK initialize (with deployment target > ios 13)
 	
 	func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+		//kakao
 		if let url = URLContexts.first?.url {
 			if (AuthApi.isKakaoTalkLoginUrl(url)) {
 				_ = AuthController.handleOpenUrl(url: url)
 			}
 		}
+		
+		//naver
+		NaverThirdPartyLoginConnection
+			.getSharedInstance()?
+			.receiveAccessToken(URLContexts.first?.url)
 	}
 	
 
