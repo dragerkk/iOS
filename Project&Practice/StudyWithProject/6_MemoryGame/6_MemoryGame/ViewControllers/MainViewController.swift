@@ -76,6 +76,10 @@ class MainViewController: UIViewController {
 			self.changesWhenLogout()
 		}
 	}
+}
+
+
+extension MainViewController {
 	
 	func changesWhenLogin() {
 		self.kakaoLoginButton.isHidden = true
@@ -89,7 +93,5 @@ class MainViewController: UIViewController {
 		self.naverLoginButton.isHidden = false
 		self.loginWith = ""
 	}
-	
-	
 
 }
