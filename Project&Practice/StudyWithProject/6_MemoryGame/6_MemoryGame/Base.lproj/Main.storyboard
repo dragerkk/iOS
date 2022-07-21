@@ -71,6 +71,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="login_kakao">
                                             <backgroundConfiguration key="background"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="kakaoLoginAction:" destination="Too-OK-Tc3" eventType="touchUpInside" id="hQS-40-cjc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-eV-UdE">
                                         <rect key="frame" x="160" y="0.0" width="150" height="44"/>
@@ -82,13 +85,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38s-hb-PkZ">
+                                <rect key="frame" x="172.5" y="825" width="69.5" height="31"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="Too-OK-Tc3" eventType="touchUpInside" id="w8T-rv-eQx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0ck-Lf-4l3"/>
                         <color key="backgroundColor" red="0.40017661450000003" green="0.37465560440000001" blue="0.35495311019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HwL-aP-YBa" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="6Fg-wP-pSo"/>
+                            <constraint firstItem="38s-hb-PkZ" firstAttribute="top" secondItem="RsW-tb-xFe" secondAttribute="bottom" constant="10" id="8hp-7D-MQm"/>
                             <constraint firstItem="RsW-tb-xFe" firstAttribute="top" secondItem="d49-5f-89w" secondAttribute="bottom" constant="100" id="AOm-dw-WDe"/>
                             <constraint firstItem="OoR-h5-ZLD" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="BCR-yr-qVI"/>
+                            <constraint firstItem="38s-hb-PkZ" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="CDz-nR-Dih"/>
                             <constraint firstItem="d49-5f-89w" firstAttribute="centerX" secondItem="SX8-FG-L4X" secondAttribute="centerX" id="Hj9-v9-g3P"/>
                             <constraint firstItem="OoR-h5-ZLD" firstAttribute="top" secondItem="HwL-aP-YBa" secondAttribute="bottom" constant="200" id="MoG-qO-HfO"/>
                             <constraint firstItem="HwL-aP-YBa" firstAttribute="top" secondItem="0ck-Lf-4l3" secondAttribute="top" constant="100" id="UR4-qn-Jy0"/>
@@ -97,6 +111,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7tc-Jd-1ay"/>
+                    <connections>
+                        <outlet property="kakaoLoginButton" destination="iJ9-n5-qXP" id="vZ6-mb-Z1g"/>
+                        <outlet property="logoutButton" destination="38s-hb-PkZ" id="JW1-rd-4pn"/>
+                        <outlet property="naverLoginButton" destination="Pst-eV-UdE" id="MBf-UM-s2h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRq-tO-gLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

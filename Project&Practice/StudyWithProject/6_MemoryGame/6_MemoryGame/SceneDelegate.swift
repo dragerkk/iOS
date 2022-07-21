@@ -6,10 +6,22 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
+	
+	// MARK: - kakao SDK initialize (with deployment target > ios 13)
+	
+	func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+		if let url = URLContexts.first?.url {
+			if (AuthApi.isKakaoTalkLoginUrl(url)) {
+				_ = AuthController.handleOpenUrl(url: url)
+			}
+		}
+	}
+	
 
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
