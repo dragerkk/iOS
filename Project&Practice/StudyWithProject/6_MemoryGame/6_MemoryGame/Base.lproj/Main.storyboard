@@ -139,15 +139,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-E6-NQI">
-                                                <rect key="frame" x="207" y="77.5" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="207" y="20" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryq-TD-MuF">
+                                                <rect key="frame" x="195" y="40" width="24" height="14"/>
+                                                <color key="tintColor" red="1" green="0.62397698720000006" blue="0.40145557399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted"/>
+                                                <connections>
+                                                    <action selector="bgmButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mon-aa-s77"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="EAb-E6-NQI" firstAttribute="centerX" secondItem="Y5O-2F-k2p" secondAttribute="centerX" id="Nf2-04-Lnx"/>
-                                            <constraint firstItem="EAb-E6-NQI" firstAttribute="centerY" secondItem="Y5O-2F-k2p" secondAttribute="centerY" id="z7J-bk-Bj9"/>
+                                            <constraint firstItem="Ryq-TD-MuF" firstAttribute="top" secondItem="EAb-E6-NQI" secondAttribute="bottom" constant="20" id="SHV-4R-Jm7"/>
+                                            <constraint firstItem="EAb-E6-NQI" firstAttribute="top" secondItem="Y5O-2F-k2p" secondAttribute="top" constant="20" id="btn-2w-L3h"/>
+                                            <constraint firstItem="Ryq-TD-MuF" firstAttribute="centerX" secondItem="Y5O-2F-k2p" secondAttribute="centerX" id="dtc-EF-eyG"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-vS-2o3">
@@ -247,6 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="P6J-Zs-KzS"/>
                     <connections>
+                        <outlet property="bgmButton" destination="Ryq-TD-MuF" id="yey-zI-LNA"/>
                         <outlet property="collectionView" destination="VuE-vS-2o3" id="4g2-Kv-Qan"/>
                         <outlet property="scoreLabel" destination="wGq-kS-KFS" id="kUt-bw-HYr"/>
                         <outlet property="timerLabel" destination="EAb-E6-NQI" id="Zit-cB-1QJ"/>

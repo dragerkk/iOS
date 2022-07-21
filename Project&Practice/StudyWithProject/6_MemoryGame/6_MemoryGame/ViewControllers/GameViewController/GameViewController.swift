@@ -12,6 +12,7 @@ class GameViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var timerLabel: UILabel!
 	@IBOutlet weak var scoreLabel: UILabel!
+	@IBOutlet weak var bgmButton: UIButton!
 	
 	let model = CardModel()
 	var cards: [Card] = []
@@ -26,12 +27,14 @@ class GameViewController: UIViewController {
 	var score: Int = 0
 	var rank = Rank()
 	
+	var bgmOn: Bool = true
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		cards = model.getCards()
+		bgmButton.setImage(UIImage(systemName: "speaker.fill"), for: .normal)
 		
 		collectionView.delegate = self
 		collectionView.dataSource = self
@@ -46,6 +49,20 @@ class GameViewController: UIViewController {
 		
 		cellLayout()
 	}
+	
+	@IBAction func bgmButtonAction(_ sender: Any) {
+		
+		if bgmOn {
+		soundPlayer.stopBGM()
+		bgmButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
+			bgmOn = false
+		} else {
+			soundPlayer.playSound(soundName: .bgm)
+			bgmButton.setImage(UIImage(systemName: "speaker.fill"), for: .normal)
+			bgmOn = true
+		}
+	}
+	
 	
 	// MARK: - play BGM
 	override func viewDidAppear(_ animated: Bool) {
