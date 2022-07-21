@@ -35,3 +35,5 @@
 - bgm, sound effect 
 - dispatchqueue
 - card memory game 
+- sns login/logout (naver, kakao)
+- save score with user defaults
