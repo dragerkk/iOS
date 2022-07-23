@@ -37,3 +37,4 @@
 - card memory game 
 - sns login/logout (naver, kakao)
 - save score with user defaults
+- Ranking score appears with animation
