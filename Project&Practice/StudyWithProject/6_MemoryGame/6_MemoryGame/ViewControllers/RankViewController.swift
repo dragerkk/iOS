@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import simd
 
 class RankViewController: UIViewController {
 //class RankViewController: BaseViewController {
@@ -22,11 +23,18 @@ class RankViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
-		label1.text = "1st : \(String(rank[4]))"
-		label2.text = "2nd : \(String(rank[3]))"
-		label3.text = "3rd : \(String(rank[2]))"
-		label4.text = "4th : \(String(rank[1]))"
-		label5.text = "5th : \(String(rank[0]))"
-    }
-    
+		setLabels(label: label1, seconds: 5, prefix: "1st", index: 4)
+		setLabels(label: label2, seconds: 4, prefix: "2nd", index: 3)
+		setLabels(label: label3, seconds: 3, prefix: "3rd", index: 2)
+		setLabels(label: label4, seconds: 2, prefix: "4th", index: 1)
+		setLabels(label: label5, seconds: 1, prefix: "5th", index: 0)
+	}
+
+	func setLabels(label:UILabel, seconds:TimeInterval, prefix:String, index:Int) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+			UIView.transition(with: label, duration: seconds, options: .transitionFlipFromRight, animations: {
+				label.text = "\(prefix) : \(String(self.rank[index]))"
+			}, completion: nil)
+		}
+	}
 }

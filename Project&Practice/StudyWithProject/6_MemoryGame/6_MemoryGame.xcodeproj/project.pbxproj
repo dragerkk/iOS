@@ -10,7 +10,7 @@
 		3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46768D287BF6B30087DAF2 /* Rank.swift */; };
 		3D467690287C6FA40087DAF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46768F287C6FA40087DAF2 /* MainViewController.swift */; };
 		3D467694287CB9BF0087DAF2 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D467693287CB9BF0087DAF2 /* RankViewController.swift */; };
-		3DA4987D288461D800726AC3 /* GameViweModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4987C288461D800726AC3 /* GameViweModel.swift */; };
+		3DA4987D288461D800726AC3 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4987C288461D800726AC3 /* GameViewModel.swift */; };
 		3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842532874812E0010FA14 /* AppDelegate.swift */; };
 		3DC842562874812E0010FA14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842552874812E0010FA14 /* SceneDelegate.swift */; };
 		3DC842582874812E0010FA14 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC842572874812E0010FA14 /* GameViewController.swift */; };
@@ -35,7 +35,7 @@
 		3D46768D287BF6B30087DAF2 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		3D46768F287C6FA40087DAF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D467693287CB9BF0087DAF2 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
-		3DA4987C288461D800726AC3 /* GameViweModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViweModel.swift; sourceTree = "<group>"; };
+		3DA4987C288461D800726AC3 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		3DC842502874812E0010FA14 /* 6_MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6_MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC842532874812E0010FA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC842552874812E0010FA14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		3DA4987E288461E500726AC3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3DA4987C288461D800726AC3 /* GameViweModel.swift */,
+				3DA4987C288461D800726AC3 /* GameViewModel.swift */,
 				3DAE89CD28795B7200A5B1A9 /* Card */,
 			);
 			path = Models;
@@ -292,7 +292,7 @@
 				3DCF3B102878C28300D247F9 /* SoundManager.swift in Sources */,
 				3D467694287CB9BF0087DAF2 /* RankViewController.swift in Sources */,
 				3DCED2492882EB9F007F73A5 /* GameViewController+CollectionView.swift in Sources */,
-				3DA4987D288461D800726AC3 /* GameViweModel.swift in Sources */,
+				3DA4987D288461D800726AC3 /* GameViewModel.swift in Sources */,
 				3D46768E287BF6B30087DAF2 /* Rank.swift in Sources */,
 				3DC842582874812E0010FA14 /* GameViewController.swift in Sources */,
 				3DC842542874812E0010FA14 /* AppDelegate.swift in Sources */,
